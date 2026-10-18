@@ -1,0 +1,3608 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>NVANH OFFICIAL - CHIA SẺ FILE MIỄN PHÍ</title>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow, noarchive">
+<meta name="google" content="notranslate">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════════════
+   RESET & VARIABLES
+   ═══════════════════════════════════════════════════════════ */
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --red:#dc2626;
+  --red-l:#ef4444;
+  --red-d:#b91c1c;
+  --red-s:rgba(220,38,38,.08);
+  --red-b:rgba(220,38,38,.18);
+  --red-g:rgba(220,38,38,.28);
+
+  --n0:#fafafa;
+  --n1:#f4f4f5;
+  --n2:#e4e4e7;
+  --n3:#d4d4d8;
+  --white:#ffffff;
+
+  --ok:#10b981;
+  --ok-s:rgba(16,185,129,.10);
+  --ok-b:rgba(16,185,129,.22);
+
+  --wn:#f59e0b;
+  --wn-s:rgba(245,158,11,.10);
+  --wn-b:rgba(245,158,11,.22);
+
+  --er:#ef4444;
+  --er-s:rgba(239,68,68,.10);
+  --er-b:rgba(239,68,68,.22);
+
+  --t0:#09090b;
+  --t1:#18181b;
+  --t2:#3f3f46;
+  --t3:#52525b;
+  --t4:#71717a;
+  --t5:#a1a1aa;
+
+  --bd:rgba(24,24,27,.08);
+  --bd2:rgba(24,24,27,.14);
+  --bd3:rgba(24,24,27,.20);
+
+  --fh:'Sora',sans-serif;
+  --fb:'Sora',sans-serif;
+  --fm:'Fira Code',monospace;
+
+  --r1:8px;
+  --r2:12px;
+  --r3:16px;
+  --r4:20px;
+  --r5:24px;
+  --r6:32px;
+
+  --sh1:0 1px 3px rgba(24,24,27,.06),0 1px 2px rgba(24,24,27,.04);
+  --sh2:0 4px 12px rgba(24,24,27,.08),0 2px 4px rgba(24,24,27,.04);
+  --sh3:0 12px 32px rgba(24,24,27,.12),0 4px 8px rgba(24,24,27,.06);
+  --sh4:0 24px 60px rgba(24,24,27,.18),0 8px 16px rgba(24,24,27,.08);
+
+  --tr:all .25s cubic-bezier(.4,0,.2,1);
+  --tr-s:all .35s cubic-bezier(.34,1.56,.64,1);
+
+  --mouse-x:50%;
+  --mouse-y:50%;
+}
+
+body.dark{
+  --n0:#0a0a0b;
+  --n1:#18181b;
+  --n2:#27272a;
+  --n3:#3f3f46;
+  --white:#1c1c1f;
+
+  --t0:#fafafa;
+  --t1:#f4f4f5;
+  --t2:#d4d4d8;
+  --t3:#a1a1aa;
+  --t4:#71717a;
+  --t5:#52525b;
+
+  --bd:rgba(255,255,255,.06);
+  --bd2:rgba(255,255,255,.10);
+  --bd3:rgba(255,255,255,.16);
+
+  --sh1:0 1px 3px rgba(0,0,0,.3);
+  --sh2:0 4px 12px rgba(0,0,0,.4);
+  --sh3:0 12px 32px rgba(0,0,0,.5);
+  --sh4:0 24px 60px rgba(0,0,0,.6);
+}
+
+html,body{
+  background:var(--n0);
+  min-height:100vh;
+  overflow-x:hidden;
+  color:var(--t1);
+  font-family:var(--fb);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  transition:background .3s,color .3s;
+}
+
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--n1)}
+::-webkit-scrollbar-thumb{background:var(--red);border-radius:10px}
+
+/* ═══════════════════════════════════════════════════════════
+   BACKGROUND EFFECTS
+   ═══════════════════════════════════════════════════════════ */
+#bgGradient{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  transition:background 1s ease;
+}
+#bgCanvas{
+  position:fixed;inset:0;z-index:1;pointer-events:none;
+}
+.bg-overlay{
+  position:fixed;inset:0;z-index:2;pointer-events:none;
+  background:
+    linear-gradient(rgba(220,38,38,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(220,38,38,.03) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 100% 70% at 50% 0%,#000 0%,transparent 80%);
+  -webkit-mask-image:radial-gradient(ellipse 100% 70% at 50% 0%,#000 0%,transparent 80%);
+}
+.bg-wave{
+  position:fixed;inset:0;z-index:3;pointer-events:none;
+  background:radial-gradient(circle at var(--mouse-x) var(--mouse-y),
+    rgba(220,38,38,.06) 0%,transparent 40%);
+  transition:background .3s;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LOADER
+   ═══════════════════════════════════════════════════════════ */
+#load{
+  position:fixed;inset:0;background:var(--white);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;
+  z-index:99999;
+  transition:background .3s;
+}
+#load .logo{
+  width:72px;height:72px;border-radius:20px;
+  background:linear-gradient(135deg,var(--red),var(--red-d));
+  display:flex;align-items:center;justify-content:center;
+  font-size:2rem;color:#fff;font-family:var(--fh);font-weight:800;
+  box-shadow:0 12px 32px var(--red-g);
+  animation:logoBounce 1.4s ease-in-out infinite;
+  position:relative;
+}
+#load .logo::after{
+  content:'';position:absolute;inset:-8px;border-radius:24px;
+  border:2px solid var(--red);opacity:.3;
+  animation:logoPulse 1.8s ease-out infinite;
+}
+@keyframes logoBounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+@keyframes logoPulse{
+  0%{transform:scale(1);opacity:.4}
+  100%{transform:scale(1.3);opacity:0}
+}
+#load .txt{
+  font-family:var(--fh);font-weight:800;font-size:.85rem;
+  color:var(--t4);letter-spacing:12px;text-transform:uppercase;
+  animation:txtBlink 1.6s ease-in-out infinite;
+}
+@keyframes txtBlink{0%,100%{opacity:.35}50%{opacity:1}}
+
+/* ═══════════════════════════════════════════════════════════
+   APP
+   ═══════════════════════════════════════════════════════════ */
+#app{
+  display:none;position:relative;z-index:10;
+  max-width:1000px;margin:0 auto;padding:16px 16px 60px;
+}
+#app.on{display:block;animation:appIn .5s cubic-bezier(.4,0,.2,1)}
+@keyframes appIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+/* ═══════════════════════════════════════════════════════════
+   API OFF BANNER
+   ═══════════════════════════════════════════════════════════ */
+#api-off-banner{
+  position:fixed;top:0;left:0;right:0;z-index:99998;
+  padding:12px 20px;text-align:center;
+  background:linear-gradient(135deg,var(--er),#b91c1c);
+  color:#fff;font-family:var(--fh);font-weight:700;
+  font-size:.82rem;letter-spacing:.2px;
+  box-shadow:0 4px 20px rgba(220,38,38,.4);
+  animation:slideDown .4s ease;
+}
+#api-off-banner i{margin-right:8px}
+@keyframes slideDown{
+  from{transform:translateY(-100%)}
+  to{transform:translateY(0)}
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════════════════════ */
+.hero{
+  position:relative;border-radius:var(--r5);
+  overflow:hidden;margin-bottom:16px;
+  border:1px solid var(--bd);
+  box-shadow:var(--sh3);
+  background:var(--white);
+  min-height:140px;
+  transition:background .3s,border-color .3s;
+}
+.hero img{
+  width:100%;height:auto;display:block;
+  transition:transform .7s cubic-bezier(.4,0,.2,1);
+}
+.hero:hover img{transform:scale(1.03)}
+.hero .overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 30%,rgba(9,9,11,.75) 100%);
+  pointer-events:none;
+}
+.hero .content{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:20px;
+  display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
+}
+.hero .content .badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 12px;border-radius:100px;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.25);
+  font-family:var(--fm);font-size:.58rem;font-weight:700;
+  color:#fff;letter-spacing:1.4px;text-transform:uppercase;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+}
+.hero .content .badge i{font-size:.68rem}
+
+/* ═══════════════════════════════════════════════════════════
+   BUTTONS — THIẾT KẾ LẠI
+   ═══════════════════════════════════════════════════════════ */
+.btn-lv2{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 18px;border-radius:100px;
+  background:linear-gradient(135deg,var(--red),var(--red-d));
+  color:#fff;
+  font-family:var(--fh);font-weight:800;font-size:.75rem;
+  letter-spacing:1px;text-transform:uppercase;
+  border:none;cursor:pointer;
+  box-shadow:0 8px 24px var(--red-g);
+  transition:var(--tr);
+  position:relative;overflow:hidden;
+}
+.btn-lv2::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);
+  transform:translateX(-100%);
+  transition:transform .7s ease;
+}
+.btn-lv2:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 32px var(--red-g);
+}
+.btn-lv2:hover::before{transform:translateX(100%)}
+.btn-lv2 .btn-icon{
+  width:20px;height:20px;
+  object-fit:contain;
+  flex-shrink:0;
+}
+
+/* Nút chính — thiết kế lại gọn đẹp hơn */
+.bt{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 20px;border-radius:var(--r2);
+  border:1.5px solid transparent;
+  font-family:var(--fh);font-weight:700;font-size:.8rem;
+  cursor:pointer;transition:var(--tr);
+  position:relative;overflow:hidden;
+  min-height:44px;text-decoration:none;
+  letter-spacing:.2px;
+  line-height:1;
+}
+.bt:active{transform:scale(.97)}
+.bt:disabled{opacity:.6;cursor:not-allowed}
+.bt-p{
+  background:linear-gradient(135deg,var(--red),var(--red-d));
+  color:#fff;
+  box-shadow:0 4px 16px var(--red-g);
+}
+.bt-p:hover:not(:disabled){
+  box-shadow:0 10px 28px var(--red-g);
+  transform:translateY(-2px);
+}
+.bt-s{
+  background:linear-gradient(135deg,var(--ok),#059669);
+  color:#fff;
+  box-shadow:0 4px 16px var(--ok-b);
+}
+.bt-s:hover:not(:disabled){
+  box-shadow:0 10px 28px var(--ok-b);
+  transform:translateY(-2px);
+}
+.bt-d{
+  background:linear-gradient(135deg,var(--er),#b91c1c);
+  color:#fff;
+  box-shadow:0 4px 16px var(--er-b);
+}
+.bt-d:hover:not(:disabled){
+  box-shadow:0 10px 28px var(--er-b);
+  transform:translateY(-2px);
+}
+.bt-w{
+  background:linear-gradient(135deg,var(--wn),#d97706);
+  color:#fff;
+  box-shadow:0 4px 16px var(--wn-b);
+}
+.bt-g{
+  background:var(--white);
+  color:var(--t2);
+  border-color:var(--bd2);
+}
+.bt-g:hover:not(:disabled){
+  background:var(--n1);
+  color:var(--t0);
+  border-color:var(--bd3);
+}
+.bt .rp{
+  position:absolute;border-radius:50%;
+  background:rgba(255,255,255,.3);
+  transform:scale(0);
+  animation:rpA .6s ease-out;
+  pointer-events:none;
+}
+.bt-g .rp{background:rgba(220,38,38,.15)}
+@keyframes rpA{to{transform:scale(4);opacity:0}}
+
+.btn-icon{
+  width:18px;height:18px;
+  object-fit:contain;
+  vertical-align:middle;
+  flex-shrink:0;
+  display:inline-block;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   STATS
+   ═══════════════════════════════════════════════════════════ */
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:10px;
+  margin-bottom:16px;
+}
+.stat{
+  padding:18px 14px;
+  background:var(--white);
+  border:1px solid var(--bd);
+  border-radius:var(--r4);
+  text-align:left;
+  box-shadow:var(--sh1);
+  transition:var(--tr), background .3s, border-color .3s;
+  position:relative;overflow:hidden;
+}
+.stat::before{
+  content:'';position:absolute;
+  top:0;left:0;width:100%;height:2px;
+  background:linear-gradient(90deg,var(--red),var(--red-l));
+  transform:scaleX(0);transform-origin:left;
+  transition:var(--tr);
+}
+.stat:hover{
+  border-color:var(--red-b);
+  transform:translateY(-3px);
+  box-shadow:var(--sh3);
+}
+.stat:hover::before{transform:scaleX(1)}
+.stat .top{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:12px;
+}
+.stat .top .icon{
+  width:36px;height:36px;border-radius:10px;
+  background:var(--red-s);border:1px solid var(--red-b);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--red);font-size:.9rem;
+  transition:background .3s;
+}
+.stat .top .trend{
+  font-family:var(--fm);font-size:.58rem;
+  color:var(--ok);font-weight:700;
+  display:flex;align-items:center;gap:3px;
+  padding:3px 8px;border-radius:6px;
+  background:var(--ok-s);
+}
+.stat .num{
+  font-family:var(--fh);font-weight:800;
+  font-size:1.55rem;line-height:1;letter-spacing:-.8px;
+  color:var(--t0);
+  margin-bottom:5px;
+}
+.stat .lbl{
+  font-family:var(--fm);font-size:.58rem;
+  color:var(--t4);text-transform:uppercase;
+  letter-spacing:1.5px;font-weight:600;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SEARCH
+   ═══════════════════════════════════════════════════════════ */
+.srch{
+  display:flex;align-items:center;gap:0;
+  padding:6px;margin-bottom:16px;
+  background:var(--white);
+  border:1.5px solid var(--bd2);
+  border-radius:var(--r4);
+  box-shadow:var(--sh1);
+  transition:var(--tr), background .3s, border-color .3s;
+}
+.srch:focus-within{
+  border-color:var(--red);
+  box-shadow:0 0 0 4px var(--red-s),var(--sh2);
+}
+.srch .ic{
+  color:var(--t4);font-size:.95rem;
+  padding:0 12px 0 16px;flex-shrink:0;
+  transition:var(--tr);
+}
+.srch:focus-within .ic{color:var(--red)}
+.srch input{
+  flex:1;background:transparent;
+  border:none;outline:none;
+  color:var(--t0);padding:13px 6px;
+  font-size:.9rem;font-family:var(--fb);font-weight:500;
+  min-width:0;
+}
+.srch input::placeholder{color:var(--t5);font-weight:400}
+.srch .cnt{
+  font-family:var(--fm);font-size:.68rem;
+  color:var(--red);font-weight:700;
+  padding:0 12px;white-space:nowrap;flex-shrink:0;
+}
+.srch .clr{
+  background:var(--n1);border:none;color:var(--t4);
+  padding:9px 13px;border-radius:9px;
+  cursor:pointer;font-size:.82rem;
+  display:none;transition:var(--tr);flex-shrink:0;
+}
+.srch .clr:hover{background:var(--red-s);color:var(--red)}
+.srch .clr.on{display:block}
+
+/* ═══════════════════════════════════════════════════════════
+   TABS
+   ═══════════════════════════════════════════════════════════ */
+.tabs{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:6px;padding:6px;
+  margin-bottom:14px;
+  background:var(--white);
+  border:1px solid var(--bd);
+  border-radius:var(--r4);
+  box-shadow:var(--sh1);
+  transition:background .3s, border-color .3s;
+}
+.tb{
+  background:transparent;border:none;
+  color:var(--t3);padding:12px 10px;
+  border-radius:var(--r2);
+  font-family:var(--fh);font-weight:700;font-size:.8rem;
+  cursor:pointer;transition:var(--tr);
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  white-space:nowrap;letter-spacing:.2px;
+}
+.tb i{font-size:.82rem;transition:var(--tr)}
+.tb.on{
+  background:linear-gradient(135deg,var(--red),var(--red-d));
+  color:#fff;
+  box-shadow:0 6px 18px var(--red-g);
+}
+.tb.on i{transform:scale(1.15)}
+.tb:hover:not(.on){color:var(--t0);background:var(--n1)}
+
+.subs{
+  display:flex;gap:6px;padding:5px;
+  margin-bottom:14px;
+  background:var(--white);
+  border:1px solid var(--bd);
+  border-radius:var(--r3);
+  overflow-x:auto;scrollbar-width:none;
+  box-shadow:var(--sh1);
+  transition:background .3s, border-color .3s;
+}
+.subs::-webkit-scrollbar{display:none}
+.sb{
+  flex:1;min-width:fit-content;
+  background:transparent;
+  border:1px solid transparent;
+  color:var(--t3);padding:10px 16px;
+  border-radius:9px;
+  font-family:var(--fh);font-weight:600;font-size:.74rem;
+  cursor:pointer;transition:var(--tr);
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  white-space:nowrap;letter-spacing:.2px;
+}
+.sb i{font-size:.72rem}
+.sb.on{
+  background:var(--red-s);
+  color:var(--red);
+  border-color:var(--red-b);
+  font-weight:700;
+}
+.sb:hover:not(.on){color:var(--t0);background:var(--n1)}
+
+.pn{display:none;animation:pnIn .3s ease}
+.pn.on{display:block}
+.sp{display:none;animation:pnIn .25s ease}
+.sp.on{display:block}
+@keyframes pnIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ═══════════════════════════════════════════════════════════
+   FILE LIST
+   ═══════════════════════════════════════════════════════════ */
+.fl{display:flex;flex-direction:column;gap:8px}
+.fi{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 18px;
+  background:var(--white);
+  border:1px solid var(--bd);
+  border-radius:var(--r3);
+  cursor:pointer;transition:var(--tr);
+  position:relative;overflow:hidden;
+  box-shadow:var(--sh1);
+}
+.fi::before{
+  content:'';position:absolute;
+  top:0;left:0;height:100%;width:4px;
+  background:linear-gradient(180deg,var(--red),var(--red-l));
+  transform:scaleY(0);transform-origin:bottom;
+  transition:transform .35s cubic-bezier(.34,1.56,.64,1);
+}
+.fi:hover{
+  border-color:var(--red-b);
+  transform:translateY(-2px);
+  box-shadow:var(--sh3);
+}
+.fi:hover::before{transform:scaleY(1)}
+.fi .fiic{
+  width:50px;height:50px;min-width:50px;
+  border-radius:var(--r2);
+  background:linear-gradient(135deg,var(--red-s),var(--red-s));
+  border:1px solid var(--red-b);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--red);font-size:1.15rem;
+  transition:var(--tr-s);
+}
+.fi:hover .fiic{
+  background:linear-gradient(135deg,var(--red),var(--red-d));
+  color:#fff;border-color:transparent;
+  box-shadow:0 8px 24px var(--red-g);
+  transform:scale(1.08) rotate(-4deg);
+}
+.fi .finfo{flex:1;min-width:0}
+.fi .finm{
+  color:var(--t0);font-weight:700;
+  font-size:.92rem;line-height:1.4;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  letter-spacing:-.1px;
+}
+.fi .fimt{
+  display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+  margin-top:6px;color:var(--t4);font-size:.68rem;
+  font-family:var(--fm);
+}
+.fi .fimt .fmi{display:flex;align-items:center;gap:3px}
+.fi .fimt .fmi i{font-size:.62rem;opacity:.8}
+.tg{
+  display:inline-flex;align-items:center;gap:3px;
+  padding:3px 9px;border-radius:6px;
+  font-size:.58rem;font-weight:700;letter-spacing:.4px;
+  font-family:var(--fm);
+}
+.tg-hot{background:var(--er-s);color:var(--er);animation:hotPulse 1.8s ease-in-out infinite}
+@keyframes hotPulse{0%,100%{opacity:1}50%{opacity:.55}}
+.tg-new{background:var(--ok-s);color:var(--ok)}
+.tg-ver{background:var(--wn-s);color:var(--wn)}
+.tg-cat{background:var(--red-s);color:var(--red)}
+.fi .fiarr{
+  width:32px;height:32px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--t5);font-size:.72rem;
+  background:var(--n1);
+  transition:var(--tr);flex-shrink:0;
+}
+.fi:hover .fiarr{
+  background:var(--red);color:#fff;
+  transform:translateX(3px);
+}
+
+.emp{
+  padding:64px 24px;text-align:center;
+  background:var(--white);
+  border:2px dashed var(--bd2);
+  border-radius:var(--r4);
+}
+.emp i{
+  font-size:2.5rem;color:var(--t5);
+  display:block;margin-bottom:16px;opacity:.5;
+}
+.emp p{color:var(--t4);font-size:.85rem;font-weight:500}
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════ */
+.ft{
+  margin-top:48px;padding:28px 24px;text-align:center;
+  background:var(--white);
+  border:1px solid var(--bd);
+  border-radius:var(--r4);
+  box-shadow:var(--sh1);
+  transition:background .3s, border-color .3s;
+}
+.ft .msg{color:var(--t3);font-size:.82rem;margin-bottom:10px;font-weight:500}
+.ft .brand{
+  font-family:var(--fh);font-weight:800;font-size:.7rem;
+  color:var(--t5);letter-spacing:8px;text-transform:uppercase;
+}
+.ft .brand span{
+  background:linear-gradient(135deg,var(--red),var(--red-l));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TOASTS
+   ═══════════════════════════════════════════════════════════ */
+#tsts{
+  position:fixed;top:20px;right:20px;z-index:99999;
+  display:flex;flex-direction:column;gap:10px;
+  max-width:380px;width:calc(100% - 40px);
+}
+.ts{
+  padding:14px 18px;
+  background:var(--white);
+  border:1.5px solid var(--bd2);
+  border-radius:var(--r3);
+  color:var(--t0);
+  font-weight:500;font-size:.82rem;
+  box-shadow:var(--sh4);
+  display:flex;align-items:center;gap:12px;
+  animation:tsIn .4s cubic-bezier(.34,1.56,.64,1);
+  position:relative;overflow:hidden;
+  transition:background .3s, border-color .3s;
+}
+.ts::before{
+  content:'';position:absolute;
+  left:0;top:0;bottom:0;width:4px;
+  background:var(--red);
+}
+.ts.info::before{background:var(--red)}
+.ts.success::before{background:var(--ok)}
+.ts.error::before{background:var(--er)}
+.ts.warning::before{background:var(--wn)}
+.ts i{font-size:1.05rem;flex-shrink:0}
+.ts.info i{color:var(--red)}
+.ts.success i{color:var(--ok)}
+.ts.error i{color:var(--er)}
+.ts.warning i{color:var(--wn)}
+@keyframes tsIn{
+  from{opacity:0;transform:translateX(60px) scale(.9)}
+  to{opacity:1;transform:none}
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MODALS — THIẾT KẾ LẠI
+   ═══════════════════════════════════════════════════════════ */
+.ov{
+  display:none;position:fixed;inset:0;z-index:9999;
+  background:rgba(9,9,11,.55);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  align-items:center;justify-content:center;padding:16px;
+}
+.ov.on{display:flex}
+.mb{
+  max-width:540px;width:100%;padding:28px;
+  background:var(--white);
+  border:1px solid var(--bd2);
+  border-radius:var(--r5);
+  max-height:92vh;overflow-y:auto;
+  box-shadow:var(--sh4);
+  animation:mbIn .35s cubic-bezier(.34,1.56,.64,1);
+  position:relative;
+  transition:background .3s, border-color .3s;
+}
+@keyframes mbIn{
+  from{opacity:0;transform:scale(.94) translateY(20px)}
+  to{opacity:1;transform:none}
+}
+.mh{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:18px;padding-bottom:16px;
+  border-bottom:1px solid var(--bd);
+}
+.mh h3{
+  font-family:var(--fh);font-weight:800;font-size:1rem;
+  display:flex;align-items:center;gap:10px;color:var(--t0);
+  letter-spacing:-.2px;
+}
+.mh h3 i{
+  width:32px;height:32px;border-radius:9px;
+  background:var(--red-s);color:var(--red);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.9rem;
+}
+.mc{
+  background:var(--n1);border:none;
+  width:36px;height:36px;border-radius:10px;
+  color:var(--t4);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.15rem;line-height:1;
+  transition:var(--tr);
+}
+.mc:hover{
+  background:var(--red-s);color:var(--red);
+  transform:rotate(90deg);
+}
+.mbody{color:var(--t1)}
+.mf{
+  display:flex;gap:8px;justify-content:flex-end;
+  margin-top:18px;padding-top:16px;
+  border-top:1px solid var(--bd);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MODAL QC / MUA LINK — THIẾT KẾ LẠI ĐẸP + NỀN KẺ Ô VUÔNG
+   ═══════════════════════════════════════════════════════════ */
+.ov.qc-flow .mb{
+  max-width:480px;
+  padding:0;
+  overflow:hidden;
+  position:relative;
+}
+
+/* Nền kẻ ô vuông cho modal QC */
+.ov.qc-flow .mb::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(220,38,38,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(220,38,38,.06) 1px,transparent 1px);
+  background-size:32px 32px;
+  pointer-events:none;
+  z-index:0;
+}
+.ov.qc-flow .mb::after{
+  content:'';position:absolute;
+  top:-30%;right:-20%;width:60%;height:80%;
+  background:radial-gradient(circle,rgba(220,38,38,.12) 0%,transparent 70%);
+  filter:blur(50px);
+  pointer-events:none;
+  z-index:0;
+  animation:qcGlow 3s ease-in-out infinite;
+}
+@keyframes qcGlow{
+  0%,100%{opacity:.6;transform:scale(1)}
+  50%{opacity:1;transform:scale(1.1)}
+}
+
+.ov.qc-flow .qc-header{
+  position:relative;z-index:1;
+  padding:22px 24px 18px;
+  border-bottom:1px solid var(--bd);
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(255,255,255,.6);
+  backdrop-filter:blur(10px);
+}
+body.dark .ov.qc-flow .qc-header{
+  background:rgba(28,28,31,.6);
+}
+.ov.qc-flow .qc-header h3{
+  font-family:var(--fh);font-weight:800;font-size:.95rem;
+  color:var(--t0);display:flex;align-items:center;gap:10px;
+}
+.ov.qc-flow .qc-header h3 i{
+  width:32px;height:32px;border-radius:9px;
+  background:linear-gradient(135deg,var(--red),var(--red-d));
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:.85rem;
+  box-shadow:0 4px 12px var(--red-g);
+}
+.ov.qc-flow .qc-body{
+  position:relative;z-index:1;
+  padding:22px 24px 24px;
+}
+.ov.qc-flow .qc-footer{
+  position:relative;z-index:1;
+  padding:14px 24px 20px;
+  border-top:1px solid var(--bd);
+  display:flex;justify-content:flex-end;gap:8px;
+  background:rgba(255,255,255,.4);
+}
+body.dark .ov.qc-flow .qc-footer{
+  background:rgba(28,28,31,.4);
+}
+
+/* File info card trong modal QC */
+.qc-file-card{
+  display:flex;align-items:center;gap:14px;
+  padding:16px;
+  background:var(--white);
+  border:1.5px solid var(--bd2);
+  border-radius:var(--r3);
+  margin-bottom:18px;
+  box-shadow:var(--sh1);
+  position:relative;overflow:hidden;
+}
+.qc-file-card::before{
+  content:'';position:absolute;
+  top:0;left:0;width:100%;height:3px;
+  background:linear-gradient(90deg,var(--red),var(--red-l));
+}
+.qc-file-card .qc-fic{
+  width:48px;height:48px;min-width:48px;
+  border-radius:var(--r2);
+  background:linear-gradient(135deg,var(--red-s),var(--red-s));
+  border:1px solid var(--red-b);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--red);font-size:1.1rem;
+}
+.qc-file-card .qc-finfo{flex:1;min-width:0}
+.qc-file-card .qc-fname{
+  font-family:var(--fh);font-weight:700;font-size:.88rem;
+  color:var(--t0);white-space:nowrap;overflow:hidden;
+  text-overflow:ellipsis;line-height:1.3;
+}
+.qc-file-card .qc-fmeta{
+  display:flex;align-items:center;gap:10px;
+  margin-top:5px;color:var(--t4);
+  font-family:var(--fm);font-size:.65rem;
+}
+
+/* Nút chọn trong modal QC */
+.qc-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-bottom:14px;
+}
+.qc-btn{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:8px;
+  padding:20px 14px;
+  border-radius:var(--r3);
+  border:1.5px solid transparent;
+  cursor:pointer;
+  transition:var(--tr);
+  font-family:var(--fh);font-weight:700;font-size:.82rem;
+  position:relative;overflow:hidden;
+  text-align:center;
+  min-height:90px;
+}
+.qc-btn::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
+  transform:translateX(-100%);
+  transition:transform .7s ease;
+}
+.qc-btn:hover::before{transform:translateX(100%)}
+.qc-btn:active{transform:scale(.97)}
+.qc-btn .qc-bic{
+  width:42px;height:42px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;
+  transition:var(--tr-s);
+}
+.qc-btn:hover .qc-bic{transform:scale(1.12) rotate(-6deg)}
+.qc-btn .qc-btxt{line-height:1.2}
+.qc-btn .qc-bsub{
+  font-family:var(--fm);font-size:.6rem;
+  font-weight:600;opacity:.7;margin-top:3px;
+}
+
+.qc-btn-bypass{
+  background:linear-gradient(135deg,var(--red),var(--red-d));
+  color:#fff;
+  box-shadow:0 6px 20px var(--red-g);
+}
+.qc-btn-bypass:hover{
+  box-shadow:0 10px 32px var(--red-g);
+  transform:translateY(-3px);
+}
+.qc-btn-bypass .qc-bic{
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.25);
+}
+
+.qc-btn-buy{
+  background:linear-gradient(135deg,var(--ok),#059669);
+  color:#fff;
+  box-shadow:0 6px 20px var(--ok-b);
+}
+.qc-btn-buy:hover{
+  box-shadow:0 10px 32px var(--ok-b);
+  transform:translateY(-3px);
+}
+.qc-btn-buy .qc-bic{
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.25);
+}
+
+.qc-btn-error{
+  grid-column:span 2;
+  flex-direction:row;
+  min-height:auto;
+  padding:13px 18px;
+  background:var(--white);
+  color:var(--er);
+  border-color:var(--er-b);
+  font-size:.78rem;
+  gap:8px;
+}
+.qc-btn-error:hover{
+  background:var(--er-s);
+  border-color:var(--er);
+  transform:translateY(-2px);
+}
+.qc-btn-error .qc-bic{
+  width:28px;height:28px;
+  background:var(--er-s);
+  border-radius:8px;
+  font-size:.8rem;
+  color:var(--er);
+}
+
+/* API Picker — thiết kế lại */
+.api-picker{
+  display:flex;flex-direction:column;gap:10px;
+  margin-top:16px;
+}
+.api-item{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 18px;
+  background:var(--white);
+  border:1.5px solid var(--bd2);
+  border-radius:var(--r3);
+  cursor:pointer;
+  transition:var(--tr);
+  text-align:left;
+  position:relative;overflow:hidden;
+}
+.api-item::before{
+  content:'';position:absolute;
+  left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,var(--red),var(--red-l));
+  transform:scaleY(0);transform-origin:bottom;
+  transition:transform .35s cubic-bezier(.34,1.56,.64,1);
+}
+.api-item:hover:not(.disabled)::before{transform:scaleY(1)}
+.api-item:hover:not(.disabled){
+  border-color:var(--red);
+  background:var(--red-s);
+  transform:translateX(4px);
+}
+.api-item.disabled{
+  opacity:.45;
+  cursor:not-allowed;
+  background:var(--n1);
+  border-color:var(--bd);
+}
+.api-item.disabled:hover{
+  transform:none;
+  background:var(--n1);
+  border-color:var(--bd);
+}
+.api-item .api-ic{
+  width:44px;height:44px;border-radius:12px;
+  background:linear-gradient(135deg,var(--red),var(--red-d));
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:1.1rem;
+  flex-shrink:0;
+  box-shadow:0 6px 18px var(--red-g);
+  transition:var(--tr-s);
+}
+.api-item:hover:not(.disabled) .api-ic{
+  transform:scale(1.08) rotate(-4deg);
+}
+.api-item.disabled .api-ic{
+  background:var(--n3);
+  box-shadow:none;
+}
+.api-item .api-info{flex:1;min-width:0}
+.api-item .api-name{
+  font-family:var(--fh);font-weight:700;
+  font-size:.9rem;color:var(--t0);
+}
+.api-item .api-desc{
+  font-family:var(--fm);font-size:.65rem;
+  color:var(--t4);margin-top:3px;
+}
+.api-item .api-badge{
+  padding:4px 10px;border-radius:20px;
+  font-family:var(--fm);font-size:.6rem;
+  font-weight:700;letter-spacing:.5px;
+  text-transform:uppercase;
+  background:var(--red-s);color:var(--red);
+  border:1px solid var(--red-b);
+  flex-shrink:0;
+}
+.api-item.disabled .api-badge{
+  background:var(--n2);color:var(--t4);
+  border-color:var(--bd);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PAYMENT MODAL
+   ═══════════════════════════════════════════════════════════ */
+.pay .mb{max-width:500px;padding:0;overflow:hidden}
+.pay .mh{padding:24px 26px 16px;margin:0}
+.pay .mbody{padding:0 26px 22px}
+.pay .mf{padding:16px 26px 22px;margin:0}
+
+.pfi{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:14px 16px;margin-bottom:14px;
+  background:linear-gradient(135deg,var(--red-s),var(--red-s));
+  border:1px solid var(--red-b);
+  border-radius:var(--r3);
+}
+.pfi .pfn{
+  font-weight:700;font-size:.85rem;color:var(--t0);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  display:flex;align-items:center;gap:10px;
+}
+.pfi .pfn i{color:var(--red)}
+.pfi .pfp{
+  background:linear-gradient(135deg,var(--red),var(--red-d));
+  color:#fff;padding:6px 16px;
+  border-radius:100px;
+  font-family:var(--fm);font-weight:700;font-size:.78rem;
+  white-space:nowrap;
+  box-shadow:0 4px 12px var(--red-g);
+}
+
+.pq{
+  background:var(--n1);
+  border-radius:var(--r4);
+  padding:20px;margin:14px 0;
+  border:1px solid var(--bd);
+  display:flex;justify-content:center;align-items:center;
+  transition:background .3s, border-color .3s;
+}
+.pq img{
+  width:100%;max-width:260px;height:auto;aspect-ratio:1/1;
+  object-fit:contain;border-radius:12px;display:block;
+}
+
+.pdl{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.pdl .pdi{
+  padding:12px 14px;
+  background:var(--n1);
+  border-radius:var(--r2);
+  border:1px solid var(--bd);
+  transition:background .3s, border-color .3s;
+}
+.pdl .pdi.full{grid-column:span 2}
+.pdl .pdll{
+  font-family:var(--fm);font-size:.56rem;color:var(--t4);
+  text-transform:uppercase;letter-spacing:1.3px;font-weight:700;
+  margin-bottom:5px;
+}
+.pdl .pdv{
+  font-family:var(--fm);font-size:.85rem;font-weight:700;
+  color:var(--t0);word-break:break-all;
+}
+.pdl .pdv.hl{color:var(--red)}
+.pdl .pdv.sm{font-size:.74rem}
+
+.ps{
+  display:flex;align-items:center;gap:12px;
+  padding:14px 18px;margin-top:14px;
+  background:var(--n1);
+  border:1px solid var(--bd);
+  border-radius:var(--r3);
+  transition:var(--tr);
+}
+.ps .psr{
+  width:20px;height:20px;flex-shrink:0;
+  border:2.5px solid var(--bd2);
+  border-top-color:var(--red);
+  border-radius:50%;
+  animation:spin .8s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ps .pst{
+  font-family:var(--fh);font-weight:600;font-size:.8rem;
+  color:var(--t2);flex:1;
+}
+.ps .pstm{
+  font-family:var(--fm);font-size:.72rem;
+  color:var(--t4);font-weight:600;
+}
+.ps.ok{
+  border-color:var(--ok-b);
+  background:var(--ok-s);
+}
+.ps.ok .pst{color:var(--ok)}
+.ps.ok .psr{
+  border-color:var(--ok);
+  border-top-color:var(--ok);
+  animation:none;
+  position:relative;
+}
+.ps.ok .psr::after{
+  content:'✓';position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--ok);font-size:.72rem;font-weight:800;
+}
+
+.pr{
+  display:none;margin-top:14px;padding:18px;
+  background:var(--ok-s);
+  border-radius:var(--r3);
+  border:1px solid var(--ok-b);
+  text-align:center;
+}
+.pr.on{display:block;animation:pnIn .3s ease}
+.pr i{font-size:2rem;color:var(--ok);display:block;margin-bottom:8px}
+.pr p{
+  font-family:var(--fh);font-weight:800;
+  font-size:.9rem;color:var(--ok);
+  margin-bottom:14px;letter-spacing:.5px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   IMAGE VIEWER
+   ═══════════════════════════════════════════════════════════ */
+.iv{
+  position:fixed;inset:0;z-index:99999;
+  background:rgba(0,0,0,.96);
+  display:none;align-items:center;justify-content:center;padding:16px;
+}
+.iv.on{display:flex}
+.iv img{
+  max-width:95vw;max-height:85vh;
+  object-fit:contain;border-radius:12px;display:block;
+}
+.iv .ivc{
+  position:fixed;top:20px;right:20px;
+  width:46px;height:46px;border-radius:12px;
+  background:rgba(255,255,255,.15);
+  border:none;color:#fff;font-size:1.4rem;
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:var(--tr);
+  backdrop-filter:blur(10px);
+}
+.iv .ivc:hover{
+  background:var(--er);
+  transform:rotate(90deg);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   WELCOME MODAL
+   ═══════════════════════════════════════════════════════════ */
+.wl{
+  position:fixed;inset:0;z-index:10000;
+  background:rgba(9,9,11,.6);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  display:none;align-items:center;justify-content:center;padding:16px;
+}
+.wl.on{display:flex}
+.wlb{
+  max-width:420px;width:100%;padding:40px 32px;
+  background:var(--white);
+  border:1px solid var(--bd2);
+  border-radius:var(--r6);
+  box-shadow:var(--sh4);
+  text-align:center;
+  position:relative;overflow:hidden;
+  animation:mbIn .4s cubic-bezier(.34,1.56,.64,1);
+  transition:background .3s, border-color .3s;
+}
+.wlb::before{
+  content:'';position:absolute;
+  top:-50%;left:-50%;width:200%;height:200%;
+  background:radial-gradient(circle at 50% 30%,var(--red-s) 0%,transparent 55%);
+  pointer-events:none;
+}
+.wlb .wi{
+  width:110px;height:110px;border-radius:26px;
+  background:var(--white);
+  border:3px solid var(--red);
+  display:inline-flex;align-items:center;justify-content:center;
+  margin-bottom:20px;
+  box-shadow:0 12px 40px var(--red-g);
+  position:relative;
+  padding:12px;
+  overflow:hidden;
+}
+.wlb .wi img{
+  width:100%;height:100%;
+  object-fit:contain;
+  display:block;
+}
+.wlb h2{
+  font-family:var(--fh);font-weight:900;
+  font-size:1.85rem;margin-bottom:8px;
+  letter-spacing:5px;
+}
+.wlb h2 span{
+  background:linear-gradient(135deg,var(--red),var(--red-l));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.wlb p{
+  color:var(--t2);font-size:.85rem;
+  line-height:1.7;margin-bottom:24px;
+}
+.wlb .wbs{display:flex;flex-direction:column;gap:10px}
+.wlb .wbs .bt{width:100%;padding:16px;font-size:.85rem}
+.wlb .wf{
+  font-family:var(--fm);font-size:.6rem;
+  color:var(--t5);margin-top:16px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FAB
+   ═══════════════════════════════════════════════════════════ */
+.fab-wrap{
+  position:fixed;bottom:28px;right:24px;z-index:9997;
+  display:flex;flex-direction:column;align-items:flex-end;gap:10px;
+}
+.fab-menu{
+  display:none;flex-direction:column;gap:8px;
+  animation:fabIn .3s cubic-bezier(.34,1.56,.64,1);
+}
+.fab-menu.on{display:flex}
+@keyframes fabIn{from{opacity:0;transform:translateY(20px) scale(.9)}to{opacity:1;transform:none}}
+.fab-item{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 20px;border-radius:100px;
+  background:var(--white);
+  border:1.5px solid var(--bd2);
+  color:var(--t1);font-family:var(--fh);font-weight:700;
+  font-size:.82rem;cursor:pointer;transition:var(--tr);
+  box-shadow:var(--sh3);white-space:nowrap;
+}
+.fab-item:hover{
+  background:var(--red-s);border-color:var(--red);
+  color:var(--red);transform:translateX(-4px);
+}
+.fab-item i{width:18px;text-align:center}
+.fab-main{
+  width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,var(--red),var(--red-d));
+  color:#fff;border:none;font-size:1.3rem;
+  cursor:pointer;transition:var(--tr);
+  box-shadow:0 8px 28px var(--red-g);
+  display:flex;align-items:center;justify-content:center;
+}
+.fab-main:hover{transform:scale(1.08) rotate(15deg)}
+.fab-main.on{transform:rotate(135deg)}
+.fab-main.on:hover{transform:rotate(135deg) scale(1.08)}
+
+/* ═══════════════════════════════════════════════════════════
+   COLOR PICKER & THEME
+   ═══════════════════════════════════════════════════════════ */
+.color-picker-wrap{
+  display:none;flex-direction:column;gap:8px;
+  padding:16px;background:var(--white);border:1.5px solid var(--bd2);
+  border-radius:var(--r3);box-shadow:var(--sh3);
+  animation:fabIn .3s cubic-bezier(.34,1.56,.64,1);
+}
+.color-picker-wrap.on{display:flex}
+.color-picker-wrap label{
+  font-family:var(--fm);font-size:.6rem;color:var(--t4);
+  text-transform:uppercase;letter-spacing:1px;font-weight:700;
+}
+.color-input{
+  width:100%;height:40px;border:none;border-radius:var(--r2);
+  cursor:pointer;background:var(--n1);
+  padding:2px;
+}
+.color-presets{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:6px;
+}
+.color-preset{
+  width:100%;aspect-ratio:1/1;border-radius:8px;
+  border:2px solid transparent;cursor:pointer;
+  transition:var(--tr);
+}
+.color-preset:hover{transform:scale(1.15)}
+.color-preset.active{border-color:var(--t0);transform:scale(1.1)}
+.theme-toggle{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 14px;background:var(--n1);border-radius:var(--r2);
+  cursor:pointer;transition:var(--tr);border:1px solid var(--bd);
+}
+.theme-toggle:hover{background:var(--n2)}
+.theme-toggle span{font-family:var(--fh);font-weight:700;font-size:.8rem;color:var(--t1)}
+.theme-toggle i{font-size:1.1rem}
+
+/* ═══════════════════════════════════════════════════════════
+   TERMS MODAL COUNTDOWN
+   ═══════════════════════════════════════════════════════════ */
+.terms-countdown{
+  text-align:center;padding:14px;
+  background:var(--wn-s);border-radius:var(--r2);
+  border:1px solid var(--wn-b);
+  font-family:var(--fh);font-weight:700;
+  font-size:.85rem;color:var(--wn);
+  margin-top:14px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PARTICLE BURST
+   ═══════════════════════════════════════════════════════════ */
+.particle{
+  position:fixed;pointer-events:none;z-index:99999;
+  width:8px;height:8px;border-radius:50%;
+  animation:particleFly .8s ease-out forwards;
+}
+@keyframes particleFly{
+  0%{opacity:1;transform:translate(0,0) scale(1)}
+  100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(0)}
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TYPING TITLE
+   ═══════════════════════════════════════════════════════════ */
+.typing-title{
+  font-family:var(--fh);font-weight:900;
+  font-size:1.4rem;letter-spacing:2px;
+  color:var(--t0);min-height:2rem;
+  margin-bottom:12px;
+}
+.typing-title .cursor{
+  display:inline-block;width:3px;height:1.2em;
+  background:var(--red);margin-left:4px;
+  animation:cursorBlink .7s step-end infinite;
+  vertical-align:text-bottom;
+}
+@keyframes cursorBlink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* ═══════════════════════════════════════════════════════════
+   MARQUEE
+   ═══════════════════════════════════════════════════════════ */
+.marquee-wrap{
+  overflow:hidden;background:var(--red-s);
+  border:1px solid var(--red-b);border-radius:var(--r2);
+  padding:8px 0;margin-bottom:14px;
+}
+.marquee{
+  display:flex;gap:0;white-space:nowrap;
+  animation:marqueeScroll 20s linear infinite;
+  font-family:var(--fm);font-size:.72rem;
+  color:var(--red);font-weight:600;
+}
+@keyframes marqueeScroll{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+.marquee span{padding:0 30px}
+
+/* ═══════════════════════════════════════════════════════════
+   BANNER SHINE
+   ═══════════════════════════════════════════════════════════ */
+.banner-shine{
+  position:relative;overflow:hidden;
+}
+.banner-shine::after{
+  content:'';position:absolute;
+  top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
+  animation:shine 3s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes shine{
+  0%,100%{left:-100%}
+  50%{left:120%}
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SCROLL SMOOTH
+   ═══════════════════════════════════════════════════════════ */
+html{scroll-behavior:smooth}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width:640px){
+  #app{padding:12px 12px 50px}
+  .hero .content{padding:14px;flex-direction:column;align-items:flex-start;gap:10px}
+  .hero .content .badge{font-size:.55rem;padding:4px 10px}
+  .btn-lv2{font-size:.7rem;padding:9px 14px}
+  .stats{grid-template-columns:repeat(2,1fr);gap:8px}
+  .stat{padding:14px 12px}
+  .stat .num{font-size:1.25rem}
+  .stat .top .icon{width:32px;height:32px;font-size:.8rem}
+  .tb{font-size:.72rem;padding:11px 6px;gap:6px}
+  .tb i{font-size:.74rem}
+  .sb{font-size:.68rem;padding:9px 12px}
+  .fi{padding:14px 14px;gap:12px}
+  .fi .fiic{width:44px;height:44px;min-width:44px;font-size:1rem}
+  .fi .finm{font-size:.84rem}
+  .fi .fimt{font-size:.62rem;gap:7px}
+  .mb{padding:22px;border-radius:var(--r4)}
+  .wlb{padding:32px 22px}
+  .wlb h2{font-size:1.55rem}
+  .wlb .wi{width:88px;height:88px;padding:10px;margin-bottom:16px;border-radius:22px}
+  .pfi{flex-direction:column;align-items:flex-start;gap:10px}
+  .pfi .pfn{max-width:100%}
+  .pq img{max-width:210px}
+  .pdl{gap:8px}
+  .pdl .pdi{padding:10px 12px}
+  .pdl .pdv{font-size:.78rem}
+  .bpb{padding:26px 22px}
+  .api-item{padding:14px 14px;gap:12px}
+  .api-item .api-ic{width:38px;height:38px;font-size:.95rem}
+  .api-item .api-name{font-size:.84rem}
+  .fab-wrap{bottom:20px;right:16px}
+  .fab-main{width:50px;height:50px;font-size:1.1rem}
+  .fab-item{padding:10px 16px;font-size:.75rem}
+  .typing-title{font-size:1.1rem}
+  .color-presets{grid-template-columns:repeat(6,1fr)}
+  .qc-actions{grid-template-columns:1fr;gap:8px}
+  .qc-btn{min-height:70px;padding:14px 12px;flex-direction:row;gap:12px;justify-content:flex-start}
+  .qc-btn .qc-bic{width:36px;height:36px;font-size:.95rem}
+  .qc-btn-error{grid-column:span 1}
+  .ov.qc-flow .qc-header{padding:18px 18px 14px}
+  .ov.qc-flow .qc-body{padding:18px 18px 20px}
+  .ov.qc-flow .qc-footer{padding:12px 18px 16px}
+}
+@media (max-width:380px){
+  .tb{font-size:.65rem;padding:10px 4px}
+  .tb i{font-size:.66rem}
+  .sb{font-size:.6rem;padding:8px 10px}
+  .fi{padding:12px 12px;gap:10px}
+  .fi .fiic{width:40px;height:40px;min-width:40px;font-size:.92rem}
+  .fi .finm{font-size:.78rem}
+  .stat .num{font-size:1.15rem}
+  .typing-title{font-size:.95rem}
+}
+</style>
+</head>
+<body>
+
+<!-- Background Effects -->
+<div id="bgGradient"></div>
+<canvas id="bgCanvas"></canvas>
+<div class="bg-overlay"></div>
+<div class="bg-wave"></div>
+
+<div id="load">
+  <div class="logo">N</div>
+  <div class="txt">NVANH</div>
+</div>
+
+<div id="app"></div>
+<div id="tsts"></div>
+
+<!-- MODAL CHUNG -->
+<div class="ov" id="ov">
+  <div class="mb">
+    <div class="mh">
+      <h3 id="mt"><i class="fas fa-cube"></i> Tiêu đề</h3>
+      <button class="mc" id="mcl">&times;</button>
+    </div>
+    <div class="mbody" id="mbody"></div>
+    <div class="mf">
+      <button class="bt bt-g" id="mcf">Đóng</button>
+    </div>
+  </div>
+</div>
+
+<!-- FILE DETAIL -->
+<div class="ov" id="fd">
+  <div class="mb">
+    <div class="mh">
+      <h3 id="fdt"><i class="fas fa-file"></i> Chi tiết file</h3>
+      <button class="mc" id="fdc">&times;</button>
+    </div>
+    <div class="mbody" id="fdb"></div>
+    <div class="mf">
+      <button class="bt bt-g" id="fdf">Đóng</button>
+    </div>
+  </div>
+</div>
+
+<!-- SHARE -->
+<div class="ov" id="sh">
+  <div class="mb">
+    <div class="mh">
+      <h3 id="sht"><i class="fas fa-share-alt"></i> Chia sẻ file</h3>
+      <button class="mc" id="shc">&times;</button>
+    </div>
+    <div class="mbody" id="shb"></div>
+    <div class="mf">
+      <button class="bt bt-g" id="shf">Đóng</button>
+    </div>
+  </div>
+</div>
+
+<!-- BYPASS -->
+<div class="bp" id="bp">
+  <div class="bpb" id="bpb"></div>
+</div>
+
+<!-- IMAGE VIEWER -->
+<div class="iv" id="iv">
+  <button class="ivc" id="ivc">&times;</button>
+  <img id="ivi" src="" alt="Full HD">
+</div>
+
+<!-- WELCOME -->
+<div class="wl" id="wl">
+  <div class="wlb">
+    <div class="wi">
+      <img src="./assets/logo.jpg" alt="NVANH Logo" onerror="this.src='https://cdn.upanhlaylink.com/i/gGhnUcbc.png'">
+    </div>
+    <h2><span>NVANH</span></h2>
+    <p>Website chia sẻ đa dạng các loại File, App Mod Pro và nhiều tài nguyên hữu ích dành cho iOS &amp; Android.</p>
+    <div class="wbs">
+      <button class="bt bt-p" id="wc">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" class="btn-icon" alt="Zalo">
+        LIÊN HỆ ADMIN
+      </button>
+      <button class="bt bt-g" id="wz">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" class="btn-icon" alt="Telegram">
+        NHÓM TELEGRAM
+      </button>
+      <button class="bt bt-d" id="wlv2">
+        <img src="https://cdn.upanhlaylink.com/i/68MznhT6.webp" class="btn-icon" alt="LV2">
+        ACC LV2 FREE
+      </button>
+      <button class="bt bt-g" id="wg" disabled>
+        <i class="fas fa-hourglass-half"></i> <span id="wgText">Chờ 5s...</span>
+      </button>
+    </div>
+    <div class="wf">Vui lòng đợi 5 giây trước khi tiếp tục</div>
+  </div>
+</div>
+
+<!-- FAB -->
+<div class="fab-wrap" id="fabWrap">
+  <div class="color-picker-wrap" id="colorPicker">
+    <label>Màu chủ đạo</label>
+    <input type="color" class="color-input" id="colorInput" value="#dc2626">
+    <div class="color-presets" id="colorPresets"></div>
+    <button class="bt bt-g" style="width:100%;padding:10px;font-size:.78rem;" id="resetColor">
+      <i class="fas fa-rotate-left"></i> Màu mặc định
+    </button>
+    <div class="theme-toggle" id="themeToggle">
+      <span id="themeLabel">🌙 Tối</span>
+      <i class="fas fa-moon" id="themeIcon"></i>
+    </div>
+  </div>
+  <div class="fab-menu" id="fabMenu">
+    <button class="fab-item" id="fabGuide">
+      <i class="fas fa-book"></i> 📖 HƯỚNG DẪN
+    </button>
+    <button class="fab-item" id="fabTerms">
+      <i class="fas fa-file-contract"></i> 📋 ĐIỀU KHOẢN
+    </button>
+    <button class="fab-item" id="fabColor">
+      <i class="fas fa-palette"></i> 🎨 MÀU SẮC
+    </button>
+  </div>
+  <button class="fab-main" id="fabMain">
+    <i class="fas fa-question"></i>
+  </button>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+
+<script>
+/* ═══════════════════════════════════════════════════════════
+   BACKGROUND EFFECTS — LOGIC NỀN ĐỘNG
+   ═══════════════════════════════════════════════════════════ */
+(function(){
+  'use strict';
+
+  const canvas = document.getElementById('bgCanvas');
+  if(!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let lastMouseX = mouseX;
+  let lastMouseY = mouseY;
+
+  function getAccentColor(){
+    const style = getComputedStyle(document.body);
+    return style.getPropertyValue('--red').trim() || '#dc2626';
+  }
+
+  function resizeCanvas(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    initStars();
+  }
+
+  function initStars(){
+    stars = [];
+    const count = Math.min(80, Math.floor(window.innerWidth / 20));
+    for(let i = 0; i < count; i++){
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.5 + 0.3,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        alpha: Math.random() * 0.6 + 0.2,
+        pulse: Math.random() * Math.PI * 2
+      });
+    }
+  }
+
+  function drawCanvas(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const accent = getAccentColor();
+
+    const dx = mouseX - lastMouseX;
+    const dy = mouseY - lastMouseY;
+    lastMouseX += dx * 0.1;
+    lastMouseY += dy * 0.1;
+
+    stars.forEach(s => {
+      s.x += s.vx + dx * 0.02;
+      s.y += s.vy + dy * 0.02;
+      s.pulse += 0.03;
+
+      if(s.x < 0) s.x = canvas.width;
+      if(s.x > canvas.width) s.x = 0;
+      if(s.y < 0) s.y = canvas.height;
+      if(s.y > canvas.height) s.y = 0;
+
+      const pulseAlpha = s.alpha * (0.7 + 0.3 * Math.sin(s.pulse));
+
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = accent;
+      ctx.globalAlpha = pulseAlpha;
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r * 3, 0, Math.PI * 2);
+      ctx.globalAlpha = pulseAlpha * 0.15;
+      ctx.fill();
+    });
+
+    if(document.body.classList.contains('has-mouse')){
+      const grd = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 200);
+      grd.addColorStop(0, accent + '40');
+      grd.addColorStop(1, 'transparent');
+      ctx.globalAlpha = 0.5;
+      ctx.fillStyle = grd;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(drawCanvas);
+  }
+
+  function updateTimeGradient(){
+    const bgGradient = document.getElementById('bgGradient');
+    if(!bgGradient) return;
+
+    const h = new Date().getHours();
+    let colors;
+
+    if(h >= 5 && h < 11){
+      colors = ['#1a0a0a', '#0a0a1a'];
+    } else if(h >= 11 && h < 17){
+      colors = ['#0a0a0a', '#1a0a0a'];
+    } else if(h >= 17 && h < 21){
+      colors = ['#1a0a1a', '#0a0a1a'];
+    } else {
+      colors = ['#050505', '#0a0510'];
+    }
+
+    if(document.body.classList.contains('dark')){
+      bgGradient.style.background = `linear-gradient(135deg, ${colors[0]}, ${colors[1]})`;
+    } else {
+      bgGradient.style.background = 'linear-gradient(135deg, #f0f2f5, #e8eaee)';
+    }
+  }
+
+  window.addEventListener('resize', resizeCanvas);
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    document.body.classList.add('has-mouse');
+    document.body.style.setProperty('--mouse-x', (e.clientX / window.innerWidth * 100) + '%');
+    document.body.style.setProperty('--mouse-y', (e.clientY / window.innerHeight * 100) + '%');
+  });
+
+  document.addEventListener('mouseleave', () => {
+    document.body.classList.remove('has-mouse');
+  });
+
+  function init(){
+    resizeCanvas();
+    drawCanvas();
+    updateTimeGradient();
+  }
+
+  window.BG = {
+    updateTimeGradient: updateTimeGradient,
+    init: init
+  };
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+/* ═══════════════════════════════════════════════════════════
+   FIREBASE CONFIG
+   ═══════════════════════════════════════════════════════════ */
+const firebaseConfig = {
+  apiKey: "AIzaSyB4Us5pVLozsK-pVyv9-tA0IOuho46vZOE",
+  authDomain: "alpha-ff-f42eb.firebaseapp.com",
+  databaseURL: "https://alpha-ff-f42eb-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "alpha-ff-f42eb",
+  storageBucket: "alpha-ff-f42eb.firebasestorage.app",
+  messagingSenderId: "302947368770",
+  appId: "1:302947368770:web:d0c3374d5c72a5b8c552db",
+  measurementId: "G-TBH0WM7CN3"
+};
+const WP = 'NVANH';
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+const FALLBACK_SETTINGS = {"apiG":true,"apiT":true,"buyEnabled":true,"content":"PHẢI GỌI LÀ BIẾT C HƠI ","link1":"http://zalo.me/0363716993","link2":"https://t.me/alpha_vn01","subTabs":{"android":["file","apk"],"ios":["filza","3105","ipa"],"proxy":["ios","android"]},"tabs":[{"icon":"fab fa-apple","id":"ios","label":"iOS","visible":true},{"icon":"fab fa-android","id":"android","label":"ANDROID","visible":true},{"icon":"fas fa-shield-alt","id":"trust","label":"UY TÍN","visible":true}],"title":"THÔNG BÁO"};
+const FALLBACK_FILES = {"-OzhFqabrylZJLzPz3zR":{"category":"ipa","createdAt":1786392046023,"description":"","downloadCount":1468,"image":"","link":"https://www.mediafire.com/file/pk663sjtv9v3qc5/Esign.ipa/file","name":"ESIGN","note":"","price":10000,"soldCount":20,"version":"","visible":true},"-OzhFxc39dH5xJS23BmL":{"category":"ipa","createdAt":1786392074790,"description":"","downloadCount":2770,"image":"","link":"https://www.mediafire.com/file/o25dpjh7j2lmxqe/FILZA+IOS+CAO.ipa/file","name":"FILZA IOS CAO","note":"","price":15000,"soldCount":38,"version":"","visible":true},"-OzhGV3ccW3CUvi74DQR":{"category":"ipa","createdAt":1786392215878,"description":"","downloadCount":137,"image":"","link":"https://www.mediafire.com/file/hmp14kurbhu7312/H5GG_Make_Menu_-5.9.ipa/file","name":"H5GG MAKE","note":"","price":10000,"version":"","visible":true},"-OzhGeqzI9RFFl8BZbNp":{"category":"ipa","createdAt":1786392260063,"description":"","downloadCount":142,"image":"","link":"https://www.mediafire.com/file/ttvn1l6rbsdkzdn/TrollFools_3.1-30.tipa/file","name":"TROLLFOOLS ","note":"","price":10000,"version":"","visible":true},"-OzhGlWEkYKNG8Be-Js3":{"category":"ipa","createdAt":1786392287340,"description":"","downloadCount":1495,"image":"","link":"https://www.mediafire.com/file/1lbnm8zy9xr3qlb/TrollStore_2.1.1_0427.tar/file","name":"TROLLSTORE","note":"","price":10000,"soldCount":15,"version":"","visible":true},"-OzhH17__pkOQZDLo914":{"category":"ipa","createdAt":1786392355397,"description":"","downloadCount":210,"image":"","link":"https://www.mediafire.com/file/xh1iw8vc77iat0d/TrollInstallerX_1.0.1@巨魔商店.ipa/file","name":"TROLL X ","note":"","price":10000,"soldCount":2,"version":"","visible":true},"-Ozsv023denbe1uLltK-":{"category":"ipa","createdAt":1786587648243,"description":"","downloadCount":1099,"image":"","link":"https://www.mediafire.com/file/f00a77ywaz8ikjl/Filza_4.0.0.ipa/file","name":"FILZA IOS THẤP ","note":"HỖ TRỢ 14. - 16.6.1","price":10000,"soldCount":5,"version":"","visible":true},"-OzwT-GsPcF1bKtnXf26":{"category":"ipa","createdAt":1786647151701,"description":"","downloadCount":107,"image":"","link":"https://drive.google.com/file/d/1yN6N0C2EjqABfvf2fELj_9DdEi-XAgiz/view?usp=drivesdk","name":"ROOTHIDE","note":"roothide jb máy \nhỗ trợ 15. - 27","price":10000,"version":"","visible":true},"-OzxCfxN74J_u8i3shGs":{"category":"ipa","createdAt":1786659651462,"description":"","downloadCount":222,"image":"","link":"https://www.mediafire.com/file/v54l8cbz3in5ki9/Shadowrocket+Premium+.ipa/file","name":"SHADOWROCKET ","note":"","price":10000,"version":"","visible":true},"-P-Szxh5IEO9XrAJvfAi":{"category":"ipa","createdAt":1787209702200,"description":"3105 Hot Fix 💗\n\n💗 Hotfix sửa lỗi chạm — Files/Patch có thể tap lại bình thường.\n\n💗 Support: iOS 17 - 18.7.1 -  iOS 26 - 27b4 (iOS 27 Public chỉ hỗ trợ bản 1 - 2) (HỖ TRỢ build mã 24A5390f trở xuống, KO HỖ TRỢ build mã 24A5408d trở lên )","downloadCount":725,"image":"","link":"https://www.mediafire.com/file/99i1qdrvm3m8dqk/3105-v1.1.1-unsigned.ipa/file","name":"3105 FIX","note":"","price":10000,"soldCount":7,"version":"","visible":true},"-P-jBmxxW07lLHHWWlzO":{"category":"ipa","createdAt":1787498278686,"description":"","downloadCount":361,"image":"","link":"https://www.mediafire.com/file/p4cxzng3c48wb83/8+Ball+Pool_56.27.0.ipa/file","name":"8 BALL POOL HACK","note":"","price":10000,"soldCount":4,"version":"","visible":true},"-P0TygUDH0cWEzHOpFrY":{"category":"3105","createdAt":1788299888469,"description":"MK : 3105","downloadCount":76,"image":"","link":"https://www.mediafire.com/file/6w244nk5dkfl1re/Capcut+Pro.3105/file","name":"CAPCUT PRO","note":"LƯU Ý : KHÔNG LOGIN ACC","price":10000,"version":"","visible":true},"-P0TzFKjOvM6VZAtZpAd":{"category":"ipa","createdAt":1788300035325,"description":"","downloadCount":340,"image":"","link":"https://www.mediafire.com/file/yghwpbo238xaisy/XOÁ+TK+KHÁCH_1.8_1754054024.ipa/file","name":"XOÁ TK KHÁCH ","note":"","price":10000,"version":"","visible":true},"-P0TzNm9YTcYWt1GOMXO":{"category":"ipa","createdAt":1788300069910,"description":"","downloadCount":99,"image":"","link":"https://www.mediafire.com/file/9ceqb1l0ki65qd9/AirTroller-1.1.1.tipa/file","name":"SPAM ARDROP","note":"","price":10000,"version":"","visible":true},"-P0sJa45J3Gy7ePri-F7":{"category":"ipa","createdAt":1788725059932,"description":"Fix ban iPA PROXY\n\nBật use custom configuration xong nhập 1e1e38\n","downloadCount":257,"image":"","link":"https://www.mediafire.com/file/96uxoidyyswbub4/NextDNS-2.0.1.ipa/file","name":"NEXT DNS ","note":"","price":10000,"soldCount":1,"version":"","visible":true},"-P1NI0MVEcE6hxbXdDp3":{"category":"ipa","createdAt":1789261518198,"description":"✅ Khắc phục 100% lỗi tự động reboot trên iOS 17 và 18 giúp thiết bị hoạt động ổn định hơn.\n✅Cập nhật giao diện onboarding mới: Các thiết bị không được hỗ trợ sẽ nhận được thông báo từ màn hình onboarding và không thể tiếp tục truy cập ứng dụng.\n✅Cải thiện trải nghiệm UI/UX của repo và patch, mang lại giao diện trực quan và thao tác mượt mà hơn.\n✅Yêu cầu cập nhật bản beta mới nhất của 3105 để đảm bảo các patch hoạt động chính xác và không xung đột.\n‼️Hướng dẫn xử lý cho iOS 17 đến 18.7.1: Cần truy cập trực tiếp vào phần cài đặt của ứng dụng để cấp và khởi chạy quyền hoạt động; lưu ý nếu đóng hẳn ứng dụng sẽ cần khởi động lại (reboot) thiết bị để chạy lại từ đầu.","downloadCount":1821,"image":"","link":"https://www.mediafire.com/file/5tjyrk4hlogn4sl/3105-2.0-beta5-unsigned.ipa/file","name":"3105 BETA 5","note":"","price":10000,"soldCount":6,"version":"","visible":true},"-P1cUq1e_69ruz5BmagG":{"category":"apk","createdAt":1789533284823,"description":"","downloadCount":1584,"image":"","link":"https://www.mediafire.com/file/7d4zmr1znhqb04z/BODY_HEADSHOT_OB55.apks/file","name":"AIM BODY ","note":"","price":10000,"soldCount":3,"version":"","visible":true},"-P1cYQSh76GQRu0cxQKK":{"category":"3105","createdAt":1789534255003,"description":"ESP: + Hiển thị tên (Name Tag) + Đường kẻ (Line) + Khung bao (Box) + Giờ đây bạn có thể bật/tắt ESP (chạm hai lần vào màn hình bằng 4 ngón tay). - Tính năng ngắm mới: + Vùng ngắm (FOV) có thể điều chỉnh theo thứ tự: Đầu → Cổ → Ngực → (lặp lại) (Nhấn nút Ngồi hai lần liên tiếp). ","downloadCount":1492,"image":"","link":"https://vi.anotepad.com/notes/ygrebgsp","name":"AIM FOV + ESP","note":"PASS : ALPHA","price":10000,"soldCount":14,"version":"","visible":true},"-P1cg0A6pqvz28OkGpss":{"category":"filza","createdAt":1789536506555,"description":"ESP: + Hiển thị tên (Name Tag) + Đường kẻ (Line) + Khung bao (Box) +\n Giờ đây bạn có thể bật/tắt ESP (chạm hai lần vào màn hình bằng 4 ngón tay). \n Tính năng ngắm mới: + Vùng ngắm (FOV) có thể điều chỉnh theo thứ tự: Đầu → Cổ → Ngực → (lặp lại) (Nhấn nút Ngồi hai lần liên tiếp). \n\n","downloadCount":2847,"image":"","link":"https://vi.anotepad.com/notes/ygrebgsp","name":"AIM FOV + ESP","note":"PASS : ALPHA","price":10000,"soldCount":14,"version":"","visible":true},"-P1goPyyongEYsrb1Zi7":{"category":"filza","createdAt":1789605818371,"description":"","downloadCount":110,"image":"","link":"https://www.mediafire.com/file/k4qvh6h8dcsinew/cache_res.GkLlYqzsX4AtTdE55sDMRh9sJOI~3D/file","name":"AIM CHEST","note":"","price":10000,"version":"","visible":true},"-P1goYygGnSHbwAw9dGx":{"category":"filza","createdAt":1789605855210,"description":"","downloadCount":552,"image":"","link":"https://www.mediafire.com/file/0o51nlu2gaair6y/cache_res.GkLlYqzsX4AtTdE55sDMRh9sJOI~3D/file","name":"AIM DRAG","note":"","price":10000,"version":"","visible":true},"-P1gp3jhP9c6l1Vu8yuw":{"category":"3105","createdAt":1789605989415,"description":"FREE FIRE THƯỜNG","downloadCount":269,"image":"","link":"https://www.mediafire.com/file/fi6fvsz1vb2d82r/AIM+DRAG.3105/file","name":"AIM DRAG","note":"PASS : ALPHA","price":10000,"soldCount":1,"version":"","visible":true},"-P1gpOQ23HIXOLq43b46":{"category":"3105","createdAt":1789606074096,"description":"FREE FIRE THƯỜNG","downloadCount":70,"image":"","link":"https://www.mediafire.com/file/4uq33fofkhqj9bz/AIM+CHEST.3105/file","name":"AIM CHEST","note":"PASS : ALPHA","price":10000,"version":"","visible":true},"-P1hKwKL5bpvx6jBOrNY":{"category":"3105","createdAt":1789614605723,"description":"DỊ TẬT ","downloadCount":131,"image":"","link":"https://www.mediafire.com/file/xnr545prm1xceaq/MAGIC+-+AIMLOCK+FFTH.3105/file","name":"MAGIC + AIM LOCK ","note":"LOADING 40% RỒI CÀI","price":10000,"version":"","visible":true},"-P1hRWhbhBLRb8qz4xyK":{"category":"filza","createdAt":1789616331699,"description":"VÀO GAME LOADING 40% RỒI CÀI","downloadCount":948,"image":"","link":"https://www.mediafire.com/file/t9yihgwgabp8n3o/cache_res.GkLlYqzsX4AtTdE55sDMRh9sJOI~3D/file","name":"AIM BODY","note":"","price":10000,"soldCount":3,"version":"","visible":true},"-P1hRwqqQQ1uRBLciI6d":{"category":"3105","createdAt":1789616442895,"description":"","downloadCount":250,"image":"","link":"https://www.mediafire.com/file/c2icg57tr8bk629/AIM+BODY-2.3105/file","name":"AIM BODY","note":"PASS : @alpha_vn1","price":10000,"soldCount":1,"version":"","visible":true},"-P1iH6WhBWHVYO9xLv1G":{"category":"file","createdAt":1789630380317,"description":"","downloadCount":1435,"image":"","link":"https://www.mediafire.com/file/cjlloj1v1l2mhhw/ESP+BOX+AIM+BOT+V2.zip/file","name":"AIM BOT + ESP","note":"","price":10000,"version":"","visible":true},"-P1mkZu5SE12kB_URWTz":{"category":"3105","createdAt":1789705473622,"description":"","downloadCount":426,"image":"","link":"https://www.mediafire.com/file/9u0nvgi8u1skqc5/MENU+FFTH-2.3105/file","name":"MENU FFTH","note":"","price":10000,"soldCount":2,"version":"","visible":true},"-P1mpr3NkYLNSwjH-Z-w":{"category":"filza","createdAt":1789706858759,"description":"","downloadCount":554,"image":"","link":"https://fnote.net/notes/9nsNJs","name":"MENU FFTH","note":"","price":10000,"soldCount":2,"version":"","visible":true},"-P1teSEPo9Auh-BIhH3c":{"category":"filza","createdAt":1789821310004,"description":"CÂN ALL IOS \nIOS NÀO CŨNG DÙNG ĐƯỢC","downloadCount":173,"image":"","link":"https://fnote.net/notes/vxaJ1S","name":"ESP + AIM FOV ","note":"","price":10000,"version":"","visible":true},"-P27QAcmKT7ZuvLZZLxb":{"category":"ipa","createdAt":1790068963961,"description":"FLORK CRACK NO KEY","downloadCount":998,"image":"","link":"https://www.mediafire.com/file/vhy7fzbr8dn6obm/FLORK+CRACK+NO+KEY.zip/file","name":"FLORK CRACK","note":"","price":10000,"version":"","visible":true},"-P2CMA7A7acIhJs-qGvh":{"category":"filza","createdAt":1790151799363,"description":"VÀO GAME VÀO ACC KHÁCH \n- THOÁT RA CÀI FILE\n- VÀO GAME ĐĂNG XUẤT ACC \n- ĐĂNG NHẬP LẠI RỒI RA XOÁ FILE","downloadCount":355,"image":"","link":"https://www.mediafire.com/file/5pwqzqtkx8jeiki/localConfig.json/file","name":"RESET ACC KHÁCH","note":"","price":10000,"version":"","visible":true},"-P2CMRlIayfdRVvJ3MTh":{"category":"3105","createdAt":1790151871632,"description":"VÀO GAME VÀO ACC KHÁCH - THOÁT RA CÀI FILE - VÀO GAME ĐĂNG XUẤT ACC - ĐĂNG NHẬP LẠI RỒI RA XOÁ FILE\n\n","downloadCount":333,"image":"","link":"https://www.mediafire.com/file/5pwqzqtkx8jeiki/localConfig.json/file","name":"RESET ACC KHÁCH","note":"","price":10000,"version":"","visible":true},"-P2CMZ5YWylbjgrQ-ziR":{"category":"file","createdAt":1790151901664,"description":"VÀO GAME VÀO ACC KHÁCH - THOÁT RA CÀI FILE - VÀO GAME ĐĂNG XUẤT ACC - ĐĂNG NHẬP LẠI RỒI RA XOÁ FILE\n","downloadCount":320,"image":"","link":"https://www.mediafire.com/file/5pwqzqtkx8jeiki/localConfig.json/file","name":"RESET ACC KHÁCH","note":"","price":10000,"version":"","visible":true},"-P2COFG3y4xu2vrjCv-9":{"category":"filza","createdAt":1790152344750,"description":"","downloadCount":461,"image":"","link":"https://www.mediafire.com/file/en36qdo7iokhkeo/com.dts.freefireth.plist/file","name":"144 FPS ","note":"","price":10000,"version":"","visible":true},"-P2COIWLybgpXuYVmN-C":{"category":"3105","createdAt":1790152358080,"description":"PASS : @alpha_vn1","downloadCount":219,"image":"","link":"https://www.mediafire.com/file/k9fk1nudaex2m0m/com-dts-freefireth.3105/file","name":"144 FPS","note":"","price":10000,"version":"","visible":true},"-P2EtSpfX8u8N4cIKZTE":{"category":"3105","createdAt":1790194343304,"description":"","downloadCount":54,"image":"","link":"https://www.mediafire.com/file/3r3tzftofrw2zri/SILENT+AIM+.zip/file","name":"AIM SILENT ","note":"","price":10000,"version":"","visible":true},"-P2EtW8LhBSWZkAI_KYC":{"category":"filza","createdAt":1790194356850,"description":"","downloadCount":110,"image":"","link":"https://www.mediafire.com/file/3r3tzftofrw2zri/SILENT+AIM+.zip/file","name":"AIM SILENT","note":"","price":10000,"version":"","visible":true},"-P2EtYImWgojR1bKFqrc":{"category":"file","createdAt":1790194365711,"description":"","downloadCount":232,"image":"","link":"https://www.mediafire.com/file/3r3tzftofrw2zri/SILENT+AIM+.zip/file","name":"AIM SILENT","note":"","price":10000,"version":"","visible":true},"-P2J7mm-QCRZCi2C5-tG":{"category":"filza","createdAt":1790265470015,"description":"COPY DÁN DATA ","downloadCount":100,"image":"","link":"https://www.mediafire.com/file/pjp7qhtzji9mown/FIX+LAG+FFMAX+IOS+OB55.zip/file","name":"FIX LAG ","note":"NHỚ LẤY DATA GỐC TRƯỚC NẾU MUỐN XOÁ","price":10000,"version":"","visible":true},"-P2KGJbwT1l8WPj9cwcv":{"category":"filza","createdAt":1790284483083,"description":"","downloadCount":672,"image":"","link":"https://www.mediafire.com/file/0u0l4gc7y8nzsdf/MENU+DELTA.zip/file","name":"MENU DELTA","note":"","price":10000,"version":"","visible":true},"-P2KGM1e0FxtPDkOWxEC":{"category":"file","createdAt":1790284492986,"description":"","downloadCount":682,"image":"","link":"https://www.mediafire.com/file/0u0l4gc7y8nzsdf/MENU+DELTA.zip/file","name":"MENU DELTA","note":"","price":10000,"version":"","visible":true},"-P2KGRu520uWBrjNxo1Q":{"category":"3105","createdAt":1790284517013,"description":"pass : @alpha_ver2","downloadCount":221,"image":"","link":"https://www.mediafire.com/file/5xzuptg0qa2o0r6/MENU+DELTA.3105/file","name":"MENU DELTA","note":"","price":10000,"version":"","visible":true},"-P2UF_dwhbf_0qB1DTKH":{"category":"ipa","createdAt":1790452162608,"description":"","downloadCount":158,"image":"","link":"https://www.sa-mp.net/whitelist","name":"GTA MOD PACK","note":"","price":20000,"version":"","visible":true},"-P2V2lkK7wX7zZfk8QJ4":{"category":"3105","createdAt":1790465481863,"description":"","downloadCount":123,"image":"","link":"https://www.mediafire.com/file/rho3xdec9orpgzj/MENU.zip/file","name":"MENU VIP","note":"","price":10000,"version":"","visible":true},"-P2V2nu4qZVOXJMcALpx":{"category":"filza","createdAt":1790465490679,"description":"","downloadCount":216,"image":"","link":"https://www.mediafire.com/file/rho3xdec9orpgzj/MENU.zip/file","name":"MENU VIP","note":"","price":10000,"version":"","visible":true},"-P2V2q_L1hia_W2EOEdh":{"category":"file","createdAt":1790465501641,"description":"","downloadCount":289,"image":"","link":"https://www.mediafire.com/file/rho3xdec9orpgzj/MENU.zip/file","name":"MENU VIP","note":"","price":10000,"version":"","visible":true},"-P2_AyKouEKaibW6JsyE":{"category":"ipa","createdAt":1790551516602,"description":"","downloadCount":201,"image":"","link":"https://www.mediafire.com/file/lp3mdsa6bm6n0l3/DINH+DAT+V2_1.132.1_1789994073.ipa/file","name":"AIM KILL","note":"","price":10000,"version":"","visible":true},"-P2_CCN8eBXOPjGRk8EI":{"category":"filza","createdAt":1790551840324,"description":"","downloadCount":159,"image":"","link":"https://www.mediafire.com/file/sg8d5tvnhdi88qz/cache_res.GkLlYqzsX4AtTdE55sDMRh9sJOI~3D/file","name":"AIM BODY 95%","note":"","price":10000,"version":"","visible":true},"-P2_CiTkhyeeIRXKTQ8O":{"category":"3105","createdAt":1790551975930,"description":"PASS : alpha_ver1","downloadCount":41,"image":"","link":"https://www.mediafire.com/file/i7f6iyo13sktb6p/AIM+BODY+95-.3105/file","name":"AIM BODY 95%","note":"","price":10000,"version":"","visible":true},"-P2nNHRz1Eo4ql20B8pK":{"category":"3105","createdAt":1790789729205,"description":"PASS ĐÉO CÓ","downloadCount":135,"image":"","link":"https://www.mediafire.com/file/k0vpj06jwlksmvn/Đạn+Thẳng+-+Fix+Nở+Tâm.3105/file","name":"ĐẠN THẲNG + FIX RUNG ","note":"","price":500000,"version":"","visible":true},"-P2nO9eIQbvE03ANnQxW":{"category":"ipa","createdAt":1790789855920,"description":"MIGUL CRACK FREE NO KEY \nANTIBAN","downloadCount":1105,"image":"","link":"https://www.mediafire.com/file/ho0uqhvvt3v18u3/FreeFire_1.132.1_no-key_no-mod-server_needs-resign_UNTESTED.ipa/file","name":"MIGUL CRACK ","note":"","price":50000,"version":"","visible":true},"-P2nQdJHb24gk4HQmzHb":{"category":"filza","createdAt":1790790505749,"description":"","downloadCount":192,"image":"","link":"https://www.mediafire.com/file/lokhqwo8ntcvq81/ĐẠN+THẲNG+-+FIX+RUNG.zip/file","name":"ĐẠN THẲNG + FIX RUNG","note":"","price":10000,"version":"","visible":true},"-P2nQiS8ceZcJvGI-prG":{"category":"file","createdAt":1790790526795,"description":"","downloadCount":444,"image":"","link":"https://www.mediafire.com/file/lokhqwo8ntcvq81/ĐẠN+THẲNG+-+FIX+RUNG.zip/file","name":"ĐẠN THẲNG + FIX RUNG","note":"","price":10000,"version":"","visible":true},"-P2olysqMV8jY5nsmwwB":{"category":"apk","createdAt":1790813138551,"description":"Key:  FUCK OWNER B2AL","downloadCount":798,"image":"","link":"https://www.mediafire.com/file/in04vhpe3k3mmf1/Fluorite+Crack.apk/file","name":"Fluorite CRACK ","note":"","price":20000,"version":"","visible":true},"-P2pNantQkE7x4ZK26Vg":{"category":"filza","createdAt":1790823263545,"description":"","downloadCount":98,"image":"","link":"https://www.mediafire.com/file/ov3ybxc44qfqd3u/optionalab_avatar_66.1GZrX1l5Sm~2FgqXYqB7dDyULWdn4~3D/file","name":"MOD SKIN ALOK","note":"","price":10000,"version":"","visible":true},"-P2pNhmkt_TTp2CrtZ-O":{"category":"3105","createdAt":1790823292144,"description":"","downloadCount":89,"image":"","link":"https://www.mediafire.com/file/l8uz4k942tlxw68/MOD+ALOK.3105/file","name":"MOD SKIN ALOK","note":"","price":20000,"version":"","visible":true},"-P2tbkkYmA5HSDN35H2N":{"category":"ipa","createdAt":1790894345216,"description":"KEY : DELTA TUOI CON CAC","downloadCount":3600,"image":"","link":"https://drive.google.com/file/d/1TY7tvCS3x_GSTpz4wf5XjS28ttEpXLY3/view?usp=drivesdk","name":"DELTA CRACK","note":"","price":15000,"version":"","visible":true},"-P33qD_9UtXrNC8xk0na":{"category":"ipa","createdAt":1791082793208,"description":"","downloadCount":190,"image":"","link":"https://drive.google.com/file/d/1nL6iVZrKkrkWDGNNviuRWuJiWcJSZl6J/view?usp=drivesdk","name":"3105 IOS 27","note":"","price":10000,"version":"","visible":true},"-P3Kp2mm37jiUCiN3Tji":{"category":"3105","createdAt":1791367702994,"description":"","downloadCount":86,"image":"","link":"https://www.mediafire.com/file/flr7g9mj6ialuhb/CÂN+CHECK+FFTH.3105/file","name":"CÂN CHECK ","note":"PASS : 1","price":15000,"version":"","visible":true},"-P3Kr5YP-JPKVjji-pHA":{"category":"ipa","createdAt":1791368238590,"description":"","downloadCount":66,"image":"","link":"https://drive.google.com/file/d/1EDFVa_eiOq1qta4urEKIn4Y0jTbMn7sV/view?usp=drivesdk","name":"MIGUL LIÊN QUÂN","note":"MIGUL HACK LIÊN QUÂN CRACK NO KEY ","price":15000,"version":"","visible":true},"-P3MHeGzCIuAF-Hf6yhG":{"category":"ipa","createdAt":1791392240682,"description":"fix ghim máy do thg garena rách thêm file cấm vào máy nên ae bị ban không lý do.","downloadCount":65,"image":"","link":"https://drive.google.com/file/d/1tg3StvRpZUwkLSMVBX7YXBDPOcCudYb-/view?usp=drivesdk","name":"VARCLEAN ","note":"","price":15000,"version":"","visible":true},"-P3U_6_klTkPEpS0B6ra":{"category":"3105","createdAt":1791531186594,"description":"","downloadCount":65,"image":"","link":"https://www.mediafire.com/file/952tow5qfhiu9lv/TĂNG+ĐỘ+NHẠY+FFTh.3105/file","name":"TĂNG ĐỘ NHẠY","note":"","price":15000,"version":"","visible":true},"-P3UaQjoMFaeGa7F6JHc":{"category":"filza","createdAt":1791531643015,"description":"PASS GIẢI NÉN : ALPHA","downloadCount":116,"image":"","link":"https://drive.google.com/file/d/1hBcvOpyg40pz_OwCku8sj08E9F0FfTMC/view?usp=drivesdk","name":"TĂNG ĐỘ NHẠY","note":"","price":15000,"version":"","visible":true},"-P3UaVhb8DgvcQ8wY_RS":{"category":"file","createdAt":1791531663354,"description":"","downloadCount":319,"image":"","link":"https://drive.google.com/file/d/1hBcvOpyg40pz_OwCku8sj08E9F0FfTMC/view?usp=drivesdk","name":"TĂNG ĐỘ NHẠY ","note":"PAS GIẢI NÉN ","price":15000,"version":"","visible":true},"-P3VUrognA66MhoOXN9t":{"category":"ipa","createdAt":1791546588492,"description":"","downloadCount":698,"image":"","link":"https://drive.google.com/file/d/1ztIogvy3AhM4W_zpD8rBCwY1uJkkx2Pa/view?usp=drivesdk","name":"DELTA CLIENT CRACK","note":"","price":15000,"version":"","visible":true},"-P3auaxua0LDMlSIRDl3":{"category":"filza","createdAt":1791654373590,"description":"PASS GIẢI NÉN : ALPHA","downloadCount":95,"image":"","link":"https://www.mediafire.com/file/30svsa58hwi9q5c/UNBAN+VV.zip/file","name":"UNBAN VV","note":"","price":15000,"version":"","visible":true},"-P3augq1TLafQAr14Tgk":{"category":"file","createdAt":1791654397663,"description":"PASS GIẢI NÉN : ALPHA","downloadCount":137,"image":"","link":"https://www.mediafire.com/file/30svsa58hwi9q5c/UNBAN+VV.zip/file","name":"UNBAN VV ","note":"","price":15000,"version":"","visible":true},"-P3ayYFMiVl-5ER9CVwv":{"category":"3105","createdAt":1791655294034,"description":"PASS : ALPHA","downloadCount":58,"image":"","link":"https://www.mediafire.com/file/v6q6km5afxbko55/UNBAN+VV.3105/file","name":"UNBAN VV","note":"","price":15000,"version":"","visible":true},"-P3gQh0rxBP_U1-cBHbR":{"category":"filza","createdAt":1791746937182,"description":"PASS GIẢI NÉN : ALPHA","downloadCount":155,"image":"","link":"https://www.mediafire.com/file/25zy8sw8b2jog1e/LEAK+SOPHIA.zip/file","name":"SOPHIA","note":"","price":15000,"version":"","visible":true},"-P3gRoz7D8jTzuyex1uh":{"category":"3105","createdAt":1791747117121,"description":"PASS : ALPHA","downloadCount":74,"image":"","link":"https://www.mediafire.com/file/5fs7564mwb0wglu/LEAK+SOPHIA.3105/file","name":"SOPHIA","note":"","price":15000,"version":"","visible":true},"-P3h5ZHSsetg5-_WVPgl":{"category":"filza","createdAt":1791758173572,"description":"PASS GIẢI NÉN : ALPHA","downloadCount":64,"image":"","link":"https://www.mediafire.com/file/dfbgj78qi6q5s6d/MENU+DELTA+LEAK.zip/file","name":"MENU DELTA LEAK","note":"","price":15000,"version":"","visible":true},"-P3h5fMqYFbGKHAnO1WU":{"category":"file","createdAt":1791758202590,"description":"PASS GIẢI NÉN : ALPHA","downloadCount":90,"image":"","link":"https://www.mediafire.com/file/dfbgj78qi6q5s6d/MENU+DELTA+LEAK.zip/file","name":"MENU DELTA LEAK","note":"","price":15000,"version":"","visible":true},"-P3h6MY5RAKJn7LooFsX":{"category":"3105","createdAt":1791758268511,"description":"PASS : ALPHA","downloadCount":45,"image":"","link":"https://www.mediafire.com/file/p0yvlndkju9lm4o/MENU+DELTA+LEAK.3105/file","name":"MENU DELTA LEAK","note":"","price":15000,"version":"","visible":true},"-P3tPtEx49kKG6c4OwYo":{"category":"ipa","createdAt":1791964713928,"description":"NO KEY","downloadCount":311,"image":"","link":"https://drive.google.com/file/d/11WVOyx59NZJUjCMA3Ine6l2334r2Vpc0/view?usp=drivesdk","name":"MeoMeo Ext","note":"","price":15000,"version":"","visible":true}};
+
+/* ═══════════════════════════════════════════════════════════
+   CẤU HÌNH 3 API
+   ═══════════════════════════════════════════════════════════ */
+const APIS = {
+  g: {
+    name: 'GTraffic',
+    desc: 'gtraffic.io',
+    icon: 'fa-server',
+    key: '6b948ebf384b49518f4185836f181daa',
+    build: function(url){
+      return `https://gtraffic.io/st?apikey=${this.key}&url=${encodeURIComponent(url)}`;
+    }
+  },
+  t: {
+    name: 'TrafficSo1',
+    desc: 'trafficso1.com',
+    icon: 'fa-server',
+    key: 'c40bce8a1a5d4c97808498ffe0e75cc4',
+    build: function(url){
+      return `https://trafficso1.com/st?apikey=${this.key}&url=${encodeURIComponent(url)}`;
+    }
+  },
+  d: {
+    name: 'direct.gtraffic',
+    desc: 'direct.gtraffic.io',
+    icon: 'fa-bolt',
+    key: '6775125a79d342beae6967152ccf3449',
+    build: function(url){
+      return `https://direct.gtraffic.io/st?apikey=${this.key}&url=${encodeURIComponent(url)}`;
+    }
+  }
+};
+
+let apiEnabled = { g: true, t: true, d: true };
+let buyEnabled = true;
+let _apiFirstLoad = true;
+
+/* ═══════════════════════════════════════════════════════════
+   LOAD SETTINGS
+   ═══════════════════════════════════════════════════════════ */
+function loadSettings(){
+  return new Promise((resolve)=>{
+    db.ref('settings').on('value', snap=>{
+      const s = snap.val() || {};
+      const prevG = apiEnabled.g;
+      const prevT = apiEnabled.t;
+      const prevD = apiEnabled.d;
+      const prevBuy = buyEnabled;
+
+      apiEnabled.g = s.apiG !== false;
+      apiEnabled.t = s.apiT !== false;
+      apiEnabled.d = s.apiD !== false;
+      buyEnabled = s.buyEnabled !== false;
+
+      if(!_apiFirstLoad){
+        if(prevG !== apiEnabled.g){
+          toast(`API GTraffic đã ${apiEnabled.g ? 'BẬT' : 'TẮT'}`, apiEnabled.g ? 'success' : 'warning');
+        }
+        if(prevT !== apiEnabled.t){
+          toast(`API TrafficSo1 đã ${apiEnabled.t ? 'BẬT' : 'TẮT'}`, apiEnabled.t ? 'success' : 'warning');
+        }
+        if(prevD !== apiEnabled.d){
+          toast(`API direct.gtraffic đã ${apiEnabled.d ? 'BẬT' : 'TẮT'}`, apiEnabled.d ? 'success' : 'warning');
+        }
+        if(prevBuy !== buyEnabled){
+          toast(`Chức năng Mua Link đã ${buyEnabled ? 'BẬT' : 'TẮT'}`, buyEnabled ? 'success' : 'warning');
+        }
+      }
+      _apiFirstLoad = false;
+
+      updateApiUI();
+
+      if(isAllDisabled() && document.getElementById('bp').classList.contains('on')){
+        closeBp();
+        toast('Hệ thống tạm thời đóng, vui lòng quay lại sau!', 'warning');
+      }
+
+      if(!window._apiResolved){
+        window._apiResolved = true;
+        resolve();
+      }
+    }, err=>{
+      console.warn('Settings listener error:', err);
+      apiEnabled.g = true;
+      apiEnabled.t = true;
+      apiEnabled.d = true;
+      buyEnabled = true;
+      if(!window._apiResolved){
+        window._apiResolved = true;
+        resolve();
+      }
+    });
+  });
+}
+
+function updateApiUI(){
+  const allOff = !apiEnabled.g && !apiEnabled.t && !apiEnabled.d;
+  let banner = document.getElementById('api-off-banner');
+
+  if(allOff){
+    if(!banner){
+      banner = document.createElement('div');
+      banner.id = 'api-off-banner';
+      banner.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Hệ thống tạm thời đóng để bảo trì. Vui lòng quay lại sau!';
+      document.body.appendChild(banner);
+    }
+  } else {
+    if(banner) banner.remove();
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   STATE
+   ═══════════════════════════════════════════════════════════ */
+function getVNDate(){
+  const now = new Date();
+  const vn = new Date(now.getTime() + (7 * 60 * 60 * 1000));
+  return vn.toISOString().slice(0,10);
+}
+
+function readState(){
+  const today = getVNDate();
+  const key = 'nvanh_bp_state';
+  let st = null;
+  try{
+    const raw = localStorage.getItem(key);
+    if(raw) st = JSON.parse(raw);
+  }catch(e){ st = null }
+  if(!st || st.day !== today) st = { day: today, count: 0 };
+  return st;
+}
+function writeState(st){
+  try{ localStorage.setItem('nvanh_bp_state', JSON.stringify(st)); }catch(e){}
+}
+
+function readUsedApis(){
+  const today = getVNDate();
+  const key = 'nvanh_used_apis';
+  let st = null;
+  try{
+    const raw = localStorage.getItem(key);
+    if(raw) st = JSON.parse(raw);
+  }catch(e){ st = null }
+  if(!st || st.day !== today) st = { day: today, apis: [] };
+  return st;
+}
+function writeUsedApis(st){
+  try{ localStorage.setItem('nvanh_used_apis', JSON.stringify(st)); }catch(e){}
+}
+function markApiUsed(apiKey){
+  const st = readUsedApis();
+  if(!st.apis.includes(apiKey)){
+    st.apis.push(apiKey);
+    writeUsedApis(st);
+  }
+}
+function isApiUsed(apiKey){
+  const st = readUsedApis();
+  return st.apis.includes(apiKey);
+}
+function isAllApiUsed(){
+  const st = readUsedApis();
+  return st.apis.length >= 3;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CHU KỲ 7 SLOT
+   ═══════════════════════════════════════════════════════════ */
+function calcPair(count){
+  const slot = (count % 7) + 1;
+  if(slot === 1) return { qc1:'g', qc2:'g', slot };
+  if(slot === 2) return { qc1:'t', qc2:'t', slot };
+  if(slot === 3) return { qc1:'d', qc2:'d', slot };
+  if(slot === 4) return { qc1:'g', qc2:'d', slot };
+  if(slot === 5) return { qc1:'t', qc2:'g', slot };
+  if(slot === 6) return { qc1:'d', qc2:'g', slot };
+  return { qc1:'t', qc2:'d', slot };
+}
+function increaseCount(){
+  const st = readState();
+  st.count = st.count + 1;
+  writeState(st);
+}
+
+function resolveApi(apiKey){
+  if(apiEnabled[apiKey]) return apiKey;
+  const order = ['g', 't', 'd'];
+  for(const k of order){
+    if(k !== apiKey && apiEnabled[k]) return k;
+  }
+  return null;
+}
+function isAllDisabled(){ return !apiEnabled.g && !apiEnabled.t && !apiEnabled.d; }
+
+/* ═══════════════════════════════════════════════════════════
+   AUDIO
+   ═══════════════════════════════════════════════════════════ */
+const AS = {
+  ctx: null,
+  init(){ try{ this.ctx = new (window.AudioContext||window.webkitAudioContext)(); }catch(e){} },
+  play(f,d,v,t='sine'){
+    if(!this.ctx) return;
+    try{
+      const o = this.ctx.createOscillator();
+      const g = this.ctx.createGain();
+      o.connect(g); g.connect(this.ctx.destination);
+      o.type = t; o.frequency.value = f;
+      g.gain.value = v;
+      g.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + d);
+      o.start(this.ctx.currentTime); o.stop(this.ctx.currentTime + d);
+    }catch(e){}
+  },
+  click(){ this.play(880,.05,.05) },
+  popup(){ this.play(660,.08,.06); setTimeout(()=>this.play(880,.08,.05),100) },
+  success(){ this.play(523,.1,.08); setTimeout(()=>this.play(659,.1,.06),120); setTimeout(()=>this.play(784,.12,.05),240) },
+  error(){ this.play(350,.15,.08,'sawtooth') },
+  toast(){ this.play(660,.04,.05) },
+  download(){ this.play(440,.08,.06); setTimeout(()=>this.play(660,.08,.05),100); setTimeout(()=>this.play(880,.1,.04),200) },
+  payment(){ this.play(523,.1,.08); setTimeout(()=>this.play(659,.1,.06),120); setTimeout(()=>this.play(784,.1,.05),240); setTimeout(()=>this.play(1047,.12,.04),360) }
+};
+AS.init();
+
+/* ═══════════════════════════════════════════════════════════
+   UTILS
+   ═══════════════════════════════════════════════════════════ */
+function esc(t){ if(!t) return ''; const d=document.createElement('div'); d.textContent=t; return d.innerHTML }
+function isUrl(s){ try{ new URL(s); return true }catch(e){ return false } }
+function baseUrl(){ try{ return location.origin + location.pathname }catch(e){ return location.href.split('?')[0] } }
+function fmt(n){ if(n>=1e6) return (n/1e6).toFixed(1)+'M'; if(n>=1e3) return (n/1e3).toFixed(1)+'K'; return n.toString() }
+function copy(t){
+  if(navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(t);
+  return new Promise((res,rej)=>{
+    try{
+      const ta=document.createElement('textarea');
+      ta.value=t; ta.style.position='fixed'; ta.style.opacity='0'; ta.style.left='-9999px';
+      document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta); res();
+    }catch(e){ rej(e) }
+  });
+}
+
+document.addEventListener('click', e=>{
+  const b = e.target.closest('.bt');
+  if(!b || b.disabled) return;
+  const r = b.getBoundingClientRect();
+  const s = Math.max(r.width, r.height);
+  const x = e.clientX - r.left - s/2;
+  const y = e.clientY - r.top - s/2;
+  const rp = document.createElement('span');
+  rp.className='rp';
+  rp.style.width=rp.style.height=s+'px';
+  rp.style.left=x+'px'; rp.style.top=y+'px';
+  b.appendChild(rp);
+  setTimeout(()=>rp.remove(),600);
+  AS.click();
+  for(let i=0;i<20;i++){
+    const p = document.createElement('div');
+    p.className='particle';
+    const colors = ['#dc2626','#ef4444','#f59e0b','#10b981','#3b82f6','#8b5cf6','#ec4899'];
+    p.style.background = colors[Math.floor(Math.random()*colors.length)];
+    p.style.left = e.clientX + 'px';
+    p.style.top = e.clientY + 'px';
+    const angle = Math.random() * Math.PI * 2;
+    const dist = 40 + Math.random() * 80;
+    p.style.setProperty('--dx', Math.cos(angle)*dist + 'px');
+    p.style.setProperty('--dy', Math.sin(angle)*dist + 'px');
+    p.style.width = p.style.height = (4 + Math.random()*6) + 'px';
+    document.body.appendChild(p);
+    setTimeout(()=>p.remove(), 800);
+  }
+});
+
+function toast(msg, type='info'){
+  AS.toast();
+  const ic = {info:'fa-circle-info', success:'fa-circle-check', error:'fa-circle-xmark', warning:'fa-triangle-exclamation'};
+  const d = document.createElement('div');
+  d.className='ts '+type;
+  d.innerHTML = `<i class="fas ${ic[type]||ic.info}"></i><span>${msg}</span>`;
+  document.getElementById('tsts').appendChild(d);
+  setTimeout(()=>{
+    d.style.opacity='0';
+    d.style.transform='translateX(60px)';
+    setTimeout(()=>{ if(d.parentNode) d.remove() },400);
+  },4000);
+}
+
+function openModal(title, html){
+  document.getElementById('mt').innerHTML = `<i class="fas fa-cube"></i> ${title}`;
+  document.getElementById('mbody').innerHTML = html;
+  document.getElementById('mcf').textContent = 'Đóng';
+  document.getElementById('ov').style.display='flex';
+  document.getElementById('mcf').onclick = closeModal;
+  document.getElementById('mcl').onclick = closeModal;
+  AS.popup();
+}
+function closeModal(){
+  document.getElementById('ov').style.display='none';
+  document.getElementById('ov').classList.remove('pay');
+  document.getElementById('ov').classList.remove('qc-flow');
+  if(window._pi){ clearInterval(window._pi); window._pi=null; window._pc=false }
+}
+function closeBp(){ document.getElementById('bp').classList.remove('on') }
+document.getElementById('ov').onclick = function(e){ if(e.target===this) closeModal() };
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape'){ closeModal(); closeBp(); closeSh(); closeFd(); closeIv(); closeFabMenu() }
+});
+
+function openIv(url){
+  if(!url || !isUrl(url)){ toast('Không thể tải ảnh!','error'); return }
+  document.getElementById('ivi').src = url;
+  document.getElementById('iv').classList.add('on');
+  AS.popup();
+}
+function closeIv(){
+  document.getElementById('iv').classList.remove('on');
+  setTimeout(()=>{ document.getElementById('ivi').src='' },300);
+}
+document.getElementById('ivc').onclick = closeIv;
+document.getElementById('iv').onclick = function(e){ if(e.target===this) closeIv() };
+
+function openFd(file){
+  const im = {ipa:'fa-apple', apk:'fa-android', zip:'fa-file-archive', pdf:'fa-file-pdf',
+    doc:'fa-file-word', filza:'fa-folder', '3105':'fa-desktop', file:'fa-file'};
+  const ext = file.name ? file.name.split('.').pop().toLowerCase() : '';
+  const ic = im[ext] || im[file.category] || im[file.sub] || 'fa-file';
+  const hasImg = file.image && file.image!=='' && isUrl(file.image);
+
+  document.getElementById('fdt').innerHTML = `<i class="fas ${ic}"></i> ${esc(file.name)}`;
+
+  let h = `
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--bd);">
+      <div style="width:56px;height:56px;min-width:56px;border-radius:var(--r2);background:linear-gradient(135deg,var(--red-s),var(--red-s));border:1px solid var(--red-b);display:flex;align-items:center;justify-content:center;color:var(--red);font-size:1.4rem;">
+        <i class="fas ${ic}"></i>
+      </div>
+      <div style="flex:1;min-width:0">
+        <h3 style="font-family:var(--fh);font-size:1rem;font-weight:800;color:var(--t0);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.3;">${esc(file.name)}</h3>
+        <div style="color:var(--t4);font-size:.72rem;margin-top:5px;font-family:var(--fm);display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+          <span><i class="fas fa-download" style="color:var(--red)"></i> ${fmt(file.downloadCount||0)}</span>
+          ${file.version?`<span><i class="fas fa-code-branch"></i> ${esc(file.version)}</span>`:''}
+        </div>
+      </div>
+    </div>
+    ${hasImg?`<img src="${esc(file.image)}" style="width:100%;max-height:220px;object-fit:cover;border-radius:var(--r2);border:1px solid var(--bd);margin-bottom:14px;cursor:pointer;" loading="lazy" onerror="this.style.display='none'" alt="Demo">`:''}
+    ${file.description?`<div style="color:var(--t2);font-size:.85rem;line-height:1.6;margin-bottom:12px;padding:14px 16px;background:var(--red-s);border-left:4px solid var(--red);border-radius:var(--r1);">${esc(file.description)}</div>`:''}
+    ${file.note?`<div style="color:var(--t2);font-size:.8rem;line-height:1.6;margin-bottom:12px;padding:14px 16px;background:var(--wn-s);border-left:4px solid var(--wn);border-radius:var(--r1);">📝 ${esc(file.note)}</div>`:''}
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <button class="bt bt-p" id="fddl" style="padding:15px;font-size:.85rem;"><i class="fas fa-arrow-down"></i> Tải file</button>
+      <button class="bt bt-g" id="fdsh" style="padding:15px;font-size:.85rem;"><i class="fas fa-share-alt"></i> Chia sẻ</button>
+    </div>
+  `;
+  document.getElementById('fdb').innerHTML = h;
+  document.getElementById('fd').style.display='flex';
+  AS.popup();
+
+  const di = document.querySelector('#fdb img');
+  if(di) di.onclick = function(){ openIv(this.getAttribute('src')) };
+
+  document.getElementById('fddl').onclick = e=>{
+    e.preventDefault(); closeFd();
+    if(window.isMt){ toast('Hệ thống đang bảo trì!','warning'); AS.error(); return }
+    handleDownload(file);
+  };
+  document.getElementById('fdsh').onclick = e=>{
+    e.preventDefault(); closeFd();
+    setTimeout(()=>openSh(file),300);
+  };
+}
+function closeFd(){ document.getElementById('fd').style.display='none' }
+document.getElementById('fdc').onclick = closeFd;
+document.getElementById('fdf').onclick = closeFd;
+document.getElementById('fd').onclick = function(e){ if(e.target===this) closeFd() };
+
+function openSh(file){
+  const url = baseUrl() + '?share=' + encodeURIComponent(file.id);
+  const hasImg = file.image && file.image!=='' && isUrl(file.image);
+
+  document.getElementById('sht').innerHTML = `<i class="fas fa-share-alt"></i> Chia sẻ file`;
+
+  let h = `
+    <div style="text-align:center;">
+      <div style="font-family:var(--fh);font-size:1rem;font-weight:800;color:var(--t0);margin-bottom:5px;">${esc(file.name)}</div>
+      <div style="color:var(--t4);font-size:.75rem;font-family:var(--fm);margin-bottom:12px;">
+        <i class="fas fa-download" style="color:var(--red)"></i> ${fmt(file.downloadCount||0)} lượt tải
+      </div>
+      ${hasImg?`<img src="${esc(file.image)}" style="max-width:100%;max-height:170px;border-radius:var(--r2);border:1px solid var(--bd);object-fit:cover;margin:8px 0 12px;cursor:pointer;" loading="lazy" onerror="this.style.display='none'">`:''}
+      <div style="background:var(--white);padding:14px;border-radius:var(--r3);display:inline-block;margin:8px auto;border:1px solid var(--bd);box-shadow:var(--sh1);">
+        <div id="qrc"></div>
+      </div>
+      <div style="background:var(--n1);padding:13px 15px;border-radius:var(--r2);border:1px solid var(--bd);margin:13px 0;word-break:break-all;color:var(--t0);font-size:.74rem;font-family:var(--fm);line-height:1.5;">${esc(url)}</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;">
+        <button class="bt bt-p" id="shcp" style="padding:14px;font-size:.82rem;"><i class="fas fa-copy"></i> Sao chép</button>
+        <button class="bt bt-s" id="shqr" style="padding:14px;font-size:.82rem;"><i class="fas fa-download"></i> Tải QR</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('shb').innerHTML = h;
+  document.getElementById('sh').style.display='flex';
+  AS.popup();
+
+  const si = document.querySelector('#shb img');
+  if(si) si.onclick = function(){ openIv(this.getAttribute('src')) };
+
+  setTimeout(()=>{
+    const qc = document.getElementById('qrc');
+    if(qc){
+      qc.innerHTML='';
+      new QRCode(qc, {
+        text: url, width: 165, height: 165,
+        colorDark:'#09090b', colorLight:'#ffffff',
+        correctLevel: QRCode.CorrectLevel.H
+      });
+    }
+  },200);
+
+  document.getElementById('shcp').onclick = e=>{
+    e.preventDefault();
+    copy(url).then(()=>{ toast('Đã copy link chia sẻ!','success'); AS.success() }).catch(()=>{ toast('Không thể copy!','error'); AS.error() });
+  };
+  document.getElementById('shqr').onclick = e=>{
+    e.preventDefault();
+    const qi = document.querySelector('#qrc img');
+    if(qi){
+      const a = document.createElement('a');
+      a.download = `QR_${file.name}_NVANH.png`;
+      a.href = qi.src; a.click();
+      toast('Đã tải QR code!','success');
+      AS.download();
+    } else { toast('Đang tạo QR, vui lòng thử lại!','error'); AS.error() }
+  };
+}
+function closeSh(){ document.getElementById('sh').style.display='none' }
+document.getElementById('shc').onclick = closeSh;
+document.getElementById('shf').onclick = closeSh;
+document.getElementById('sh').onclick = function(e){ if(e.target===this) closeSh() };
+
+function openShareLanding(file){
+  const hasImg = file.image && file.image!=='' && isUrl(file.image);
+  document.getElementById('sht').innerHTML = `<i class="fas fa-file"></i> ${esc(file.name)}`;
+
+  let h = `
+    <div style="text-align:center;">
+      <div style="font-family:var(--fh);font-size:1rem;font-weight:800;color:var(--t0);margin-bottom:5px;">${esc(file.name)}</div>
+      <div style="color:var(--t4);font-size:.75rem;font-family:var(--fm);margin-bottom:12px;">
+        <i class="fas fa-download" style="color:var(--red)"></i> ${fmt(file.downloadCount||0)} lượt tải
+      </div>
+      ${hasImg?`<img src="${esc(file.image)}" style="max-width:100%;max-height:170px;border-radius:var(--r2);border:1px solid var(--bd);object-fit:cover;margin:8px 0 12px;cursor:pointer;" loading="lazy" onerror="this.style.display='none'">`:''}
+      ${file.note?`<div style="color:var(--t2);font-size:.8rem;text-align:left;padding:13px 15px;background:var(--wn-s);border-radius:var(--r1);border-left:4px solid var(--wn);margin:12px 0;">📝 ${esc(file.note)}</div>`:''}
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:360px;margin:16px auto 0;">
+        <button class="bt bt-p" id="lgbp" style="padding:15px;font-size:.85rem;"><i class="fas fa-forward"></i> Vượt QC</button>
+        <button class="bt bt-s" id="lgby" style="padding:15px;font-size:.85rem;"><i class="fas fa-cart-plus"></i> Mua Link</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('shb').innerHTML = h;
+  document.getElementById('sh').style.display='flex';
+  AS.popup();
+
+  const si = document.querySelector('#shb img');
+  if(si) si.onclick = function(){ openIv(this.getAttribute('src')) };
+
+  document.getElementById('lgbp').onclick = e=>{
+    e.preventDefault(); closeSh();
+    if(!window.isMt){ startBp(file) }
+    else { toast('Hệ thống đang bảo trì!','warning') }
+  };
+  document.getElementById('lgby').onclick = e=>{
+    e.preventDefault(); closeSh();
+    if(!window.isMt){ handleBuy(file) }
+    else { toast('Hệ thống đang bảo trì!','warning') }
+  };
+}
+
+function checkShareRedirect(){
+  try{
+    const u = new URLSearchParams(location.search);
+    const sid = u.get('share');
+    if(!sid) return;
+    const url = new URL(location); url.search='';
+    history.replaceState({}, document.title, url.pathname);
+    const f = window.curFiles?.find(x=>x.id===sid);
+    if(!f){ toast('File không tồn tại hoặc đã bị xóa!','error'); AS.error(); return }
+    setTimeout(()=>{ openShareLanding(f); toast('Chia sẻ file từ bạn bè!','info') },400);
+  }catch(e){}
+}
+
+let links = { l1:'', l2:'', l3:'https://alpha-ff.gt.tc' };
+
+function loadLinks(){
+  db.ref('settings').on('value', s=>{
+    const st = s.val() || {};
+    links.l1 = st.link1 || 'https://zalo.me/0363716993';
+    links.l2 = st.link2 || 'https://t.me/';
+    links.l3 = st.link3 || 'https://alpha-ff.gt.tc';
+  }, ()=>{});
+}
+
+let welcomeCountdownTimer = null;
+
+function showWelcome(){
+  const wl = document.getElementById('wl');
+  const btn = document.getElementById('wg');
+
+  wl.classList.add('on');
+  document.body.style.overflow = 'hidden';
+
+  btn.disabled = true;
+  let sec = 5;
+  btn.innerHTML = `<i class="fas fa-hourglass-half"></i> <span>Chờ ${sec}s...</span>`;
+
+  if(welcomeCountdownTimer) clearInterval(welcomeCountdownTimer);
+  welcomeCountdownTimer = setInterval(()=>{
+    sec--;
+    if(sec <= 0){
+      clearInterval(welcomeCountdownTimer);
+      welcomeCountdownTimer = null;
+      btn.disabled = false;
+      btn.innerHTML = `<i class="fas fa-check"></i> TIẾP TỤC`;
+      AS.success();
+    } else {
+      btn.innerHTML = `<i class="fas fa-hourglass-half"></i> <span>Chờ ${sec}s...</span>`;
+    }
+  }, 1000);
+
+  AS.popup();
+}
+
+function hideWelcome(){
+  document.getElementById('wl').classList.remove('on');
+  document.body.style.overflow='';
+  if(welcomeCountdownTimer){ clearInterval(welcomeCountdownTimer); welcomeCountdownTimer = null; }
+}
+
+document.getElementById('wc').onclick = ()=>{ window.open(links.l1,'_blank'); AS.click() };
+document.getElementById('wz').onclick = ()=>{ window.open(links.l2,'_blank'); AS.click() };
+document.getElementById('wlv2').onclick = ()=>{ window.open(links.l3,'_blank'); AS.click() };
+document.getElementById('wg').onclick = ()=>{ hideWelcome(); AS.click() };
+
+const CL = {filza:'FILZA','3105':'3105',ipa:'IPA',file:'FILE',apk:'APK',ios:'iOS',android:'Android',imazing:'3105'};
+const CI = {filza:'fa-folder','3105':'fa-desktop',ipa:'fa-apple',file:'fa-file',apk:'fa-android',ios:'fa-apple',android:'fa-android',imazing:'fa-desktop'};
+
+let tabsD = [];
+let subsD = {};
+
+function loadTabs(){
+  db.ref('settings/tabs').once('value').then(s=>{
+    let t = s.val();
+    if(!t || !Array.isArray(t) || t.length===0){
+      t = [
+        {id:'ios',label:'iOS',icon:'fab fa-apple',visible:true},
+        {id:'android',label:'ANDROID',icon:'fab fa-android',visible:true}
+      ];
+      db.ref('settings/tabs').set(t);
+    }
+    t = t.filter(x=>x.id!=='trust');
+    tabsD = t;
+    renderTabs();
+  }).catch(()=>{
+    tabsD = [
+      {id:'ios',label:'iOS',icon:'fab fa-apple',visible:true},
+      {id:'android',label:'ANDROID',icon:'fab fa-android',visible:true}
+    ];
+    renderTabs();
+  });
+
+  db.ref('settings/subTabs').once('value').then(s=>{
+    subsD = s.val() || {};
+    const def = {ios:['filza','3105','ipa'], android:['file','apk']};
+    Object.keys(subsD).forEach(k=>{
+      if(subsD[k] && Array.isArray(subsD[k])){
+        subsD[k] = subsD[k].map(x=>x==='imazing'?'3105':x);
+      }
+    });
+    delete subsD.trust;
+    Object.keys(def).forEach(k=>{ if(!subsD[k]) subsD[k]=def[k] });
+    db.ref('settings/subTabs').set(subsD);
+    renderTabs();
+  }).catch(()=>{
+    subsD = {ios:['filza','3105','ipa'], android:['file','apk']};
+    renderTabs();
+  });
+}
+
+function renderTabs(){
+  const nav = document.getElementById('tnav');
+  const pnls = document.getElementById('tpnls');
+  if(!tabsD.length){ nav.innerHTML = `<button class="tb on">Trang chủ</button>`; return }
+
+  let nh='';
+  let first=null;
+  tabsD.forEach(t=>{
+    if(t.visible===false) return;
+    if(!first) first=t.id;
+    nh += `<button class="tb ${t.id===first?'on':''}" data-tab="${t.id}"><i class="${t.icon||'fas fa-circle'}"></i> ${t.label}</button>`;
+  });
+  nav.innerHTML = nh;
+
+  let ph='';
+  tabsD.forEach(t=>{
+    if(t.visible===false) return;
+    const isOn = t.id===first;
+    const subs = subsD[t.id] || [];
+    let sn='', sp='';
+    let fs=null;
+    subs.forEach(s=>{
+      if(!fs) fs=s;
+      const lbl = CL[s] || s.toUpperCase();
+      const ic = CI[s] || 'fa-folder';
+      sn += `<button class="sb ${s===fs?'on':''}" data-sub="${s}"><i class="fas ${ic}"></i> ${lbl}</button>`;
+      sp += `<div id="sp-${s}" class="sp ${s===fs?'on':''}"><div class="fl" id="fl-${s}"></div></div>`;
+    });
+    ph += `<div id="tp-${t.id}" class="pn ${isOn?'on':''}"><div class="subs">${sn}</div>${sp}</div>`;
+  });
+  pnls.innerHTML = ph;
+
+  const sp = document.createElement('div');
+  sp.id='srp';
+  sp.className='pn';
+  sp.innerHTML='<div id="srl"></div>';
+  pnls.appendChild(sp);
+
+  document.querySelectorAll('.tb').forEach(b=>{
+    b.onclick = function(e){
+      e.preventDefault();
+      document.getElementById('srp').classList.remove('on');
+      document.querySelectorAll('.tb').forEach(x=>x.classList.remove('on'));
+      this.classList.add('on');
+      const tab = this.dataset.tab;
+      document.querySelectorAll('.pn').forEach(p=>p.classList.remove('on'));
+      const pnl = document.getElementById(`tp-${tab}`);
+      if(pnl) pnl.classList.add('on');
+      const sn = pnl.querySelector('.subs');
+      if(sn){
+        const fs = sn.querySelector('.sb');
+        if(fs){
+          const sk = fs.dataset.sub;
+          pnl.querySelectorAll('.sp').forEach(p=>p.classList.remove('on'));
+          const spp = document.getElementById(`sp-${sk}`);
+          if(spp) spp.classList.add('on');
+          sn.querySelectorAll('.sb').forEach(x=>x.classList.remove('on'));
+          fs.classList.add('on');
+          renderList(sk);
+        }
+      }
+      window.scrollTo({top:0,behavior:'smooth'});
+    };
+  });
+
+  document.querySelectorAll('.sb').forEach(b=>{
+    b.onclick = function(e){
+      e.preventDefault();
+      document.getElementById('srp').classList.remove('on');
+      const pp = this.closest('.pn');
+      pp.querySelectorAll('.sb').forEach(x=>x.classList.remove('on'));
+      this.classList.add('on');
+      const sk = this.dataset.sub;
+      pp.querySelectorAll('.sp').forEach(p=>p.classList.remove('on'));
+      const spp = document.getElementById(`sp-${sk}`);
+      if(spp) spp.classList.add('on');
+      renderList(sk);
+    };
+  });
+
+  if(first){
+    const subs = subsD[first] || [];
+    if(subs.length) renderList(subs[0]);
+  }
+}
+
+function updStats(){
+  const tf = window.curFiles?.filter(f=>f.visible!==false).length || 0;
+  document.getElementById('sf').textContent = tf;
+  document.getElementById('sd').textContent = fmt(window.totalDl || 0);
+  document.getElementById('sv').textContent = fmt(window.totalVis || 0);
+  document.getElementById('sc').textContent = window.allCats?.size || 0;
+}
+
+function incVisits(){
+  const k = 'nvanh_visit_' + location.hostname;
+  const lv = localStorage.getItem(k);
+  const now = Date.now();
+  if(lv && (now - parseInt(lv)) < 300000) return;
+  db.ref('statistics/visits').transaction(c => (c||0)+1, (err, ok, snap)=>{
+    if(err) return;
+    if(ok){
+      localStorage.setItem(k, now.toString());
+      window.totalVis = snap.val();
+      document.getElementById('sv').textContent = fmt(window.totalVis||0);
+    }
+  });
+}
+
+let searchQ = '';
+let curCat = '';
+
+function searchFiles(q){
+  searchQ = q.toLowerCase().trim();
+  const clr = document.getElementById('sclr');
+  const sl = document.getElementById('srl');
+  const sp = document.getElementById('srp');
+  const cnt = document.getElementById('scnt');
+
+  if(searchQ.length>0) clr.classList.add('on'); else clr.classList.remove('on');
+
+  if(searchQ.length===0){
+    sp.classList.remove('on');
+    if(cnt) cnt.textContent='';
+    const at = document.querySelector('.tb.on');
+    if(at){
+      const tid = at.dataset.tab;
+      document.querySelectorAll('.pn').forEach(p=>p.classList.remove('on'));
+      const p = document.getElementById(`tp-${tid}`);
+      if(p) p.classList.add('on');
+    }
+    return;
+  }
+
+  const all = window.curFiles?.filter(f=>f.visible!==false) || [];
+  const res = all.filter(f=>{
+    const n = f.name.toLowerCase().includes(searchQ);
+    const d = f.description && f.description.toLowerCase().includes(searchQ);
+    const v = f.version && f.version.toLowerCase().includes(searchQ);
+    return n||d||v;
+  });
+
+  document.querySelectorAll('.pn').forEach(p=>p.classList.remove('on'));
+  sp.classList.add('on');
+
+  if(cnt) cnt.textContent = res.length>0 ? `${res.length} kết quả` : '';
+
+  if(res.length===0){
+    sl.innerHTML = `<div class="emp"><i class="fas fa-search"></i><p>Không tìm thấy file nào cho "<strong>${esc(searchQ)}</strong>"</p></div>`;
+    return;
+  }
+
+  const im = {ipa:'fa-apple',apk:'fa-android',zip:'fa-file-archive',pdf:'fa-file-pdf',doc:'fa-file-word',filza:'fa-folder','3105':'fa-desktop',file:'fa-file'};
+  let h='';
+  res.forEach(f=>{
+    const ext = f.name ? f.name.split('.').pop().toLowerCase() : '';
+    const ic = im[ext] || im[f.category] || im[f.sub] || 'fa-file';
+    let cn = CL[f.category] || f.category || 'File';
+    if(f.category==='imazing') cn='3105';
+    h += `
+      <div class="fi" data-id="${esc(f.id)}">
+        <div class="fiic"><i class="fas ${ic}"></i></div>
+        <div class="finfo">
+          <div class="finm">${esc(f.name)}</div>
+          <div class="fimt">
+            <span class="fmi"><i class="fas fa-download"></i> ${fmt(f.downloadCount||0)}</span>
+            <span class="tg tg-cat"><i class="fas fa-folder"></i> ${cn}</span>
+            ${f.version?`<span class="tg tg-ver">${esc(f.version)}</span>`:''}
+          </div>
+        </div>
+        <div class="fiarr"><i class="fas fa-chevron-right"></i></div>
+      </div>
+    `;
+  });
+  sl.innerHTML = h;
+  sl.querySelectorAll('.fi').forEach((it,i)=>{
+    const f = res[i];
+    if(f) it.onclick = ()=>openFd(f);
+  });
+}
+
+function clearSearch(){
+  const i = document.getElementById('sinput');
+  i.value=''; searchQ='';
+  document.getElementById('sclr').classList.remove('on');
+  document.getElementById('srp').classList.remove('on');
+  document.getElementById('scnt').textContent='';
+  const at = document.querySelector('.tb.on');
+  if(at){
+    const tid = at.dataset.tab;
+    document.querySelectorAll('.pn').forEach(p=>p.classList.remove('on'));
+    const p = document.getElementById(`tp-${tid}`);
+    if(p) p.classList.add('on');
+  }
+  renderList(curCat);
+}
+
+function renderList(cat){
+  curCat = cat;
+  const l = document.getElementById(`fl-${cat}`);
+  if(!l) return;
+  l.innerHTML='';
+  if(window.isMt){
+    l.innerHTML = `<div class="emp"><i class="fas fa-tools"></i><p>Đang bảo trì</p></div>`;
+    return;
+  }
+
+  let files = window.curFiles?.filter(f=>{
+    let c = f.category || f.sub || detectCat(f.name);
+    if(c==='imazing') c='3105';
+    return c===cat && f.visible!==false;
+  }) || [];
+
+  if(files.length===0){
+    l.innerHTML = `<div class="emp"><i class="fas fa-inbox"></i><p>Chưa có file trong danh mục này</p></div>`;
+    return;
+  }
+
+  let maxD=0;
+  files.forEach(f=>{ if(f.downloadCount>maxD) maxD=f.downloadCount });
+
+  const im = {ipa:'fa-apple',apk:'fa-android',zip:'fa-file-archive',pdf:'fa-file-pdf',doc:'fa-file-word',filza:'fa-folder','3105':'fa-desktop',file:'fa-file',imazing:'fa-desktop'};
+
+  files.sort((a,b)=>(b.downloadCount||0)-(a.downloadCount||0));
+
+  files.forEach(f=>{
+    const hot = (f.downloadCount===maxD && maxD>0);
+    const nw = f.createdAt && (Date.now()-f.createdAt) < 7*24*60*60*1000;
+    const ext = f.name ? f.name.split('.').pop().toLowerCase() : '';
+    const ic = im[ext] || im[f.category] || im[f.sub] || 'fa-file';
+
+    const it = document.createElement('div');
+    it.className='fi';
+    it.innerHTML = `
+      <div class="fiic"><i class="fas ${ic}"></i></div>
+      <div class="finfo">
+        <div class="finm">${esc(f.name)}</div>
+        <div class="fimt">
+          <span class="fmi"><i class="fas fa-download"></i> ${fmt(f.downloadCount||0)}</span>
+          ${hot?'<span class="tg tg-hot"><i class="fas fa-fire"></i> HOT</span>':''}
+          ${nw?'<span class="tg tg-new"><i class="fas fa-star"></i> NEW</span>':''}
+          ${f.version?`<span class="tg tg-ver">${esc(f.version)}</span>`:''}
+        </div>
+      </div>
+      <div class="fiarr"><i class="fas fa-chevron-right"></i></div>
+    `;
+    it.onclick = ()=>openFd(f);
+    l.appendChild(it);
+  });
+}
+
+function detectCat(name){
+  if(!name) return 'file';
+  const l = name.toLowerCase();
+  if(l.includes('filza')) return 'filza';
+  if(l.includes('3105') || l.includes('imazing')) return '3105';
+  if(l.includes('.ipa') || l.includes('ipa')) return 'ipa';
+  if(l.includes('.apk') || l.includes('apk')) return 'apk';
+  return 'file';
+}
+
+async function loadFiles(){
+  try{
+    const s = await db.ref('files').once('value');
+    const d = s.val() || {};
+    window.curFiles = Object.keys(d).map(k=>{
+      const f = {id:k, ...d[k]};
+      if(f.category==='imazing') f.category='3105';
+      if(f.sub==='imazing') f.sub='3105';
+      return f;
+    });
+
+    window.totalDl = window.curFiles.reduce((a,f)=>a+(f.downloadCount||0),0);
+    const vs = await db.ref('statistics/visits').once('value');
+    window.totalVis = vs.val() || 0;
+
+    const ms = await db.ref('settings/maintenance').once('value');
+    window.isMt = ms.val() || false;
+
+    window.allCats = new Set();
+    window.curFiles.forEach(f=>{
+      let c = f.category || f.sub || detectCat(f.name);
+      if(c==='imazing') c='3105';
+      if(c) window.allCats.add(c);
+    });
+
+    window.allCats.forEach(c=>renderList(c));
+    updStats();
+    checkShareRedirect();
+  }catch(e){
+    toast('Lỗi tải dữ liệu: '+e.message,'error');
+    AS.error();
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HANDLE DOWNLOAD — MODAL QC / MUA LINK THIẾT KẾ LẠI
+   ═══════════════════════════════════════════════════════════ */
+function handleDownload(file){
+  if(window.isMt){ toast('Hệ thống đang bảo trì!','warning'); AS.error(); return }
+  if(!file || !file.id){ toast('Dữ liệu file không hợp lệ!','error'); AS.error(); return }
+
+  if(isAllDisabled()){
+    toast('Hệ thống tạm thời đóng, vui lòng quay lại sau!','warning');
+    AS.error();
+    return;
+  }
+
+  const ext = file.name ? file.name.split('.').pop().toLowerCase() : '';
+  const im = {ipa:'fa-apple',apk:'fa-android',zip:'fa-file-archive',pdf:'fa-file-pdf',doc:'fa-file-word',filza:'fa-folder','3105':'fa-desktop',file:'fa-file'};
+  const ic = im[ext] || im[file.category] || im[file.sub] || 'fa-file';
+
+  let buttonsHtml = '';
+  if(buyEnabled){
+    buttonsHtml = `
+      <div class="qc-actions">
+        <button class="qc-btn qc-btn-bypass" id="bpbtn">
+          <div class="qc-bic"><i class="fas fa-forward"></i></div>
+          <div>
+            <div class="qc-btxt">VƯỢT QC</div>
+            <div class="qc-bsub">Miễn phí • 2 bước</div>
+          </div>
+        </button>
+        <button class="qc-btn qc-btn-buy" id="bybtn">
+          <div class="qc-bic"><i class="fas fa-cart-plus"></i></div>
+          <div>
+            <div class="qc-btxt">MUA LINK</div>
+            <div class="qc-bsub">Nhanh chóng • 10k</div>
+          </div>
+        </button>
+      </div>
+      <button class="qc-btn qc-btn-error" id="errorbtn">
+        <div class="qc-bic"><i class="fas fa-triangle-exclamation"></i></div>
+        <div>GẶP LỖI KHI VƯỢT QC? BÁO NGAY</div>
+      </button>
+    `;
+  } else {
+    buttonsHtml = `
+      <div class="qc-actions">
+        <button class="qc-btn qc-btn-bypass" id="bpbtn" style="grid-column:span 2;">
+          <div class="qc-bic"><i class="fas fa-forward"></i></div>
+          <div>
+            <div class="qc-btxt">VƯỢT QC</div>
+            <div class="qc-bsub">Miễn phí • 2 bước</div>
+          </div>
+        </button>
+      </div>
+      <button class="qc-btn qc-btn-error" id="errorbtn">
+        <div class="qc-bic"><i class="fas fa-triangle-exclamation"></i></div>
+        <div>GẶP LỖI KHI VƯỢT QC? BÁO NGAY</div>
+      </button>
+    `;
+  }
+
+  const ov = document.getElementById('ov');
+  ov.classList.add('qc-flow');
+  document.getElementById('mt').innerHTML = `<i class="fas fa-download"></i> Tải File`;
+  document.getElementById('mbody').innerHTML = `
+    <div class="qc-file-card">
+      <div class="qc-fic"><i class="fas ${ic}"></i></div>
+      <div class="qc-finfo">
+        <div class="qc-fname">${esc(file.name)}</div>
+        <div class="qc-fmeta">
+          <span><i class="fas fa-download"></i> ${fmt(file.downloadCount||0)}</span>
+          ${file.version?`<span><i class="fas fa-code-branch"></i> ${esc(file.version)}</span>`:''}
+        </div>
+      </div>
+    </div>
+    ${buttonsHtml}
+  `;
+  document.getElementById('mcf').textContent = 'Đóng';
+  document.getElementById('mcf').onclick = closeModal;
+  document.getElementById('mcl').onclick = closeModal;
+  ov.style.display = 'flex';
+  AS.popup();
+
+  setTimeout(()=>{
+    const b = document.getElementById('bpbtn');
+    const u = document.getElementById('bybtn');
+    const e = document.getElementById('errorbtn');
+    if(b) b.onclick = ev=>{ ev.preventDefault(); closeModal(); if(!window.isMt) startBp(file) };
+    if(u) u.onclick = ev=>{ ev.preventDefault(); closeModal(); if(!window.isMt) handleBuy(file) };
+    if(e) e.onclick = ev=>{ ev.preventDefault(); closeModal(); setTimeout(()=>openApiPicker(file),200) };
+  },100);
+}
+
+function handleBuy(file){
+  if(window.isMt){ toast('Hệ thống đang bảo trì!','warning'); AS.error(); return }
+  if(!buyEnabled){ toast('Chức năng Mua Link đang tạm đóng!','warning'); AS.error(); return }
+  if(!file || !file.id){ toast('Dữ liệu file không hợp lệ!','error'); AS.error(); return }
+  startBuy(file);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   API PICKER
+   ═══════════════════════════════════════════════════════════ */
+function openApiPicker(file){
+  if(isAllApiUsed()){
+    let buyBtn = '';
+    if(buyEnabled){
+      buyBtn = `
+        <button class="bt bt-s" id="pick-buy" style="width:100%;padding:15px;font-size:.85rem;margin-top:14px;">
+          <i class="fas fa-cart-plus"></i> Mua Link Ngay
+        </button>
+      `;
+    }
+    openModal('Đã Dùng Hết API', `
+      <div style="text-align:center;padding:10px 0;">
+        <div style="width:70px;height:70px;border-radius:50%;background:var(--wn-s);border:2px solid var(--wn);display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:var(--wn);margin:0 auto 16px;">
+          <i class="fas fa-triangle-exclamation"></i>
+        </div>
+        <div style="font-family:var(--fh);font-weight:800;font-size:1rem;color:var(--t0);margin-bottom:8px;">Đã dùng hết 3 API hôm nay</div>
+        <div style="color:var(--t2);font-size:.85rem;line-height:1.6;margin-bottom:16px;">
+          Bạn đã thử cả 3 API rồi.<br>
+          Vui lòng quay lại sau <strong style="color:var(--red);">00:00</strong> để reset<br>
+          hoặc Mua Link để tải ngay.
+        </div>
+        ${buyBtn}
+      </div>
+    `);
+    setTimeout(()=>{
+      const pb = document.getElementById('pick-buy');
+      if(pb) pb.onclick = e=>{ e.preventDefault(); closeModal(); setTimeout(()=>handleBuy(file),200) };
+    },100);
+    return;
+  }
+
+  const used = readUsedApis().apis;
+  const allKeys = ['g','t','d'];
+  let listHtml = '';
+  allKeys.forEach(k=>{
+    const api = APIS[k];
+    const isUsed = used.includes(k);
+    const isDisabled = !apiEnabled[k] || isUsed;
+    let badge = '';
+    if(isUsed){
+      badge = '<span class="api-badge">ĐÃ DÙNG</span>';
+    } else if(!apiEnabled[k]){
+      badge = '<span class="api-badge">ĐANG TẮT</span>';
+    } else {
+      badge = '<span class="api-badge" style="background:var(--ok-s);color:var(--ok);border-color:var(--ok-b);">SẴN SÀNG</span>';
+    }
+    listHtml += `
+      <div class="api-item ${isDisabled?'disabled':''}" data-api="${k}">
+        <div class="api-ic"><i class="fas ${api.icon}"></i></div>
+        <div class="api-info">
+          <div class="api-name">${api.name}</div>
+          <div class="api-desc">${api.desc}</div>
+        </div>
+        ${badge}
+      </div>
+    `;
+  });
+
+  openModal('Chọn API Vượt QC', `
+    <div style="color:var(--t2);font-size:.83rem;line-height:1.6;margin-bottom:6px;">
+      Chọn API bạn muốn dùng để vượt QC cho file này.
+      <br><span style="color:var(--t4);font-size:.75rem;">Lưu ý: API đã dùng hôm nay sẽ không chọn được cho đến 00:00.</span>
+    </div>
+    <div class="api-picker">
+      ${listHtml}
+    </div>
+    ${buyEnabled ? `
+      <button class="bt bt-s" id="picker-buy" style="width:100%;padding:13px;font-size:.82rem;margin-top:14px;">
+        <i class="fas fa-cart-plus"></i> Hoặc Mua Link
+      </button>
+    ` : ''}
+  `);
+
+  setTimeout(()=>{
+    document.querySelectorAll('.api-item').forEach(el=>{
+      el.onclick = ()=>{
+        if(el.classList.contains('disabled')) return;
+        const apiKey = el.dataset.api;
+        closeModal();
+        setTimeout(()=>startBpWithApi(file, apiKey),200);
+      };
+    });
+    const pb = document.getElementById('picker-buy');
+    if(pb) pb.onclick = e=>{ e.preventDefault(); closeModal(); setTimeout(()=>handleBuy(file),200) };
+  },100);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BYPASS
+   ═══════════════════════════════════════════════════════════ */
+function startBp(file){
+  if(!file || !file.id){ toast('Dữ liệu file không hợp lệ!','error'); AS.error(); return }
+
+  if(isAllDisabled()){
+    toast('Hệ thống tạm thời đóng, vui lòng quay lại sau!','warning');
+    AS.error();
+    return;
+  }
+
+  const b = baseUrl();
+  const st = readState();
+  const pair = calcPair(st.count);
+
+  const resolvedQc1 = resolveApi(pair.qc1);
+  if(!resolvedQc1){
+    toast('Hệ thống tạm thời đóng, vui lòng quay lại sau!','warning');
+    AS.error();
+    return;
+  }
+
+  sessionStorage.setItem('nvanh_bp_file_id', file.id);
+  sessionStorage.removeItem('nvanh_bp_manual_api');
+
+  const api = APIS[resolvedQc1];
+  const qc1Link = api.build(b + '?step=1&id=' + file.id);
+
+  try{
+    const w = window.open(qc1Link, '_blank');
+    if(!w || w.closed || typeof w.closed==='undefined'){ location.href = qc1Link; return }
+    toast(`Đang mở QC1 (${api.name})...`, 'info');
+  }catch(e){
+    location.href = qc1Link;
+  }
+}
+
+function startBpWithApi(file, apiKey){
+  if(!file || !file.id){ toast('Dữ liệu file không hợp lệ!','error'); AS.error(); return }
+  if(!apiEnabled[apiKey]){ toast('API này đang tắt!','warning'); AS.error(); return }
+  if(isApiUsed(apiKey)){ toast('API này đã dùng hôm nay!','warning'); AS.error(); return }
+
+  const b = baseUrl();
+  sessionStorage.setItem('nvanh_bp_file_id', file.id);
+  sessionStorage.setItem('nvanh_bp_manual_api', apiKey);
+
+  const api = APIS[apiKey];
+  const qc1Link = api.build(b + '?step=1&id=' + file.id);
+
+  try{
+    const w = window.open(qc1Link, '_blank');
+    if(!w || w.closed || typeof w.closed==='undefined'){ location.href = qc1Link; return }
+    toast(`Đang mở QC1 (${api.name})...`, 'info');
+  }catch(e){
+    location.href = qc1Link;
+  }
+}
+
+function checkBpRedirect(){
+  try{
+    const u = new URLSearchParams(location.search);
+    const step = u.get('step');
+    const id = u.get('id');
+    if(!step || !id) return;
+
+    const f = window.curFiles?.find(x=>x.id===id);
+    if(!f){ toast('File không tồn tại!','error'); AS.error(); return }
+
+    if(step === '1'){
+      redirectToQc2(f);
+    } else if(step === '2'){
+      finalRedirect(f);
+    }
+  }catch(e){ toast('Lỗi xử lý redirect!','error'); AS.error() }
+}
+
+function redirectToQc2(file){
+  if(isAllDisabled()){
+    toast('Hệ thống tạm thời đóng, vui lòng quay lại sau!','warning');
+    AS.error();
+    return;
+  }
+
+  const b = baseUrl();
+  const manualApi = sessionStorage.getItem('nvanh_bp_manual_api');
+  let apiKey;
+
+  if(manualApi && apiEnabled[manualApi]){
+    apiKey = manualApi;
+  } else {
+    const st = readState();
+    const pair = calcPair(st.count);
+    const resolved = resolveApi(pair.qc2);
+    if(!resolved){
+      toast('Hệ thống tạm thời đóng, vui lòng quay lại sau!','warning');
+      AS.error();
+      return;
+    }
+    apiKey = resolved;
+  }
+
+  const api = APIS[apiKey];
+  const qc2Link = api.build(b + '?step=2&id=' + file.id);
+
+  document.body.innerHTML = `
+    <div style="
+      position:fixed;inset:0;background:#fafafa;
+      display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;
+      font-family:'Sora',sans-serif;color:#18181b;
+      z-index:99999;
+    ">
+      <div style="
+        width:60px;height:60px;border-radius:50%;
+        border:3px solid rgba(220,38,38,.15);
+        border-top-color:#dc2626;
+        animation:spin .8s linear infinite;
+      "></div>
+      <div style="
+        font-weight:800;font-size:.9rem;
+        letter-spacing:2px;color:#dc2626;
+        text-transform:uppercase;
+      ">ĐANG CHUYỂN SANG QC2</div>
+      <div style="
+        font-family:'Fira Code',monospace;
+        font-size:.7rem;color:#71717a;
+      ">API: ${api.name}</div>
+      <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+    </div>
+  `;
+
+  setTimeout(()=>{
+    window.location.href = qc2Link;
+  }, 400);
+}
+
+function finalRedirect(file){
+  const manualApi = sessionStorage.getItem('nvanh_bp_manual_api');
+
+  if(manualApi){
+    markApiUsed(manualApi);
+  } else {
+    const st = readState();
+    const pair = calcPair(st.count);
+    if(apiEnabled[pair.qc1]){
+      markApiUsed(pair.qc1);
+    }
+  }
+
+  increaseCount();
+
+  const fr = db.ref(`files/${file.id}`);
+  fr.transaction(cur=>{
+    if(cur===null) return {downloadCount:1};
+    return {...cur, downloadCount:(cur.downloadCount||0)+1};
+  }).catch(()=>{});
+  db.ref('statistics/bypass').transaction(c=>(c||0)+1).catch(()=>{});
+
+  document.body.innerHTML = `
+    <div style="
+      position:fixed;inset:0;background:#fafafa;
+      display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;
+      font-family:'Sora',sans-serif;color:#18181b;
+      z-index:99999;
+    ">
+      <div style="
+        width:70px;height:70px;border-radius:50%;
+        background:linear-gradient(135deg,#10b981,#059669);
+        display:flex;align-items:center;justify-content:center;
+        font-size:2rem;color:#fff;
+        box-shadow:0 12px 40px rgba(16,185,129,.4);
+        animation:successPop .6s cubic-bezier(.34,1.56,.64,1);
+      ">✓</div>
+      <div style="
+        font-weight:800;font-size:1rem;
+        letter-spacing:1px;color:#10b981;
+        text-transform:uppercase;
+      ">VƯỢT QC THÀNH CÔNG</div>
+      <div style="
+        font-weight:600;font-size:.85rem;
+        color:#52525b;text-align:center;
+        padding:0 20px;
+      ">Đang mở link tải cho bạn...</div>
+      <div style="
+        width:50px;height:50px;border-radius:50%;
+        border:3px solid rgba(220,38,38,.15);
+        border-top-color:#dc2626;
+        animation:spin .8s linear infinite;
+        margin-top:10px;
+      "></div>
+      <style>
+        @keyframes spin{to{transform:rotate(360deg)}}
+        @keyframes successPop{
+          0%{transform:scale(0)}
+          60%{transform:scale(1.15)}
+          100%{transform:scale(1)}
+        }
+      </style>
+    </div>
+  `;
+
+  setTimeout(()=>{
+    sessionStorage.removeItem('nvanh_bp_manual_api');
+    window.location.href = file.link;
+  }, 1200);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BUY
+   ═══════════════════════════════════════════════════════════ */
+let isPay = false;
+let payI = null;
+
+function startBuy(file){
+  if(!file || !file.id){ toast('Dữ liệu file không hợp lệ!','error'); AS.error(); return }
+  if(!buyEnabled){ toast('Chức năng Mua Link đang tạm đóng!','warning'); AS.error(); return }
+  if(isPay){ toast('Đang kiểm tra thanh toán, vui lòng đợi...','warning'); return }
+
+  const price = file.price || 10000;
+  const content = `${WP}${Date.now().toString(36).toUpperCase()}`;
+  const qr = `https://img.vietqr.io/image/VPB-0363716993-print.png?amount=${price}&addInfo=${encodeURIComponent(content)}`;
+
+  isPay = true;
+
+  const ov = document.getElementById('ov');
+  ov.classList.add('pay');
+
+  document.getElementById('mt').innerHTML = `<i class="fas fa-credit-card"></i> Mua Link`;
+  document.getElementById('mbody').innerHTML = `
+    <div class="pfi">
+      <span class="pfn"><i class="fas fa-file"></i> ${esc(file.name)}</span>
+      <span class="pfp">${price.toLocaleString()}đ</span>
+    </div>
+    <div class="pq">
+      <img src="${qr}" alt="QR" id="pqi" onerror="this.style.display='none'" loading="lazy">
+    </div>
+    <div class="pdl">
+      <div class="pdi">
+        <div class="pdll">Số tài khoản</div>
+        <div class="pdv hl">0363716993</div>
+      </div>
+      <div class="pdi">
+        <div class="pdll">Ngân hàng</div>
+        <div class="pdv">VPB Bank</div>
+      </div>
+      <div class="pdi full">
+        <div class="pdll">Nội dung chuyển khoản</div>
+        <div class="pdv sm">${esc(content)}</div>
+      </div>
+    </div>
+    <div class="ps" id="pst">
+      <div class="psr" id="psi"></div>
+      <span class="pst" id="pstx">Đang chờ thanh toán...</span>
+      <span class="pstm" id="ptm">0s</span>
+    </div>
+    <div class="pr" id="prs">
+      <i class="fas fa-check-circle"></i>
+      <p>THANH TOÁN THÀNH CÔNG!</p>
+      <button class="bt bt-s" id="glk" style="width:100%;padding:15px;font-size:.85rem;">
+        <i class="fas fa-link"></i> LẤY LINK
+      </button>
+    </div>
+    <div style="font-family:var(--fm);font-size:.6rem;color:var(--t5);text-align:center;margin-top:14px;">
+      <i class="fas fa-shield-alt"></i> Hệ thống tự động kiểm tra mỗi 1 giây
+    </div>
+  `;
+  document.getElementById('mcf').textContent='Đóng';
+  document.getElementById('mcf').onclick = closeModal;
+  document.getElementById('mcl').onclick = closeModal;
+  ov.style.display='flex';
+  AS.popup();
+
+  setTimeout(()=>{
+    const q = document.getElementById('pqi');
+    if(q){
+      q.style.cursor='pointer';
+      q.onclick = function(){ openIv(this.getAttribute('src')) };
+    }
+  },100);
+
+  let sec=0, done=false;
+  if(payI){ clearInterval(payI); payI=null }
+
+  const ti = setInterval(()=>{
+    sec++;
+    const t = document.getElementById('ptm');
+    if(t) t.textContent = sec+'s';
+  },1000);
+
+  payI = setInterval(async ()=>{
+    if(done || !document.getElementById('pstx')){
+      clearInterval(payI); clearInterval(ti);
+      payI=null; isPay=false;
+      return;
+    }
+    try{
+      const ctl = new AbortController();
+      const to = setTimeout(()=>ctl.abort(), 8000);
+      const r = await fetch('api.php', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({action:'check', bank:'VPB', account:'0363716993', amount:price, content:content}),
+        signal: ctl.signal
+      });
+      clearTimeout(to);
+      if(!r.ok) throw new Error('API');
+      const d = await r.json();
+      if(d && d.status==='success'){
+        done=true;
+        clearInterval(payI); clearInterval(ti);
+        payI=null; isPay=false;
+
+        const sb = document.getElementById('pst');
+        const st = document.getElementById('pstx');
+        const si = document.getElementById('psi');
+        const re = document.getElementById('prs');
+        if(sb) sb.classList.add('ok');
+        if(st) st.textContent = 'ĐÃ THANH TOÁN!';
+        if(si){ si.style.borderColor='var(--ok)'; si.style.borderTopColor='var(--ok)'; si.style.animation='none' }
+        if(re) re.classList.add('on');
+
+        const gl = document.getElementById('glk');
+        if(gl){
+          gl.onclick = e=>{
+            e.preventDefault(); closeModal();
+            showFinalBuy(file);
+            db.ref(`files/${file.id}/soldCount`).transaction(c=>(c||0)+1).catch(()=>{});
+            db.ref('statistics/sold').transaction(c=>(c||0)+1).catch(()=>{});
+            db.ref('transactions').push({
+              fileName:file.name, fileId:file.id, amount:price, content:content,
+              website:WP.toLowerCase(), status:'approved', createdAt:Date.now()
+            }).catch(()=>{});
+            loadFiles();
+          };
+        }
+        toast('Thanh toán thành công!','success');
+        AS.payment();
+      }
+    }catch(e){}
+  },1000);
+}
+
+function showFinalBuy(file){
+  openModal('Link của bạn', `
+    <div style="text-align:center;">
+      <div style="background:var(--ok-s);border-radius:var(--r3);padding:16px;border:1px solid var(--ok-b);margin-bottom:16px;">
+        <i class="fas fa-check-circle" style="color:var(--ok);font-size:1.6rem;display:block;margin-bottom:6px;"></i>
+        <span style="color:var(--ok);font-weight:800;font-size:.95rem;font-family:var(--fh);letter-spacing:.5px;">THANH TOÁN THÀNH CÔNG!</span>
+      </div>
+      <div class="lnk">${esc(file.link)}</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;">
+        <button class="bt bt-p" id="cpfb" style="padding:14px;font-size:.82rem;"><i class="fas fa-copy"></i> Sao chép</button>
+        <button class="bt bt-s" id="opfb" style="padding:14px;font-size:.82rem;"><i class="fas fa-external-link-alt"></i> Mở file</button>
+      </div>
+      <div style="color:var(--t3);background:var(--red-s);padding:12px;border-radius:var(--r1);font-size:.72rem;margin-top:14px;">
+        <i class="fas fa-shield-alt" style="color:var(--red)"></i> Hack Free • Tự bảo vệ tài khoản
+      </div>
+    </div>
+  `);
+  setTimeout(()=>{
+    document.getElementById('cpfb').onclick = e=>{
+      e.preventDefault();
+      copy(file.link).then(()=>{ toast('Đã copy!','success'); AS.success() }).catch(()=>{ toast('Không thể copy!','error'); AS.error() });
+    };
+    document.getElementById('opfb').onclick = e=>{
+      e.preventDefault();
+      try{ window.open(file.link,'_blank'); AS.download() }catch(err){ toast('Không thể mở link!','error'); AS.error() }
+    };
+  },100);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RENDER APP
+   ═══════════════════════════════════════════════════════════ */
+function renderApp(){
+  const app = document.getElementById('app');
+  app.innerHTML = `
+    <div class="hero banner-shine">
+      <img src="./assets/banner.jpg" alt="NVANH OFFICIAL" onerror="this.src='https://sf-static.upanhlaylink.com/img/image_202607309a6e1745a1d50f2b4ebe8d61aa905361.jpg'" loading="eager">
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="badge"><i class="fas fa-bolt"></i> Phiên bản mới</div>
+        <button class="btn-lv2" id="hero-lv2">
+          <img src="https://cdn.upanhlaylink.com/i/68MznhT6.webp" class="btn-icon" alt="LV2">
+          ACC LV2 FREE
+        </button>
+      </div>
+    </div>
+
+    <div class="typing-title" id="typingTitle"></div>
+
+    <div class="marquee-wrap">
+      <div class="marquee">
+        <span>🔥 NVANH OFFICIAL - CHIA SẺ FILE MIỄN PHÍ</span>
+        <span>⚡ VƯỢT QC NHANH CHÓNG - AN TOÀN - BẢO MẬT</span>
+        <span>🎁 ACC LV2 FREE MỖI NGÀY</span>
+        <span>📱 HỖ TRỢ iOS & ANDROID</span>
+        <span>🔥 NVANH OFFICIAL - CHIA SẺ FILE MIỄN PHÍ</span>
+        <span>⚡ VƯỢT QC NHANH CHÓNG - AN TOÀN - BẢO MẬT</span>
+        <span>🎁 ACC LV2 FREE MỖI NGÀY</span>
+        <span>📱 HỖ TRỢ iOS & ANDROID</span>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="top">
+          <div class="icon"><i class="fas fa-file"></i></div>
+          <div class="trend"><i class="fas fa-arrow-up"></i></div>
+        </div>
+        <div class="num" id="sf">0</div>
+        <div class="lbl">File</div>
+      </div>
+      <div class="stat">
+        <div class="top">
+          <div class="icon"><i class="fas fa-download"></i></div>
+          <div class="trend"><i class="fas fa-arrow-up"></i></div>
+        </div>
+        <div class="num" id="sd">0</div>
+        <div class="lbl">Tải xuống</div>
+      </div>
+      <div class="stat">
+        <div class="top">
+          <div class="icon"><i class="fas fa-eye"></i></div>
+          <div class="trend"><i class="fas fa-arrow-up"></i></div>
+        </div>
+        <div class="num" id="sv">0</div>
+        <div class="lbl">Truy cập</div>
+      </div>
+      <div class="stat">
+        <div class="top">
+          <div class="icon"><i class="fas fa-folder"></i></div>
+          <div class="trend"><i class="fas fa-arrow-up"></i></div>
+        </div>
+        <div class="num" id="sc">0</div>
+        <div class="lbl">Danh mục</div>
+      </div>
+    </div>
+
+    <div class="srch">
+      <i class="fas fa-search ic"></i>
+      <input type="text" id="sinput" placeholder="Tìm kiếm file trên toàn bộ website..." oninput="searchFiles(this.value)">
+      <span class="cnt" id="scnt"></span>
+      <button class="clr" id="sclr" onclick="clearSearch()"><i class="fas fa-times"></i></button>
+    </div>
+
+    <main>
+      <nav class="tabs" id="tnav"></nav>
+      <div id="tpnls"></div>
+    </main>
+
+    <footer class="ft">
+      <div class="msg" id="ftm"></div>
+      <div class="brand"><span>NVANH</span> SYSTEM ONLINE</div>
+    </footer>
+  `;
+  app.classList.add('on');
+  document.getElementById('load').style.display='none';
+
+  const si = document.getElementById('sinput');
+  const cb = document.getElementById('sclr');
+  si.addEventListener('input', function(){
+    if(this.value.length>0) cb.classList.add('on');
+    else { cb.classList.remove('on'); searchQ=''; renderList(curCat) }
+  });
+
+  document.getElementById('hero-lv2').onclick = ()=>{
+    window.open(links.l3, '_blank');
+    AS.click();
+  };
+
+  const titleEl = document.getElementById('typingTitle');
+  const txt = 'NVANH HACK FREE';
+  let idx = 0;
+  titleEl.innerHTML = '<span class="cursor"></span>';
+  const typeInterval = setInterval(()=>{
+    if(idx < txt.length){
+      titleEl.innerHTML = txt.slice(0, idx+1) + '<span class="cursor"></span>';
+      idx++;
+    } else {
+      clearInterval(typeInterval);
+    }
+  }, 120);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COLOR PICKER & THEME
+   ═══════════════════════════════════════════════════════════ */
+const defaultColor = '#dc2626';
+const colorPresets = [
+  '#dc2626','#ea580c','#eab308','#10b981',
+  '#3b82f6','#8b5cf6','#ec4899','#06b6d4',
+  '#84cc16','#f472b6','#6366f1','#d97706'
+];
+
+function initColorPicker(){
+  const input = document.getElementById('colorInput');
+  const presets = document.getElementById('colorPresets');
+  const reset = document.getElementById('resetColor');
+  const toggle = document.getElementById('themeToggle');
+  const label = document.getElementById('themeLabel');
+  const icon = document.getElementById('themeIcon');
+
+  const saved = localStorage.getItem('nvanh_color');
+  if(saved){
+    input.value = saved;
+    applyColor(saved);
+  }
+
+  const savedTheme = localStorage.getItem('nvanh_theme');
+  if(savedTheme === 'dark'){
+    document.body.classList.add('dark');
+    label.textContent = '☀️ Sáng';
+    icon.className = 'fas fa-sun';
+    if(window.BG) window.BG.updateTimeGradient();
+  }
+
+  colorPresets.forEach(c=>{
+    const el = document.createElement('div');
+    el.className = 'color-preset';
+    el.style.background = c;
+    el.onclick = ()=>{ input.value = c; applyColor(c); localStorage.setItem('nvanh_color', c); AS.click() };
+    presets.appendChild(el);
+  });
+
+  input.oninput = function(){
+    applyColor(this.value);
+    localStorage.setItem('nvanh_color', this.value);
+  };
+
+  reset.onclick = ()=>{
+    input.value = defaultColor;
+    applyColor(defaultColor);
+    localStorage.setItem('nvanh_color', defaultColor);
+    AS.click();
+  };
+
+  toggle.onclick = ()=>{
+    document.body.classList.toggle('dark');
+    const isDark = document.body.classList.contains('dark');
+    localStorage.setItem('nvanh_theme', isDark ? 'dark' : 'light');
+    label.textContent = isDark ? '☀️ Sáng' : '🌙 Tối';
+    icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+    if(window.BG) window.BG.updateTimeGradient();
+    AS.click();
+  };
+}
+
+function applyColor(hex){
+  const root = document.documentElement;
+  const r = parseInt(hex.slice(1,3),16);
+  const g = parseInt(hex.slice(3,5),16);
+  const b = parseInt(hex.slice(5,7),16);
+  const rd = Math.max(0, r-40);
+  const gd = Math.max(0, g-40);
+  const bd = Math.max(0, b-40);
+  root.style.setProperty('--red', hex);
+  root.style.setProperty('--red-d', `rgb(${rd},${gd},${bd})`);
+  root.style.setProperty('--red-l', `rgb(${Math.min(255,r+20)},${Math.min(255,g+20)},${Math.min(255,b+20)})`);
+  root.style.setProperty('--red-s', `rgba(${r},${g},${b},.08)`);
+  root.style.setProperty('--red-b', `rgba(${r},${g},${b},.18)`);
+  root.style.setProperty('--red-g', `rgba(${r},${g},${b},.28)`);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FAB MENU
+   ═══════════════════════════════════════════════════════════ */
+function closeFabMenu(){
+  document.getElementById('fabMenu').classList.remove('on');
+  document.getElementById('colorPicker').classList.remove('on');
+  document.getElementById('fabMain').classList.remove('on');
+  document.getElementById('fabMain').innerHTML = '<i class="fas fa-question"></i>';
+}
+
+function initFab(){
+  const main = document.getElementById('fabMain');
+  const menu = document.getElementById('fabMenu');
+  const colorPicker = document.getElementById('colorPicker');
+
+  main.onclick = ()=>{
+    const isOpen = menu.classList.contains('on') || colorPicker.classList.contains('on');
+    if(isOpen){
+      closeFabMenu();
+    } else {
+      menu.classList.add('on');
+      colorPicker.classList.remove('on');
+      main.classList.add('on');
+      main.innerHTML = '<i class="fas fa-times"></i>';
+      AS.click();
+    }
+  };
+
+  document.getElementById('fabGuide').onclick = ()=>{
+    closeFabMenu();
+    openModal('📖 HƯỚNG DẪN', `
+      <div style="line-height:1.8;font-size:.85rem;color:var(--t1);">
+        <div style="margin-bottom:14px;padding:14px;background:var(--red-s);border-radius:var(--r2);border-left:4px solid var(--red);">
+          <strong style="color:var(--red);">Bước 1:</strong> Chọn danh mục và file bạn muốn tải.
+        </div>
+        <div style="margin-bottom:14px;padding:14px;background:var(--red-s);border-radius:var(--r2);border-left:4px solid var(--red);">
+          <strong style="color:var(--red);">Bước 2:</strong> Bấm "Tải file" và chọn "Vượt QC" hoặc "Mua Link".
+        </div>
+        <div style="margin-bottom:14px;padding:14px;background:var(--red-s);border-radius:var(--r2);border-left:4px solid var(--red);">
+          <strong style="color:var(--red);">Bước 3:</strong> Vượt qua 2 lớp QC (quảng cáo) để nhận link tải.
+        </div>
+        <div style="margin-bottom:14px;padding:14px;background:var(--red-s);border-radius:var(--r2);border-left:4px solid var(--red);">
+          <strong style="color:var(--red);">Bước 4:</strong> Nhấn "Lấy link" và tải file về máy.
+        </div>
+        <div style="padding:14px;background:var(--wn-s);border-radius:var(--r2);border-left:4px solid var(--wn);font-size:.8rem;">
+          ⚠️ <strong>Lưu ý:</strong> Không đăng nhập Google trên trình duyệt khi vượt QC. Nếu gặp lỗi, thử lại với API khác.
+        </div>
+      </div>
+    `);
+  };
+
+  document.getElementById('fabTerms').onclick = ()=>{
+    closeFabMenu();
+    openModal('📋 ĐIỀU KHOẢN', `
+      <div style="line-height:1.8;font-size:.85rem;color:var(--t1);">
+        <div style="margin-bottom:16px;padding:16px;background:var(--red-s);border-radius:var(--r3);border-left:4px solid var(--red);">
+          <h4 style="font-family:var(--fh);font-weight:800;color:var(--red);margin-bottom:8px;font-size:.9rem;">
+            <i class="fas fa-gavel"></i> VỀ MẶT PHÁP LUẬT
+          </h4>
+          <p style="color:var(--t2);font-size:.82rem;line-height:1.7;">
+            NVANH OFFICIAL là nền tảng chia sẻ tài nguyên học tập và ứng dụng miễn phí. 
+            Mọi nội dung được chia sẻ với mục đích tham khảo và học hỏi. 
+            Người dùng hoàn toàn chịu trách nhiệm trước pháp luật về cách sử dụng tài nguyên tải về. 
+            Chúng tôi không khuyến khích, không cổ xúy và không chịu trách nhiệm cho bất kỳ hành vi vi phạm pháp luật nào của người dùng.
+          </p>
+        </div>
+        <div style="margin-bottom:16px;padding:16px;background:var(--ok-s);border-radius:var(--r3);border-left:4px solid var(--ok);">
+          <h4 style="font-family:var(--fh);font-weight:800;color:var(--ok);margin-bottom:8px;font-size:.9rem;">
+            <i class="fas fa-shield-halved"></i> VỀ MẶT AN TOÀN
+          </h4>
+          <p style="color:var(--t2);font-size:.82rem;line-height:1.7;">
+            Tất cả file được kiểm tra trước khi đăng tải. Tuy nhiên, người dùng nên tự bảo vệ thiết bị bằng phần mềm diệt virus. 
+            Không đăng nhập tài khoản Google, iCloud hoặc tài khoản ngân hàng khi thực hiện vượt QC. 
+            Nếu phát hiện file có dấu hiệu bất thường, hãy báo ngay cho Admin qua Zalo/Telegram.
+          </p>
+        </div>
+        <div style="margin-bottom:16px;padding:16px;background:var(--wn-s);border-radius:var(--r3);border-left:4px solid var(--wn);">
+          <h4 style="font-family:var(--fh);font-weight:800;color:var(--wn);margin-bottom:8px;font-size:.9rem;">
+            <i class="fas fa-mobile-screen"></i> KHÔNG GÂY HẠI THIẾT BỊ
+          </h4>
+          <p style="color:var(--t2);font-size:.82rem;line-height:1.7;">
+            Chúng tôi cam kết các file chia sẻ không chứa mã độc, không gây hại cho thiết bị của bạn. 
+            Mọi file đều được test trên thiết bị thật trước khi public. 
+            Nếu có bất kỳ vấn đề gì xảy ra, vui lòng liên hệ ngay để được hỗ trợ kịp thời.
+          </p>
+        </div>
+        <div style="padding:16px;background:var(--er-s);border-radius:var(--r3);border-left:4px solid var(--er);">
+          <h4 style="font-family:var(--fh);font-weight:800;color:var(--er);margin-bottom:8px;font-size:.9rem;">
+            <i class="fas fa-triangle-exclamation"></i> MIỄN TRỪ TRÁCH NHIỆM
+          </h4>
+          <p style="color:var(--t2);font-size:.82rem;line-height:1.7;">
+            Website hoạt động phi lợi nhuận, không bảo hành, không hoàn tiền. 
+            Người dùng tự chịu mọi rủi ro khi sử dụng file. 
+            Chúng tôi có quyền thay đổi điều khoản bất cứ lúc nào mà không cần thông báo trước.
+          </p>
+        </div>
+      </div>
+    `);
+  };
+
+  document.getElementById('fabColor').onclick = ()=>{
+    const isColorOpen = colorPicker.classList.contains('on');
+    if(isColorOpen){
+      colorPicker.classList.remove('on');
+      document.getElementById('fabMain').classList.remove('on');
+      document.getElementById('fabMain').innerHTML = '<i class="fas fa-question"></i>';
+    } else {
+      colorPicker.classList.add('on');
+      menu.classList.remove('on');
+      document.getElementById('fabMain').classList.add('on');
+      document.getElementById('fabMain').innerHTML = '<i class="fas fa-times"></i>';
+    }
+    AS.click();
+  };
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TERMS MODAL
+   ═══════════════════════════════════════════════════════════ */
+function showTermsIfNeeded(){
+  const key = 'nvanh_terms_accepted';
+  const last = localStorage.getItem(key);
+  const now = Date.now();
+  const twoHours = 2 * 60 * 60 * 1000;
+  if(last && (now - parseInt(last)) < twoHours) return;
+
+  openModal('📋 ĐIỀU KHOẢN SỬ DỤNG', `
+    <div style="line-height:1.8;font-size:.85rem;color:var(--t1);">
+      <div style="margin-bottom:14px;padding:14px;background:var(--red-s);border-radius:var(--r2);border-left:4px solid var(--red);">
+        <strong style="color:var(--red);font-size:.88rem;">⚖️ VỀ MẶT PHÁP LUẬT</strong>
+        <p style="color:var(--t2);font-size:.8rem;margin-top:6px;line-height:1.6;">
+          NVANH OFFICIAL là nền tảng chia sẻ tài nguyên miễn phí. Người dùng tự chịu trách nhiệm trước pháp luật về cách sử dụng.
+        </p>
+      </div>
+      <div style="margin-bottom:14px;padding:14px;background:var(--ok-s);border-radius:var(--r2);border-left:4px solid var(--ok);">
+        <strong style="color:var(--ok);font-size:.88rem;">🛡️ VỀ MẶT AN TOÀN</strong>
+        <p style="color:var(--t2);font-size:.8rem;margin-top:6px;line-height:1.6;">
+          File được kiểm tra trước khi đăng. Không đăng nhập Google/iCloud khi vượt QC.
+        </p>
+      </div>
+      <div style="margin-bottom:14px;padding:14px;background:var(--wn-s);border-radius:var(--r2);border-left:4px solid var(--wn);">
+        <strong style="color:var(--wn);font-size:.88rem;">📱 KHÔNG GÂY HẠI THIẾT BỊ</strong>
+        <p style="color:var(--t2);font-size:.8rem;margin-top:6px;line-height:1.6;">
+          Cam kết không chứa mã độc, không gây hại cho thiết bị của bạn.
+        </p>
+      </div>
+      <div id="termsCountdown" class="terms-countdown">
+        <i class="fas fa-hourglass-half"></i> Vui lòng đợi <span id="termsSec">5</span>s...
+      </div>
+    </div>
+  `);
+
+  const btn = document.getElementById('mcf');
+  btn.disabled = true;
+  btn.textContent = 'ĐỢI 5s...';
+  let sec = 5;
+  const cd = setInterval(()=>{
+    sec--;
+    const el = document.getElementById('termsSec');
+    if(el) el.textContent = sec;
+    if(sec <= 0){
+      clearInterval(cd);
+      btn.disabled = false;
+      btn.textContent = 'ĐÃ HIỂU & TIẾP TỤC';
+      const cdEl = document.getElementById('termsCountdown');
+      if(cdEl){
+        cdEl.innerHTML = '<i class="fas fa-check-circle" style="color:var(--ok);"></i> Bạn có thể tiếp tục!';
+        cdEl.style.background = 'var(--ok-s)';
+        cdEl.style.borderColor = 'var(--ok-b)';
+        cdEl.style.color = 'var(--ok)';
+      }
+      AS.success();
+    }
+  },1000);
+
+  btn.onclick = ()=>{
+    if(btn.disabled) return;
+    localStorage.setItem('nvanh_terms_accepted', Date.now().toString());
+    closeModal();
+    AS.click();
+  };
+}
+
+/* ═══════════════════════════════════════════════════════════
+   INIT
+   ═══════════════════════════════════════════════════════════ */
+async function init(){
+  renderApp();
+  initColorPicker();
+  initFab();
+  await loadSettings();
+  await loadLinks();
+  await loadTabs();
+  await loadFiles();
+  checkBpRedirect();
+
+  setTimeout(()=>{ incVisits() },1000);
+
+  const h = new Date().getHours();
+  let msg='';
+  if(h>=5 && h<10) msg='🌅 Chúc bạn một buổi sáng tốt lành!';
+  else if(h>=10 && h<14) msg='☀️ Chúc bạn một buổi trưa vui vẻ!';
+  else if(h>=14 && h<18) msg='🌇 Chúc bạn một buổi chiều ấm áp!';
+  else if(h>=18 && h<22) msg='🌙 Chúc bạn một buổi tối thư giãn!';
+  else msg='🌌 Chúc bạn một đêm an lành!';
+  document.getElementById('ftm').textContent = msg;
+
+  const urlParams = new URLSearchParams(location.search);
+  const isBypassFlow = urlParams.get('step') !== null;
+
+  if(!isBypassFlow){
+    setTimeout(()=>{ showWelcome() },600);
+    setTimeout(()=>{ showTermsIfNeeded() },1200);
+  }
+
+  if(window._lfi){ clearInterval(window._lfi); window._lfi=null }
+  window._lfi = setInterval(loadFiles, 30000);
+}
+
+window.addEventListener('beforeunload', ()=>{
+  if(window._lfi){ clearInterval(window._lfi); window._lfi=null }
+  if(payI){ clearInterval(payI); payI=null; isPay=false }
+  if(welcomeCountdownTimer){ clearInterval(welcomeCountdownTimer); welcomeCountdownTimer=null }
+});
+
+init();
+</script>
+</body>
+</html>
