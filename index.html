@@ -1414,7 +1414,7 @@ html{scroll-behavior:smooth}
   .mb{padding:22px;border-radius:var(--r4)}
   .wlb{padding:32px 22px}
   .wlb h2{font-size:1.55rem}
-  .wlb .wi{width:88px;height:88px;padding:10px;margin-bottom:16px;border-radius:22px}
+  .wlb .wi{width:96px;height:96px;padding:0;margin-bottom:16px;border-radius:50%}
   .pfi{flex-direction:column;align-items:flex-start;gap:10px}
   .pfi .pfn{max-width:100%}
   .pq img{max-width:210px}
@@ -1459,7 +1459,7 @@ html{scroll-behavior:smooth}
 <div class="bg-wave"></div>
 
 <div id="load">
-  <div class="logo">N</div>
+  <div class="logo"><img src="./assets/avatar.jpg" alt="nvanh" style="width:100%;height:100%;border-radius:20px;object-fit:cover;display:block;"></div>
   <div class="txt">NVANH</div>
 </div>
 
@@ -1523,22 +1523,18 @@ html{scroll-behavior:smooth}
 <div class="wl" id="wl">
   <div class="wlb">
     <div class="wi">
-      <img src="./assets/logo.jpg" alt="NVANH Logo" onerror="this.src='https://cdn.upanhlaylink.com/i/gGhnUcbc.png'">
+      <img src="./assets/avatar.jpg" alt="nvanh">
     </div>
-    <h2><span>NVANH</span></h2>
+    <h2><span>nvanh</span></h2>
     <p>Website chia sẻ đa dạng các loại File, App Mod Pro và nhiều tài nguyên hữu ích dành cho iOS &amp; Android.</p>
     <div class="wbs">
       <button class="bt bt-p" id="wc">
         <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" class="btn-icon" alt="Zalo">
-        LIÊN HỆ ADMIN
+        ZALO: 0993676192
       </button>
       <button class="bt bt-g" id="wz">
         <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" class="btn-icon" alt="Telegram">
-        NHÓM TELEGRAM
-      </button>
-      <button class="bt bt-d" id="wlv2">
-        <img src="https://cdn.upanhlaylink.com/i/68MznhT6.webp" class="btn-icon" alt="LV2">
-        ACC LV2 FREE
+        KÊNH TELEGRAM
       </button>
       <button class="bt bt-g" id="wg" disabled>
         <i class="fas fa-hourglass-half"></i> <span id="wgText">Chờ 5s...</span>
@@ -1563,6 +1559,8 @@ html{scroll-behavior:smooth}
     </div>
   </div>
   <div class="fab-menu" id="fabMenu">
+    <button class="fab-item" id="fabZalo"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" style="width:16px;height:16px;object-fit:contain;" alt="Zalo"> 💬 Zalo: 0993676192</button>
+    <button class="fab-item" id="fabTele"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" style="width:16px;height:16px;object-fit:contain;" alt="Tele"> ✈️ Telegram</button>
     <button class="fab-item" id="fabGuide">
       <i class="fas fa-book"></i> 📖 HƯỚNG DẪN
     </button>
@@ -1745,7 +1743,7 @@ const firebaseConfig = {
 const WP = 'NVANH';
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
-const FALLBACK_SETTINGS = {"apiG":true,"apiT":true,"buyEnabled":true,"content":"PHẢI GỌI LÀ BIẾT C HƠI ","link1":"http://zalo.me/0363716993","link2":"https://t.me/alpha_vn01","subTabs":{"android":["file","apk"],"ios":["filza","3105","ipa"],"proxy":["ios","android"]},"tabs":[{"icon":"fab fa-apple","id":"ios","label":"iOS","visible":true},{"icon":"fab fa-android","id":"android","label":"ANDROID","visible":true},{"icon":"fas fa-shield-alt","id":"trust","label":"UY TÍN","visible":true}],"title":"THÔNG BÁO"};
+const FALLBACK_SETTINGS = {"apiG":true,"apiT":true,"buyEnabled":true,"content":"PHẢI GỌI LÀ BIẾT C HƠI ","link1":"https://zalo.me/0993676192","link2":"https://t.me/addlist/mrzYTdLDTXcxNWJl","subTabs":{"android":["file","apk"],"ios":["filza","3105","ipa"],"proxy":["ios","android"]},"tabs":[{"icon":"fab fa-apple","id":"ios","label":"iOS","visible":true},{"icon":"fab fa-android","id":"android","label":"ANDROID","visible":true},{"icon":"fas fa-shield-alt","id":"trust","label":"UY TÍN","visible":true}],"title":"THÔNG BÁO"};
 const FALLBACK_FILES = {"-OzhFqabrylZJLzPz3zR":{"category":"ipa","createdAt":1786392046023,"description":"","downloadCount":1468,"image":"","link":"https://www.mediafire.com/file/pk663sjtv9v3qc5/Esign.ipa/file","name":"ESIGN","note":"","price":10000,"soldCount":20,"version":"","visible":true},"-OzhFxc39dH5xJS23BmL":{"category":"ipa","createdAt":1786392074790,"description":"","downloadCount":2770,"image":"","link":"https://www.mediafire.com/file/o25dpjh7j2lmxqe/FILZA+IOS+CAO.ipa/file","name":"FILZA IOS CAO","note":"","price":15000,"soldCount":38,"version":"","visible":true},"-OzhGV3ccW3CUvi74DQR":{"category":"ipa","createdAt":1786392215878,"description":"","downloadCount":137,"image":"","link":"https://www.mediafire.com/file/hmp14kurbhu7312/H5GG_Make_Menu_-5.9.ipa/file","name":"H5GG MAKE","note":"","price":10000,"version":"","visible":true},"-OzhGeqzI9RFFl8BZbNp":{"category":"ipa","createdAt":1786392260063,"description":"","downloadCount":142,"image":"","link":"https://www.mediafire.com/file/ttvn1l6rbsdkzdn/TrollFools_3.1-30.tipa/file","name":"TROLLFOOLS ","note":"","price":10000,"version":"","visible":true},"-OzhGlWEkYKNG8Be-Js3":{"category":"ipa","createdAt":1786392287340,"description":"","downloadCount":1495,"image":"","link":"https://www.mediafire.com/file/1lbnm8zy9xr3qlb/TrollStore_2.1.1_0427.tar/file","name":"TROLLSTORE","note":"","price":10000,"soldCount":15,"version":"","visible":true},"-OzhH17__pkOQZDLo914":{"category":"ipa","createdAt":1786392355397,"description":"","downloadCount":210,"image":"","link":"https://www.mediafire.com/file/xh1iw8vc77iat0d/TrollInstallerX_1.0.1@巨魔商店.ipa/file","name":"TROLL X ","note":"","price":10000,"soldCount":2,"version":"","visible":true},"-Ozsv023denbe1uLltK-":{"category":"ipa","createdAt":1786587648243,"description":"","downloadCount":1099,"image":"","link":"https://www.mediafire.com/file/f00a77ywaz8ikjl/Filza_4.0.0.ipa/file","name":"FILZA IOS THẤP ","note":"HỖ TRỢ 14. - 16.6.1","price":10000,"soldCount":5,"version":"","visible":true},"-OzwT-GsPcF1bKtnXf26":{"category":"ipa","createdAt":1786647151701,"description":"","downloadCount":107,"image":"","link":"https://drive.google.com/file/d/1yN6N0C2EjqABfvf2fELj_9DdEi-XAgiz/view?usp=drivesdk","name":"ROOTHIDE","note":"roothide jb máy \nhỗ trợ 15. - 27","price":10000,"version":"","visible":true},"-OzxCfxN74J_u8i3shGs":{"category":"ipa","createdAt":1786659651462,"description":"","downloadCount":222,"image":"","link":"https://www.mediafire.com/file/v54l8cbz3in5ki9/Shadowrocket+Premium+.ipa/file","name":"SHADOWROCKET ","note":"","price":10000,"version":"","visible":true},"-P-Szxh5IEO9XrAJvfAi":{"category":"ipa","createdAt":1787209702200,"description":"3105 Hot Fix 💗\n\n💗 Hotfix sửa lỗi chạm — Files/Patch có thể tap lại bình thường.\n\n💗 Support: iOS 17 - 18.7.1 -  iOS 26 - 27b4 (iOS 27 Public chỉ hỗ trợ bản 1 - 2) (HỖ TRỢ build mã 24A5390f trở xuống, KO HỖ TRỢ build mã 24A5408d trở lên )","downloadCount":725,"image":"","link":"https://www.mediafire.com/file/99i1qdrvm3m8dqk/3105-v1.1.1-unsigned.ipa/file","name":"3105 FIX","note":"","price":10000,"soldCount":7,"version":"","visible":true},"-P-jBmxxW07lLHHWWlzO":{"category":"ipa","createdAt":1787498278686,"description":"","downloadCount":361,"image":"","link":"https://www.mediafire.com/file/p4cxzng3c48wb83/8+Ball+Pool_56.27.0.ipa/file","name":"8 BALL POOL HACK","note":"","price":10000,"soldCount":4,"version":"","visible":true},"-P0TygUDH0cWEzHOpFrY":{"category":"3105","createdAt":1788299888469,"description":"MK : 3105","downloadCount":76,"image":"","link":"https://www.mediafire.com/file/6w244nk5dkfl1re/Capcut+Pro.3105/file","name":"CAPCUT PRO","note":"LƯU Ý : KHÔNG LOGIN ACC","price":10000,"version":"","visible":true},"-P0TzFKjOvM6VZAtZpAd":{"category":"ipa","createdAt":1788300035325,"description":"","downloadCount":340,"image":"","link":"https://www.mediafire.com/file/yghwpbo238xaisy/XOÁ+TK+KHÁCH_1.8_1754054024.ipa/file","name":"XOÁ TK KHÁCH ","note":"","price":10000,"version":"","visible":true},"-P0TzNm9YTcYWt1GOMXO":{"category":"ipa","createdAt":1788300069910,"description":"","downloadCount":99,"image":"","link":"https://www.mediafire.com/file/9ceqb1l0ki65qd9/AirTroller-1.1.1.tipa/file","name":"SPAM ARDROP","note":"","price":10000,"version":"","visible":true},"-P0sJa45J3Gy7ePri-F7":{"category":"ipa","createdAt":1788725059932,"description":"Fix ban iPA PROXY\n\nBật use custom configuration xong nhập 1e1e38\n","downloadCount":257,"image":"","link":"https://www.mediafire.com/file/96uxoidyyswbub4/NextDNS-2.0.1.ipa/file","name":"NEXT DNS ","note":"","price":10000,"soldCount":1,"version":"","visible":true},"-P1NI0MVEcE6hxbXdDp3":{"category":"ipa","createdAt":1789261518198,"description":"✅ Khắc phục 100% lỗi tự động reboot trên iOS 17 và 18 giúp thiết bị hoạt động ổn định hơn.\n✅Cập nhật giao diện onboarding mới: Các thiết bị không được hỗ trợ sẽ nhận được thông báo từ màn hình onboarding và không thể tiếp tục truy cập ứng dụng.\n✅Cải thiện trải nghiệm UI/UX của repo và patch, mang lại giao diện trực quan và thao tác mượt mà hơn.\n✅Yêu cầu cập nhật bản beta mới nhất của 3105 để đảm bảo các patch hoạt động chính xác và không xung đột.\n‼️Hướng dẫn xử lý cho iOS 17 đến 18.7.1: Cần truy cập trực tiếp vào phần cài đặt của ứng dụng để cấp và khởi chạy quyền hoạt động; lưu ý nếu đóng hẳn ứng dụng sẽ cần khởi động lại (reboot) thiết bị để chạy lại từ đầu.","downloadCount":1821,"image":"","link":"https://www.mediafire.com/file/5tjyrk4hlogn4sl/3105-2.0-beta5-unsigned.ipa/file","name":"3105 BETA 5","note":"","price":10000,"soldCount":6,"version":"","visible":true},"-P1cUq1e_69ruz5BmagG":{"category":"apk","createdAt":1789533284823,"description":"","downloadCount":1584,"image":"","link":"https://www.mediafire.com/file/7d4zmr1znhqb04z/BODY_HEADSHOT_OB55.apks/file","name":"AIM BODY ","note":"","price":10000,"soldCount":3,"version":"","visible":true},"-P1cYQSh76GQRu0cxQKK":{"category":"3105","createdAt":1789534255003,"description":"ESP: + Hiển thị tên (Name Tag) + Đường kẻ (Line) + Khung bao (Box) + Giờ đây bạn có thể bật/tắt ESP (chạm hai lần vào màn hình bằng 4 ngón tay). - Tính năng ngắm mới: + Vùng ngắm (FOV) có thể điều chỉnh theo thứ tự: Đầu → Cổ → Ngực → (lặp lại) (Nhấn nút Ngồi hai lần liên tiếp). ","downloadCount":1492,"image":"","link":"https://vi.anotepad.com/notes/ygrebgsp","name":"AIM FOV + ESP","note":"PASS : ALPHA","price":10000,"soldCount":14,"version":"","visible":true},"-P1cg0A6pqvz28OkGpss":{"category":"filza","createdAt":1789536506555,"description":"ESP: + Hiển thị tên (Name Tag) + Đường kẻ (Line) + Khung bao (Box) +\n Giờ đây bạn có thể bật/tắt ESP (chạm hai lần vào màn hình bằng 4 ngón tay). \n Tính năng ngắm mới: + Vùng ngắm (FOV) có thể điều chỉnh theo thứ tự: Đầu → Cổ → Ngực → (lặp lại) (Nhấn nút Ngồi hai lần liên tiếp). \n\n","downloadCount":2847,"image":"","link":"https://vi.anotepad.com/notes/ygrebgsp","name":"AIM FOV + ESP","note":"PASS : ALPHA","price":10000,"soldCount":14,"version":"","visible":true},"-P1goPyyongEYsrb1Zi7":{"category":"filza","createdAt":1789605818371,"description":"","downloadCount":110,"image":"","link":"https://www.mediafire.com/file/k4qvh6h8dcsinew/cache_res.GkLlYqzsX4AtTdE55sDMRh9sJOI~3D/file","name":"AIM CHEST","note":"","price":10000,"version":"","visible":true},"-P1goYygGnSHbwAw9dGx":{"category":"filza","createdAt":1789605855210,"description":"","downloadCount":552,"image":"","link":"https://www.mediafire.com/file/0o51nlu2gaair6y/cache_res.GkLlYqzsX4AtTdE55sDMRh9sJOI~3D/file","name":"AIM DRAG","note":"","price":10000,"version":"","visible":true},"-P1gp3jhP9c6l1Vu8yuw":{"category":"3105","createdAt":1789605989415,"description":"FREE FIRE THƯỜNG","downloadCount":269,"image":"","link":"https://www.mediafire.com/file/fi6fvsz1vb2d82r/AIM+DRAG.3105/file","name":"AIM DRAG","note":"PASS : ALPHA","price":10000,"soldCount":1,"version":"","visible":true},"-P1gpOQ23HIXOLq43b46":{"category":"3105","createdAt":1789606074096,"description":"FREE FIRE THƯỜNG","downloadCount":70,"image":"","link":"https://www.mediafire.com/file/4uq33fofkhqj9bz/AIM+CHEST.3105/file","name":"AIM CHEST","note":"PASS : ALPHA","price":10000,"version":"","visible":true},"-P1hKwKL5bpvx6jBOrNY":{"category":"3105","createdAt":1789614605723,"description":"DỊ TẬT ","downloadCount":131,"image":"","link":"https://www.mediafire.com/file/xnr545prm1xceaq/MAGIC+-+AIMLOCK+FFTH.3105/file","name":"MAGIC + AIM LOCK ","note":"LOADING 40% RỒI CÀI","price":10000,"version":"","visible":true},"-P1hRWhbhBLRb8qz4xyK":{"category":"filza","createdAt":1789616331699,"description":"VÀO GAME LOADING 40% RỒI CÀI","downloadCount":948,"image":"","link":"https://www.mediafire.com/file/t9yihgwgabp8n3o/cache_res.GkLlYqzsX4AtTdE55sDMRh9sJOI~3D/file","name":"AIM BODY","note":"","price":10000,"soldCount":3,"version":"","visible":true},"-P1hRwqqQQ1uRBLciI6d":{"category":"3105","createdAt":1789616442895,"description":"","downloadCount":250,"image":"","link":"https://www.mediafire.com/file/c2icg57tr8bk629/AIM+BODY-2.3105/file","name":"AIM BODY","note":"PASS : @alpha_vn1","price":10000,"soldCount":1,"version":"","visible":true},"-P1iH6WhBWHVYO9xLv1G":{"category":"file","createdAt":1789630380317,"description":"","downloadCount":1435,"image":"","link":"https://www.mediafire.com/file/cjlloj1v1l2mhhw/ESP+BOX+AIM+BOT+V2.zip/file","name":"AIM BOT + ESP","note":"","price":10000,"version":"","visible":true},"-P1mkZu5SE12kB_URWTz":{"category":"3105","createdAt":1789705473622,"description":"","downloadCount":426,"image":"","link":"https://www.mediafire.com/file/9u0nvgi8u1skqc5/MENU+FFTH-2.3105/file","name":"MENU FFTH","note":"","price":10000,"soldCount":2,"version":"","visible":true},"-P1mpr3NkYLNSwjH-Z-w":{"category":"filza","createdAt":1789706858759,"description":"","downloadCount":554,"image":"","link":"https://fnote.net/notes/9nsNJs","name":"MENU FFTH","note":"","price":10000,"soldCount":2,"version":"","visible":true},"-P1teSEPo9Auh-BIhH3c":{"category":"filza","createdAt":1789821310004,"description":"CÂN ALL IOS \nIOS NÀO CŨNG DÙNG ĐƯỢC","downloadCount":173,"image":"","link":"https://fnote.net/notes/vxaJ1S","name":"ESP + AIM FOV ","note":"","price":10000,"version":"","visible":true},"-P27QAcmKT7ZuvLZZLxb":{"category":"ipa","createdAt":1790068963961,"description":"FLORK CRACK NO KEY","downloadCount":998,"image":"","link":"https://www.mediafire.com/file/vhy7fzbr8dn6obm/FLORK+CRACK+NO+KEY.zip/file","name":"FLORK CRACK","note":"","price":10000,"version":"","visible":true},"-P2CMA7A7acIhJs-qGvh":{"category":"filza","createdAt":1790151799363,"description":"VÀO GAME VÀO ACC KHÁCH \n- THOÁT RA CÀI FILE\n- VÀO GAME ĐĂNG XUẤT ACC \n- ĐĂNG NHẬP LẠI RỒI RA XOÁ FILE","downloadCount":355,"image":"","link":"https://www.mediafire.com/file/5pwqzqtkx8jeiki/localConfig.json/file","name":"RESET ACC KHÁCH","note":"","price":10000,"version":"","visible":true},"-P2CMRlIayfdRVvJ3MTh":{"category":"3105","createdAt":1790151871632,"description":"VÀO GAME VÀO ACC KHÁCH - THOÁT RA CÀI FILE - VÀO GAME ĐĂNG XUẤT ACC - ĐĂNG NHẬP LẠI RỒI RA XOÁ FILE\n\n","downloadCount":333,"image":"","link":"https://www.mediafire.com/file/5pwqzqtkx8jeiki/localConfig.json/file","name":"RESET ACC KHÁCH","note":"","price":10000,"version":"","visible":true},"-P2CMZ5YWylbjgrQ-ziR":{"category":"file","createdAt":1790151901664,"description":"VÀO GAME VÀO ACC KHÁCH - THOÁT RA CÀI FILE - VÀO GAME ĐĂNG XUẤT ACC - ĐĂNG NHẬP LẠI RỒI RA XOÁ FILE\n","downloadCount":320,"image":"","link":"https://www.mediafire.com/file/5pwqzqtkx8jeiki/localConfig.json/file","name":"RESET ACC KHÁCH","note":"","price":10000,"version":"","visible":true},"-P2COFG3y4xu2vrjCv-9":{"category":"filza","createdAt":1790152344750,"description":"","downloadCount":461,"image":"","link":"https://www.mediafire.com/file/en36qdo7iokhkeo/com.dts.freefireth.plist/file","name":"144 FPS ","note":"","price":10000,"version":"","visible":true},"-P2COIWLybgpXuYVmN-C":{"category":"3105","createdAt":1790152358080,"description":"PASS : @alpha_vn1","downloadCount":219,"image":"","link":"https://www.mediafire.com/file/k9fk1nudaex2m0m/com-dts-freefireth.3105/file","name":"144 FPS","note":"","price":10000,"version":"","visible":true},"-P2EtSpfX8u8N4cIKZTE":{"category":"3105","createdAt":1790194343304,"description":"","downloadCount":54,"image":"","link":"https://www.mediafire.com/file/3r3tzftofrw2zri/SILENT+AIM+.zip/file","name":"AIM SILENT ","note":"","price":10000,"version":"","visible":true},"-P2EtW8LhBSWZkAI_KYC":{"category":"filza","createdAt":1790194356850,"description":"","downloadCount":110,"image":"","link":"https://www.mediafire.com/file/3r3tzftofrw2zri/SILENT+AIM+.zip/file","name":"AIM SILENT","note":"","price":10000,"version":"","visible":true},"-P2EtYImWgojR1bKFqrc":{"category":"file","createdAt":1790194365711,"description":"","downloadCount":232,"image":"","link":"https://www.mediafire.com/file/3r3tzftofrw2zri/SILENT+AIM+.zip/file","name":"AIM SILENT","note":"","price":10000,"version":"","visible":true},"-P2J7mm-QCRZCi2C5-tG":{"category":"filza","createdAt":1790265470015,"description":"COPY DÁN DATA ","downloadCount":100,"image":"","link":"https://www.mediafire.com/file/pjp7qhtzji9mown/FIX+LAG+FFMAX+IOS+OB55.zip/file","name":"FIX LAG ","note":"NHỚ LẤY DATA GỐC TRƯỚC NẾU MUỐN XOÁ","price":10000,"version":"","visible":true},"-P2KGJbwT1l8WPj9cwcv":{"category":"filza","createdAt":1790284483083,"description":"","downloadCount":672,"image":"","link":"https://www.mediafire.com/file/0u0l4gc7y8nzsdf/MENU+DELTA.zip/file","name":"MENU DELTA","note":"","price":10000,"version":"","visible":true},"-P2KGM1e0FxtPDkOWxEC":{"category":"file","createdAt":1790284492986,"description":"","downloadCount":682,"image":"","link":"https://www.mediafire.com/file/0u0l4gc7y8nzsdf/MENU+DELTA.zip/file","name":"MENU DELTA","note":"","price":10000,"version":"","visible":true},"-P2KGRu520uWBrjNxo1Q":{"category":"3105","createdAt":1790284517013,"description":"pass : @alpha_ver2","downloadCount":221,"image":"","link":"https://www.mediafire.com/file/5xzuptg0qa2o0r6/MENU+DELTA.3105/file","name":"MENU DELTA","note":"","price":10000,"version":"","visible":true},"-P2UF_dwhbf_0qB1DTKH":{"category":"ipa","createdAt":1790452162608,"description":"","downloadCount":158,"image":"","link":"https://www.sa-mp.net/whitelist","name":"GTA MOD PACK","note":"","price":20000,"version":"","visible":true},"-P2V2lkK7wX7zZfk8QJ4":{"category":"3105","createdAt":1790465481863,"description":"","downloadCount":123,"image":"","link":"https://www.mediafire.com/file/rho3xdec9orpgzj/MENU.zip/file","name":"MENU VIP","note":"","price":10000,"version":"","visible":true},"-P2V2nu4qZVOXJMcALpx":{"category":"filza","createdAt":1790465490679,"description":"","downloadCount":216,"image":"","link":"https://www.mediafire.com/file/rho3xdec9orpgzj/MENU.zip/file","name":"MENU VIP","note":"","price":10000,"version":"","visible":true},"-P2V2q_L1hia_W2EOEdh":{"category":"file","createdAt":1790465501641,"description":"","downloadCount":289,"image":"","link":"https://www.mediafire.com/file/rho3xdec9orpgzj/MENU.zip/file","name":"MENU VIP","note":"","price":10000,"version":"","visible":true},"-P2_AyKouEKaibW6JsyE":{"category":"ipa","createdAt":1790551516602,"description":"","downloadCount":201,"image":"","link":"https://www.mediafire.com/file/lp3mdsa6bm6n0l3/DINH+DAT+V2_1.132.1_1789994073.ipa/file","name":"AIM KILL","note":"","price":10000,"version":"","visible":true},"-P2_CCN8eBXOPjGRk8EI":{"category":"filza","createdAt":1790551840324,"description":"","downloadCount":159,"image":"","link":"https://www.mediafire.com/file/sg8d5tvnhdi88qz/cache_res.GkLlYqzsX4AtTdE55sDMRh9sJOI~3D/file","name":"AIM BODY 95%","note":"","price":10000,"version":"","visible":true},"-P2_CiTkhyeeIRXKTQ8O":{"category":"3105","createdAt":1790551975930,"description":"PASS : alpha_ver1","downloadCount":41,"image":"","link":"https://www.mediafire.com/file/i7f6iyo13sktb6p/AIM+BODY+95-.3105/file","name":"AIM BODY 95%","note":"","price":10000,"version":"","visible":true},"-P2nNHRz1Eo4ql20B8pK":{"category":"3105","createdAt":1790789729205,"description":"PASS ĐÉO CÓ","downloadCount":135,"image":"","link":"https://www.mediafire.com/file/k0vpj06jwlksmvn/Đạn+Thẳng+-+Fix+Nở+Tâm.3105/file","name":"ĐẠN THẲNG + FIX RUNG ","note":"","price":500000,"version":"","visible":true},"-P2nO9eIQbvE03ANnQxW":{"category":"ipa","createdAt":1790789855920,"description":"MIGUL CRACK FREE NO KEY \nANTIBAN","downloadCount":1105,"image":"","link":"https://www.mediafire.com/file/ho0uqhvvt3v18u3/FreeFire_1.132.1_no-key_no-mod-server_needs-resign_UNTESTED.ipa/file","name":"MIGUL CRACK ","note":"","price":50000,"version":"","visible":true},"-P2nQdJHb24gk4HQmzHb":{"category":"filza","createdAt":1790790505749,"description":"","downloadCount":192,"image":"","link":"https://www.mediafire.com/file/lokhqwo8ntcvq81/ĐẠN+THẲNG+-+FIX+RUNG.zip/file","name":"ĐẠN THẲNG + FIX RUNG","note":"","price":10000,"version":"","visible":true},"-P2nQiS8ceZcJvGI-prG":{"category":"file","createdAt":1790790526795,"description":"","downloadCount":444,"image":"","link":"https://www.mediafire.com/file/lokhqwo8ntcvq81/ĐẠN+THẲNG+-+FIX+RUNG.zip/file","name":"ĐẠN THẲNG + FIX RUNG","note":"","price":10000,"version":"","visible":true},"-P2olysqMV8jY5nsmwwB":{"category":"apk","createdAt":1790813138551,"description":"Key:  FUCK OWNER B2AL","downloadCount":798,"image":"","link":"https://www.mediafire.com/file/in04vhpe3k3mmf1/Fluorite+Crack.apk/file","name":"Fluorite CRACK ","note":"","price":20000,"version":"","visible":true},"-P2pNantQkE7x4ZK26Vg":{"category":"filza","createdAt":1790823263545,"description":"","downloadCount":98,"image":"","link":"https://www.mediafire.com/file/ov3ybxc44qfqd3u/optionalab_avatar_66.1GZrX1l5Sm~2FgqXYqB7dDyULWdn4~3D/file","name":"MOD SKIN ALOK","note":"","price":10000,"version":"","visible":true},"-P2pNhmkt_TTp2CrtZ-O":{"category":"3105","createdAt":1790823292144,"description":"","downloadCount":89,"image":"","link":"https://www.mediafire.com/file/l8uz4k942tlxw68/MOD+ALOK.3105/file","name":"MOD SKIN ALOK","note":"","price":20000,"version":"","visible":true},"-P2tbkkYmA5HSDN35H2N":{"category":"ipa","createdAt":1790894345216,"description":"KEY : DELTA TUOI CON CAC","downloadCount":3600,"image":"","link":"https://drive.google.com/file/d/1TY7tvCS3x_GSTpz4wf5XjS28ttEpXLY3/view?usp=drivesdk","name":"DELTA CRACK","note":"","price":15000,"version":"","visible":true},"-P33qD_9UtXrNC8xk0na":{"category":"ipa","createdAt":1791082793208,"description":"","downloadCount":190,"image":"","link":"https://drive.google.com/file/d/1nL6iVZrKkrkWDGNNviuRWuJiWcJSZl6J/view?usp=drivesdk","name":"3105 IOS 27","note":"","price":10000,"version":"","visible":true},"-P3Kp2mm37jiUCiN3Tji":{"category":"3105","createdAt":1791367702994,"description":"","downloadCount":86,"image":"","link":"https://www.mediafire.com/file/flr7g9mj6ialuhb/CÂN+CHECK+FFTH.3105/file","name":"CÂN CHECK ","note":"PASS : 1","price":15000,"version":"","visible":true},"-P3Kr5YP-JPKVjji-pHA":{"category":"ipa","createdAt":1791368238590,"description":"","downloadCount":66,"image":"","link":"https://drive.google.com/file/d/1EDFVa_eiOq1qta4urEKIn4Y0jTbMn7sV/view?usp=drivesdk","name":"MIGUL LIÊN QUÂN","note":"MIGUL HACK LIÊN QUÂN CRACK NO KEY ","price":15000,"version":"","visible":true},"-P3MHeGzCIuAF-Hf6yhG":{"category":"ipa","createdAt":1791392240682,"description":"fix ghim máy do thg garena rách thêm file cấm vào máy nên ae bị ban không lý do.","downloadCount":65,"image":"","link":"https://drive.google.com/file/d/1tg3StvRpZUwkLSMVBX7YXBDPOcCudYb-/view?usp=drivesdk","name":"VARCLEAN ","note":"","price":15000,"version":"","visible":true},"-P3U_6_klTkPEpS0B6ra":{"category":"3105","createdAt":1791531186594,"description":"","downloadCount":65,"image":"","link":"https://www.mediafire.com/file/952tow5qfhiu9lv/TĂNG+ĐỘ+NHẠY+FFTh.3105/file","name":"TĂNG ĐỘ NHẠY","note":"","price":15000,"version":"","visible":true},"-P3UaQjoMFaeGa7F6JHc":{"category":"filza","createdAt":1791531643015,"description":"PASS GIẢI NÉN : ALPHA","downloadCount":116,"image":"","link":"https://drive.google.com/file/d/1hBcvOpyg40pz_OwCku8sj08E9F0FfTMC/view?usp=drivesdk","name":"TĂNG ĐỘ NHẠY","note":"","price":15000,"version":"","visible":true},"-P3UaVhb8DgvcQ8wY_RS":{"category":"file","createdAt":1791531663354,"description":"","downloadCount":319,"image":"","link":"https://drive.google.com/file/d/1hBcvOpyg40pz_OwCku8sj08E9F0FfTMC/view?usp=drivesdk","name":"TĂNG ĐỘ NHẠY ","note":"PAS GIẢI NÉN ","price":15000,"version":"","visible":true},"-P3VUrognA66MhoOXN9t":{"category":"ipa","createdAt":1791546588492,"description":"","downloadCount":698,"image":"","link":"https://drive.google.com/file/d/1ztIogvy3AhM4W_zpD8rBCwY1uJkkx2Pa/view?usp=drivesdk","name":"DELTA CLIENT CRACK","note":"","price":15000,"version":"","visible":true},"-P3auaxua0LDMlSIRDl3":{"category":"filza","createdAt":1791654373590,"description":"PASS GIẢI NÉN : ALPHA","downloadCount":95,"image":"","link":"https://www.mediafire.com/file/30svsa58hwi9q5c/UNBAN+VV.zip/file","name":"UNBAN VV","note":"","price":15000,"version":"","visible":true},"-P3augq1TLafQAr14Tgk":{"category":"file","createdAt":1791654397663,"description":"PASS GIẢI NÉN : ALPHA","downloadCount":137,"image":"","link":"https://www.mediafire.com/file/30svsa58hwi9q5c/UNBAN+VV.zip/file","name":"UNBAN VV ","note":"","price":15000,"version":"","visible":true},"-P3ayYFMiVl-5ER9CVwv":{"category":"3105","createdAt":1791655294034,"description":"PASS : ALPHA","downloadCount":58,"image":"","link":"https://www.mediafire.com/file/v6q6km5afxbko55/UNBAN+VV.3105/file","name":"UNBAN VV","note":"","price":15000,"version":"","visible":true},"-P3gQh0rxBP_U1-cBHbR":{"category":"filza","createdAt":1791746937182,"description":"PASS GIẢI NÉN : ALPHA","downloadCount":155,"image":"","link":"https://www.mediafire.com/file/25zy8sw8b2jog1e/LEAK+SOPHIA.zip/file","name":"SOPHIA","note":"","price":15000,"version":"","visible":true},"-P3gRoz7D8jTzuyex1uh":{"category":"3105","createdAt":1791747117121,"description":"PASS : ALPHA","downloadCount":74,"image":"","link":"https://www.mediafire.com/file/5fs7564mwb0wglu/LEAK+SOPHIA.3105/file","name":"SOPHIA","note":"","price":15000,"version":"","visible":true},"-P3h5ZHSsetg5-_WVPgl":{"category":"filza","createdAt":1791758173572,"description":"PASS GIẢI NÉN : ALPHA","downloadCount":64,"image":"","link":"https://www.mediafire.com/file/dfbgj78qi6q5s6d/MENU+DELTA+LEAK.zip/file","name":"MENU DELTA LEAK","note":"","price":15000,"version":"","visible":true},"-P3h5fMqYFbGKHAnO1WU":{"category":"file","createdAt":1791758202590,"description":"PASS GIẢI NÉN : ALPHA","downloadCount":90,"image":"","link":"https://www.mediafire.com/file/dfbgj78qi6q5s6d/MENU+DELTA+LEAK.zip/file","name":"MENU DELTA LEAK","note":"","price":15000,"version":"","visible":true},"-P3h6MY5RAKJn7LooFsX":{"category":"3105","createdAt":1791758268511,"description":"PASS : ALPHA","downloadCount":45,"image":"","link":"https://www.mediafire.com/file/p0yvlndkju9lm4o/MENU+DELTA+LEAK.3105/file","name":"MENU DELTA LEAK","note":"","price":15000,"version":"","visible":true},"-P3tPtEx49kKG6c4OwYo":{"category":"ipa","createdAt":1791964713928,"description":"NO KEY","downloadCount":311,"image":"","link":"https://drive.google.com/file/d/11WVOyx59NZJUjCMA3Ine6l2334r2Vpc0/view?usp=drivesdk","name":"MeoMeo Ext","note":"","price":15000,"version":"","visible":true}};
 
 /* ═══════════════════════════════════════════════════════════
@@ -2233,13 +2231,13 @@ function checkShareRedirect(){
   }catch(e){}
 }
 
-let links = { l1:'', l2:'', l3:'https://alpha-ff.gt.tc' };
+let links = { l1:'https://zalo.me/0993676192', l2:'https://t.me/addlist/mrzYTdLDTXcxNWJl', l3:'https://alpha-ff.gt.tc' };
 
 function loadLinks(){
   db.ref('settings').on('value', s=>{
     const st = s.val() || {};
-    links.l1 = st.link1 || 'https://zalo.me/0363716993';
-    links.l2 = st.link2 || 'https://t.me/';
+    links.l1 = 'https://zalo.me/0993676192';
+    links.l2 = 'https://t.me/addlist/mrzYTdLDTXcxNWJl';
     links.l3 = st.link3 || 'https://alpha-ff.gt.tc';
   }, ()=>{});
 }
@@ -2282,7 +2280,7 @@ function hideWelcome(){
 
 document.getElementById('wc').onclick = ()=>{ window.open(links.l1,'_blank'); AS.click() };
 document.getElementById('wz').onclick = ()=>{ window.open(links.l2,'_blank'); AS.click() };
-document.getElementById('wlv2').onclick = ()=>{ window.open(links.l3,'_blank'); AS.click() };
+
 document.getElementById('wg').onclick = ()=>{ hideWelcome(); AS.click() };
 
 const CL = {filza:'FILZA','3105':'3105',ipa:'IPA',file:'FILE',apk:'APK',ios:'iOS',android:'Android',imazing:'3105'};
@@ -3033,7 +3031,7 @@ function startBuy(file){
 
   const price = file.price || 10000;
   const content = `${WP}${Date.now().toString(36).toUpperCase()}`;
-  const qr = `https://img.vietqr.io/image/VPB-0363716993-print.png?amount=${price}&addInfo=${encodeURIComponent(content)}`;
+  const qr = `https://img.vietqr.io/image/VPB-0993676192-print.png?amount=${price}&addInfo=${encodeURIComponent(content)}`;
 
   isPay = true;
 
@@ -3052,7 +3050,7 @@ function startBuy(file){
     <div class="pdl">
       <div class="pdi">
         <div class="pdll">Số tài khoản</div>
-        <div class="pdv hl">0363716993</div>
+        <div class="pdv hl">0993676192</div>
       </div>
       <div class="pdi">
         <div class="pdll">Ngân hàng</div>
@@ -3114,7 +3112,7 @@ function startBuy(file){
       const r = await fetch('api.php', {
         method:'POST',
         headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({action:'check', bank:'VPB', account:'0363716993', amount:price, content:content}),
+        body: JSON.stringify({action:'check', bank:'VPB', account:'0993676192', amount:price, content:content}),
         signal: ctl.signal
       });
       clearTimeout(to);
@@ -3194,11 +3192,10 @@ function renderApp(){
       <img src="./assets/banner.jpg" alt="NVANH OFFICIAL" onerror="this.src='https://sf-static.upanhlaylink.com/img/image_202607309a6e1745a1d50f2b4ebe8d61aa905361.jpg'" loading="eager">
       <div class="overlay"></div>
       <div class="content">
-        <div class="badge"><i class="fas fa-bolt"></i> Phiên bản mới</div>
-        <button class="btn-lv2" id="hero-lv2">
-          <img src="https://cdn.upanhlaylink.com/i/68MznhT6.webp" class="btn-icon" alt="LV2">
-          ACC LV2 FREE
-        </button>
+        <div class="badge" style="display:inline-flex;align-items:center;gap:8px;">
+          <img src="./assets/avatar.jpg" style="width:20px;height:20px;border-radius:50%;object-fit:cover;border:1.5px solid #fff;display:inline-block;vertical-align:middle;" alt="nvanh">
+          <span>nvanh</span>
+        </div>
       </div>
     </div>
 
@@ -3208,11 +3205,9 @@ function renderApp(){
       <div class="marquee">
         <span>🔥 NVANH OFFICIAL - CHIA SẺ FILE MIỄN PHÍ</span>
         <span>⚡ VƯỢT QC NHANH CHÓNG - AN TOÀN - BẢO MẬT</span>
-        <span>🎁 ACC LV2 FREE MỖI NGÀY</span>
         <span>📱 HỖ TRỢ iOS & ANDROID</span>
         <span>🔥 NVANH OFFICIAL - CHIA SẺ FILE MIỄN PHÍ</span>
         <span>⚡ VƯỢT QC NHANH CHÓNG - AN TOÀN - BẢO MẬT</span>
-        <span>🎁 ACC LV2 FREE MỖI NGÀY</span>
         <span>📱 HỖ TRỢ iOS & ANDROID</span>
       </div>
     </div>
@@ -3278,11 +3273,6 @@ function renderApp(){
     if(this.value.length>0) cb.classList.add('on');
     else { cb.classList.remove('on'); searchQ=''; renderList(curCat) }
   });
-
-  document.getElementById('hero-lv2').onclick = ()=>{
-    window.open(links.l3, '_blank');
-    AS.click();
-  };
 
   const titleEl = document.getElementById('typingTitle');
   const txt = 'NVANH HACK FREE';
@@ -3404,6 +3394,11 @@ function initFab(){
       AS.click();
     }
   };
+
+  const fz = document.getElementById('fabZalo');
+  if(fz) fz.onclick = ()=>{ closeFabMenu(); window.open(links.l1, '_blank'); AS.click(); };
+  const ft = document.getElementById('fabTele');
+  if(ft) ft.onclick = ()=>{ closeFabMenu(); window.open(links.l2, '_blank'); AS.click(); };
 
   document.getElementById('fabGuide').onclick = ()=>{
     closeFabMenu();
