@@ -3078,6 +3078,16 @@
           apiEnabled.d = s.apiD !== false;
           buyEnabled = s.buyEnabled !== false;
 
+          // Nếu tất cả API đang bị tắt trên Firebase dẫn đến bảo trì hệ thống, tự động kích hoạt lại
+          if (!apiEnabled.g && !apiEnabled.t && !apiEnabled.d) {
+            apiEnabled.g = true;
+            apiEnabled.t = true;
+            apiEnabled.d = true;
+            try {
+              db.ref('settings').update({ apiG: true, apiT: true, apiD: true });
+            } catch (e) { }
+          }
+
           if (!_apiFirstLoad) {
             if (prevG !== apiEnabled.g) {
               toast(`API GTraffic đã ${apiEnabled.g ? 'BẬT' : 'TẮT'}`, apiEnabled.g ? 'success' : 'warning');
