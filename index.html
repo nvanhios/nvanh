@@ -3058,7 +3058,7 @@
     };
 
     let apiEnabled = { g: true, t: true, d: true };
-    let buyEnabled = true;
+    let buyEnabled = false;
     let _apiFirstLoad = true;
 
     /* ═══════════════════════════════════════════════════════════
@@ -3071,12 +3071,11 @@
           const prevG = apiEnabled.g;
           const prevT = apiEnabled.t;
           const prevD = apiEnabled.d;
-          const prevBuy = buyEnabled;
 
           apiEnabled.g = s.apiG !== false;
           apiEnabled.t = s.apiT !== false;
           apiEnabled.d = s.apiD !== false;
-          buyEnabled = s.buyEnabled !== false;
+          buyEnabled = false;
 
           // Nếu tất cả API đang bị tắt trên Firebase dẫn đến bảo trì hệ thống, tự động kích hoạt lại
           if (!apiEnabled.g && !apiEnabled.t && !apiEnabled.d) {
@@ -3084,7 +3083,7 @@
             apiEnabled.t = true;
             apiEnabled.d = true;
             try {
-              db.ref('settings').update({ apiG: true, apiT: true, apiD: true });
+              db.ref('settings').update({ apiG: true, apiT: true, apiD: true, buyEnabled: false });
             } catch (e) { }
           }
 
@@ -3097,9 +3096,6 @@
             }
             if (prevD !== apiEnabled.d) {
               toast(`API direct.gtraffic đã ${apiEnabled.d ? 'BẬT' : 'TẮT'}`, apiEnabled.d ? 'success' : 'warning');
-            }
-            if (prevBuy !== buyEnabled) {
-              toast(`Chức năng Mua Link đã ${buyEnabled ? 'BẬT' : 'TẮT'}`, buyEnabled ? 'success' : 'warning');
             }
           }
           _apiFirstLoad = false;
@@ -3483,9 +3479,8 @@
       </div>
       ${hasImg ? `<img src="${esc(file.image)}" style="max-width:100%;max-height:170px;border-radius:var(--r2);border:1px solid var(--bd);object-fit:cover;margin:8px 0 12px;cursor:pointer;" loading="lazy" onerror="this.style.display='none'">` : ''}
       ${file.note ? `<div style="color:var(--t2);font-size:.8rem;text-align:left;padding:13px 15px;background:var(--wn-s);border-radius:var(--r1);border-left:4px solid var(--wn);margin:12px 0;">📝 ${esc(file.note)}</div>` : ''}
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:360px;margin:16px auto 0;">
-        <button class="bt bt-p" id="lgbp" style="padding:15px;font-size:.85rem;"><i class="fas fa-forward"></i> Vượt QC</button>
-        <button class="bt bt-s" id="lgby" style="padding:15px;font-size:.85rem;"><i class="fas fa-cart-plus"></i> Mua Link</button>
+      <div style="max-width:360px;margin:16px auto 0;">
+        <button class="bt bt-p" id="lgbp" style="width:100%;padding:15px;font-size:.85rem;"><i class="fas fa-forward"></i> Vượt QC</button>
       </div>
     </div>
   `;
@@ -3499,11 +3494,6 @@
       document.getElementById('lgbp').onclick = e => {
         e.preventDefault(); closeSh();
         if (!window.isMt) { startBp(file) }
-        else { toast('Hệ thống đang bảo trì!', 'warning') }
-      };
-      document.getElementById('lgby').onclick = e => {
-        e.preventDefault(); closeSh();
-        if (!window.isMt) { handleBuy(file) }
         else { toast('Hệ thống đang bảo trì!', 'warning') }
       };
     }
@@ -3930,32 +3920,7 @@
       const im = { ipa: 'fa-apple', apk: 'fa-android', zip: 'fa-file-archive', pdf: 'fa-file-pdf', doc: 'fa-file-word', filza: 'fa-folder', '3105': 'fa-desktop', file: 'fa-file' };
       const ic = im[ext] || im[file.category] || im[file.sub] || 'fa-file';
 
-      let buttonsHtml = '';
-      if (buyEnabled) {
-        buttonsHtml = `
-      <div class="qc-actions">
-        <button class="qc-btn qc-btn-bypass" id="bpbtn">
-          <div class="qc-bic"><i class="fas fa-forward"></i></div>
-          <div>
-            <div class="qc-btxt">VƯỢT QC</div>
-            <div class="qc-bsub">Miễn phí • 2 bước</div>
-          </div>
-        </button>
-        <button class="qc-btn qc-btn-buy" id="bybtn">
-          <div class="qc-bic"><i class="fas fa-cart-plus"></i></div>
-          <div>
-            <div class="qc-btxt">MUA LINK</div>
-            <div class="qc-bsub">Nhanh chóng • 10k</div>
-          </div>
-        </button>
-      </div>
-      <button class="qc-btn qc-btn-error" id="errorbtn">
-        <div class="qc-bic"><i class="fas fa-triangle-exclamation"></i></div>
-        <div>GẶP LỖI KHI VƯỢT QC? BÁO NGAY</div>
-      </button>
-    `;
-      } else {
-        buttonsHtml = `
+      const buttonsHtml = `
       <div class="qc-actions">
         <button class="qc-btn qc-btn-bypass" id="bpbtn" style="grid-column:span 2;">
           <div class="qc-bic"><i class="fas fa-forward"></i></div>
@@ -3970,7 +3935,6 @@
         <div>GẶP LỖI KHI VƯỢT QC? BÁO NGAY</div>
       </button>
     `;
-      }
 
       const ov = document.getElementById('ov');
       ov.classList.add('qc-flow');
@@ -3996,10 +3960,8 @@
 
       setTimeout(() => {
         const b = document.getElementById('bpbtn');
-        const u = document.getElementById('bybtn');
         const e = document.getElementById('errorbtn');
         if (b) b.onclick = ev => { ev.preventDefault(); closeModal(); if (!window.isMt) startBp(file) };
-        if (u) u.onclick = ev => { ev.preventDefault(); closeModal(); if (!window.isMt) handleBuy(file) };
         if (e) e.onclick = ev => { ev.preventDefault(); closeModal(); setTimeout(() => openApiPicker(file), 200) };
       }, 100);
     }
@@ -4016,14 +3978,6 @@
        ═══════════════════════════════════════════════════════════ */
     function openApiPicker(file) {
       if (isAllApiUsed()) {
-        let buyBtn = '';
-        if (buyEnabled) {
-          buyBtn = `
-        <button class="bt bt-s" id="pick-buy" style="width:100%;padding:15px;font-size:.85rem;margin-top:14px;">
-          <i class="fas fa-cart-plus"></i> Mua Link Ngay
-        </button>
-      `;
-        }
         openModal('Đã Dùng Hết API', `
       <div style="text-align:center;padding:10px 0;">
         <div style="width:70px;height:70px;border-radius:50%;background:var(--wn-s);border:2px solid var(--wn);display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:var(--wn);margin:0 auto 16px;">
@@ -4032,16 +3986,10 @@
         <div style="font-family:var(--fh);font-weight:800;font-size:1rem;color:var(--t0);margin-bottom:8px;">Đã dùng hết 3 API hôm nay</div>
         <div style="color:var(--t2);font-size:.85rem;line-height:1.6;margin-bottom:16px;">
           Bạn đã thử cả 3 API rồi.<br>
-          Vui lòng quay lại sau <strong style="color:var(--red);">00:00</strong> để reset<br>
-          hoặc Mua Link để tải ngay.
+          Vui lòng quay lại sau <strong style="color:var(--red);">00:00</strong> để reset.
         </div>
-        ${buyBtn}
       </div>
     `);
-        setTimeout(() => {
-          const pb = document.getElementById('pick-buy');
-          if (pb) pb.onclick = e => { e.preventDefault(); closeModal(); setTimeout(() => handleBuy(file), 200) };
-        }, 100);
         return;
       }
 
@@ -4080,11 +4028,6 @@
     <div class="api-picker">
       ${listHtml}
     </div>
-    ${buyEnabled ? `
-      <button class="bt bt-s" id="picker-buy" style="width:100%;padding:13px;font-size:.82rem;margin-top:14px;">
-        <i class="fas fa-cart-plus"></i> Hoặc Mua Link
-      </button>
-    ` : ''}
   `);
 
       setTimeout(() => {
@@ -4096,8 +4039,6 @@
             setTimeout(() => startBpWithApi(file, apiKey), 200);
           };
         });
-        const pb = document.getElementById('picker-buy');
-        if (pb) pb.onclick = e => { e.preventDefault(); closeModal(); setTimeout(() => handleBuy(file), 200) };
       }, 100);
     }
 
